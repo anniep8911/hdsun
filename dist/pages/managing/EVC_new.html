@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>현대차 홈 에너지 시스템</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- favicon -->
+  <!-- <link rel="icon" href="./assets/images/common/favicon.ico" type="image/x-icon" /> -->
+  <!-- //favicon -->
+  <link rel="stylesheet" href="../../assets/css/ui-style.css">
+  <script src="../../assets/lib/jquery-3.7.1.min.js"></script>
+  <script src="../../assets/js/ui-script.js"></script>
+</head>
+
+<body>
+  <div class="wrapper">
+    <!-- 헤더 임시 태그 : 실제 개발 시 삭제하시고 page/inc/header.html의 태그를 사용하시면 됩니다.  -->
+    <div class="header-place"></div>
+    <!--// 헤더 임시 태그 : 실제 개발 시 삭제하시고 page/inc/header.html의 태그를 사용하시면 됩니다.  -->
+ 
+    <!-- 컨텐츠 영역 -->
+    <section class="container">
+      <!-- 컨텐츠 공통해더 : fixed -->
+      <div class="header">
+        <ul class="breadcrumb">
+          <li><a href="#">main</a></li>
+          <li><a href="#">EVC 관리</a></li>
+          <li><a href="#">EVC 등록</a></li>
+        </ul>
+        <h2>EVC 등록</h2>
+      </div>
+
+      <!-- 공통영역은 고정 / container 내부 내용만 변경 -->
+      <form action="" class="content">
+        <ul class="input-table">
+          <li>
+            <label for="home-name">사이트<i class="imp"></i></label>
+            <select class="site-sel" name="" id="">
+              <option value="">실제자원</option>
+              <option value="">실제자원2</option>
+              <option value="">실제자원1</option>
+            </select>
+            <div class="site-find">
+              <div class="input-txt">
+                <i class="place"></i>
+                <span>Site 찾기</span>
+                <span class="">서울특별시 마포구 잔나비길 1 가동 707호</spans>
+              </div>
+
+              <div class="addr">
+                <div class="header">
+                  <select name="" id="">
+                    <option value="">도/시</option>
+                    <option value="">서울시</option>
+                    <option value="">경기도</option>
+                  </select>
+                  <select name="" id="">
+                    <option value="">시/군/구</option>
+                  </select>
+                  <div class="input-txt" auto-srch="true">
+                    <input type="text">
+                  </div>
+                  <button type="button">검색</button>
+                </div>
+  
+                <div class="section">
+                  <h4>검색결과 <span>0</span> 건</h4>
+                  <ul class="result">
+                    <!-- 검색결과 컴포넌트-->
+                    <li>
+                      <i class="place-lg"></i>
+                      <span class="dts">
+                        <span>남양연구소</span>
+                        <span>경기도 화성시 남양읍 현대연구소로 150</span>
+                      </span>
+                    </li>
+                    
+                    <li>
+                      <i class="place-lg"></i>
+                      <span class="dts">
+                        <span>구로발전소</span>
+                        <span>서울시 구로구 남구로동 현대연구소로 150</span>
+                      </span>
+                    </li>
+
+                    <li>
+                      <i class="place-lg"></i>
+                      <span class="dts">
+                        <span>신도시연구소</span>
+                        <span>서울시 강서구 마곡동 현대연구소로 150</span>
+                      </span>
+                    </li>
+
+
+                    <li>
+                      <i class="place-lg"></i>
+                      <span class="dts">
+                        <span>테스트연구소</span>
+                        <span>서울시 테스트 마곡동 현대연구소로 150</span>
+                      </span>
+                    </li>
+                    
+                  </ul>
+                </div>
+              </div>
+
+            </div>
+          </li>
+          <li>
+            <label for="">EVC명<i class="imp"></i></label>
+            <div class="input-txt">
+              <input type="text" class="notice" placeholder="EVC명" id="">
+              <i class="clear"></i>
+            </div>
+          </li>
+          <li> 
+            <label for="">설치일<i class="imp"></i></label>
+            <div class="input-txt">
+              <input type="text" class="notice" placeholder="YYYY.MM.DD" id="">
+              <i class="clear"></i>
+            </div>
+          </li>
+          <li> 
+            <label for="install-date">설치 위치<i class="imp"></i></label>
+            <div class="input-txt">
+              <input type="text" class="notice" placeholder="설치 위치" id="install-date">
+              <i class="clear"></i>
+            </div>
+          </li>
+          <li>
+            <label for="charge-cat">충전기 종류<i class="imp"></i></label>
+            <select name="" id="charge-cat">
+              <option value="">충전기종류 선택</option>
+            </select>
+          </li>
+          <li>
+            <label for="prd-num">제품일련번호<i class="imp"></i></label>
+            <div class="input-txt">
+              <input type="text" class="notice" placeholder="제품일련번호" id="prd-num">
+              <i class="clear"></i>
+            </div>
+          </li>
+          <li>
+            <label for="prd-num">ID(자동 부여)</label>
+            <div class="input-txt" state="disabled">
+              <input type="text" class="notice" placeholder="ID" id="prd-num">
+              <i class="clear"></i>
+            </div>
+          </li>
+          <li>
+            <label for="prd-num">SECC_ID<i class="imp"></i></label>
+            <div class="input-txt">
+              <input type="text" class="notice" placeholder="SECC_ID" id="prd-num">
+              <i class="clear"></i>
+            </div>
+          </li>
+          <li>
+            <label for="prd-num">상<i class="imp"></i></label>
+            <div class="w160">
+              <input type="checkbox" id="triple" name="sang" checked>
+              <label for="triple">3상</label>
+              <input type="checkbox"  id="single" name="sang" class="ml-30">
+              <label for="single">단상</label>
+            </div>
+            <select name="" id="" class="site-sel ml-30">
+              <option value="">A</option>
+            </select>
+          </li>
+          <li class="etc">
+            <label for="etc">비고</label>
+            <textarea name="" id="etc" placeholder="비고"></textarea>
+          </li>
+          <li class="btns">
+            <a href="./home.html" class="negative-btn">취소</a>
+            <button type="submit">등록</button>
+          </li>
+        </ul>
+      </form> 
+    </section>
+
+  </div>
+
+
+
+  <!-- 모달임시태그 , 아래의 태그를 완전히 지우고, 해당 위치에 dist/inc/modal의 태그를 사용하면됩니다.(스크립트제외)-->
+  <div class="modal-place"></div>
+  <!--// 모달임시태그 , 아래의 태그를 완전히 지우고, 해당 위치에 dist/inc/modal의 태그를 사용하면됩니다.(스크립트제외)-->
+
+  <!-- 레이아웃 조합용 스크립트입니다. 개발시 삭제해주세요.:파일까지 삭제 필요 -->
+  <script src="../../assets/js/ui-layout-script.js"></script>
+  <!--//레이아웃 조합용 스크립트입니다. 개발시 삭제해주세요. //-->
+</body>
+
+</html>

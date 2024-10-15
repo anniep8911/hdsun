@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="utf-8">
+
+<head>
+  <title>현대차 홈 에너지 시스템</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- favicon -->
+  <link rel="icon" href="./assets/images/common/favicon.ico" type="image/x-icon" />
+  <link rel="stylesheet" href="../../assets/css/ui-stats.css">
+  <script src="../../assets/lib/jquery-3.7.1.min.js"></script>
+  <script src="../../assets/lib/chart-3.5.1.min.js"></script>
+
+  <!-- 확인후 주석삭제: UI 데이터 개수 변경용 스크립트입니다. 개발시 삭제해주세요.:파일까지 삭제 필요 -->
+  <script src="../../assets/js/ui-layout-script.js"></script>
+  <!--확인후 주석삭제: // UI 데이터 개수 변경용 스크립트입니다. 개발시 삭제해주세요. //-->
+
+  <script src="../../assets/js/ui-script.js"></script>
+  <script src="../../assets/js/ui-liveESS.js" type="module"></script>
+</head>
+
+<body>
+  <!-- 헤더 임시 태그 : 실제 개발 시 삭제하시고 page/inc/header.html의 태그를 사용하시면 됩니다.  -->
+  <div class="header-place"></div>
+  <!--// 헤더 임시 태그 : 실제 개발 시 삭제하시고 page/inc/header.html의 태그를 사용하시면 됩니다.  -->
+
+  <!-- 컨텐츠 영역 -->
+  <section class="container stats">
+    <!-- 컨텐츠 공통해더 : fixed -->
+    <div class="header">
+      <div class="hdr-left">
+        <ul class="breadcrumb">
+          <li><a hred="#">main</a></li>
+          <li><a hred="#">ESS 현황</a></li>
+        </ul>
+        <h2>ESS 현황</h2>
+      </div>
+      <div class="hdr-right">
+        <select name="" id="">
+          <option value="">실제자원</option>
+          <option value="">실제자원2</option>
+          <option value="">실제자원3</option>
+        </select>
+
+        <div class="site-find">
+          <div class="input-txt">
+            <i class="place"></i>
+            <span>통합</span>
+          </div>
+
+          <div class="addr">
+            <div class="header">
+              <select name="" id="">
+                <option value="">도/시</option>
+                <option value="">서울시</option>
+                <option value="">경기도</option>
+              </select>
+              <select name="" id="">
+                <option value="">시/군/구</option>
+              </select>
+              <div class="input-txt" auto-srch="true">
+                <input type="text">
+              </div>
+              <button type="button">검색</button>
+            </div>
+
+            <div class="section">
+              <h4>검색결과 <span>0</span> 건</h4>
+              <ul class="result">
+                <!-- 검색결과 컴포넌트-->
+                <li>
+                  <i class="place-lg"></i>
+                  <span class="dts">
+                    <span>남양연구소</span>
+                    <span>경기도 화성시 남양읍 현대연구소로 150</span>
+                  </span>
+                </li>
+
+                <li>
+                  <i class="place-lg"></i>
+                  <span class="dts">
+                    <span>구로발전소</span>
+                    <span>서울시 구로구 남구로동 현대연구소로 150</span>
+                  </span>
+                </li>
+
+                <li>
+                  <i class="place-lg"></i>
+                  <span class="dts">
+                    <span>신도시연구소</span>
+                    <span>서울시 강서구 마곡동 현대연구소로 150</span>
+                  </span>
+                </li>
+                <li>
+                  <i class="place-lg"></i>
+                  <span class="dts">
+                    <span>테스트연구소</span>
+                    <span>서울시 테스트 마곡동 현대연구소로 150</span>
+                  </span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+        <select name="" id="">
+          <option value="">-</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- 콘텐츠 영역: 내용변경 영역 -->
+    <div class="content-wrap ev">
+      <div class="content chart">
+        <h2>ESS 개요 <span>(2024-08-01 16:05:24)</span></h2>
+        <div class="art-wrap ver">
+          <article>
+            <h3>ESS 수</h3>
+            <h4><span>400</span>대</h4>
+            <i class="accure-gr"></i>
+          </article>
+          <article>
+            <h3>ESS 용량</h3>
+            <h4><span>1,490</span>kWh</h4>
+            <i class="db-gr"></i>
+          </article>
+          <article class="short">
+            <h3>충전중 <i class="lab" style="--color-bg:#2CD885"></i></h3>
+            <h4><span>2</span></h4>
+          </article>
+          <article class="short">
+            <h3>대기중 <i class="lab" style="--color-bg:#00AAD2"></i></h3>
+            <h4><span>523</span></h4>
+          </article>
+          <article class="short">
+            <h3>방전중 <i class="lab" style="--color-bg:#B3B3B3"></i></h3>
+            <h4><span>2</span></h4>
+          </article>
+          <article class="short">
+            <h3>고장 <i class="lab" style="--color-bg:#E63312"></i></h3>
+            <h4><span>1</span></h4>
+          </article>
+       
+        </div>
+      </div>
+
+      <div class="content chart">
+        <div class="chart-header">
+          <h2>기간별 현황</h2>
+          <h2 style="display: none;">일자별 현황</h2>
+          <ul class="labels-select">
+            <li>
+              <!-- 일 선택시 발생 -->
+              <input type="date" value="2020-08-25" class="day">
+
+              <!-- 월 선택시 발생 -->
+              <select name="" id="" class="month">
+                <option value="">1</option>
+                <option value="">...</option>
+                <option value="">12</option>
+              </select>
+
+              <!-- 년 선택시 발생 -->
+              <select name="" id="" class="year">
+                <option value="">2024</option>
+                <option value="">...</option>
+                <option value="">2020</option>
+              </select>
+
+              <!-- 기간 선택시 발생 -->
+              <div class="term">
+                <input type="date" value="2020-08-25">
+                <span> ~ </span>
+                <input type="date" value="2020-08-25">
+              </div>
+            </li>
+            <li>
+              <select name="" id="" class="sel_date">
+                <!-- 여기서 value값을 ui임시노출용으로 변경하였습니다. 개발에 맞게 수정하시면 됩니다! -->
+                <option value="day">일</option>
+                <option value="month">월</option>
+                <option value="year">년</option>
+                <option value="term" selected>기간</option>
+              </select>
+            </li>
+          </ul>
+        </div>
+
+        <article>
+          <h3>충전 전력량</h3>
+          <h4><span>1,958</span>kWh</h4>
+          <p>충전 시간 <span>123:19:41</span></p>
+          <i class="charging"></i>
+        </article>
+
+        <article>
+          <h3>방전 전력량</h3>
+          <h4><span>1,958</span>kWh</h4>
+          <p>방전 시간 <span>123:19:41</span></p>
+          <i class="dead"></i>
+        </article>
+        
+        <article>
+          <h3>대기 시간</h3>
+          <h4><span>124:00:12</span></h4>
+          <i class="use"></i>
+        </article>
+
+        <article>
+          <h3>사용율</h3>
+          <!-- 가동율의 퍼센트 값은 span.prog-gata안에 '숫자만' 입력-->
+          <h4><span class="prog-data">30</span>%</h4>
+          <div class="prog-bar simple">
+            <!-- 가동율의 퍼센트 값은 span.prog-gata안에 '숫자만' 입력-->
+            <div class="bar"><span class="prog-data">30</span></div>
+            </div>
+          <i class="ev"></i>
+        </article>
+
+        <!-- ESS 현황 (대)) -->
+        <article class="chart-large">
+          <canvas class="mixed-bar-chart" state="term"></canvas>
+        </article>
+        
+        <!-- 충전 / 방전량 그래프 (kWh) -->
+        <article class="chart-large">
+          <canvas class="mixed-neg-chart" state="term"></canvas>
+        </article>
+      </div>
+      <div class="content board">
+        <div class="header">
+          <h2>유닛리스트</h2>
+          <!-- active로 버튼 show/hide 적용 -->
+          <div class="results">
+            <p class="units">
+              <!-- 유닛이 없을경우 아래 span만 없앰 :: p태그는 빈 태그로 남겨둘것  -->
+            </p>
+            <a href="" class="button">차트적용</a>
+          </div>
+        </div>
+        <div class="search" state="">
+          <input type="text" placeholder="home명 검색">
+          <i class="search-icon"></i>
+        </div>
+        <div class="table">
+          <div class="tbl-header">
+            <!-- 테이블 타이틀 컴포넌트-->
+            <ul>
+              <li><input type="checkbox" name="list-check" checked></li>
+              <li>ID</li>
+              <li>상태</li>
+              <li>충방전파워</li>
+              <li>SOC</li>
+              <li>(기간)충전량</li>
+              <li>(기간)방전량</li>
+              <li>용량</li>
+              <li>ESS 온도</li>
+            </ul>
+            <!-- // 테이블 타이틀 컴포넌트-->
+          </div>
+
+          <!-- 테이블 데이터 컴포넌트 -->
+          <ul class="tbl-list">
+            <li><input type="checkbox" name="list-check"></li>
+            <li>아이디노출됩니다</li>
+            <li>TEXT</li>
+            <li>TEXT</li>
+            <li>TEXT</li>
+            <li>TEXT</li>
+            <li>TEXT</li>
+            <li>TEXT</li>
+            <li>TEXT</li>
+          </ul>
+          <!-- //테이블 데이터 컴포넌트 -->
+        </div>
+        <div class="pagination">
+          <!-- 확인후 주석삭제: href 내 reload는 개발시 삭제 pressed ui구현을 위함(테스트목적) -->
+          <a href="javascript:location.reload()"><i class="prvdb"></i></a>
+          <a href="javascript:location.reload()"><i class="prv"></i></a>
+          <a href="#" class="pg active">1</a>
+          <a href="#" class="pg">2</a>
+          <a href="#" class="pg">3</a>
+          <a href="#" class="pg">4</a>
+          <a href="#" class="pg">5</a>
+          <a href="#" class="pg">6</a>
+          <a href="javascript:location.reload()"><i class="nxt"></i></a>
+          <a href="javascript:location.reload()"><i class="nxtdb"></i></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- 모달임시태그 , 아래의 태그를 완전히 지우고, 해당 위치에 dist/inc/modal의 태그를 사용하면됩니다.-->
+  <div class="modal-place"></div>
+  <!--// 모달임시태그 , 아래의 태그를 완전히 지우고, 해당 위치에 dist/inc/modal의 태그를 사용하면됩니다.-->
+</body>
+
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>현대차 홈 에너지 시스템</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- favicon -->
+  <!-- <link rel="icon" href="./assets/images/common/favicon.ico" type="image/x-icon" /> -->
+  <!-- //favicon -->
+  <link rel="stylesheet" href="../../assets/css/ui-style.css">
+  <script src="../../assets/lib/jquery-3.7.1.min.js"></script>
+  <script src="../../assets/js/ui-script.js"></script>
+</head> 
+
+<body>
+  <div class="wrapper">
+    <!-- 헤더 임시 태그 : 실제 개발 시 삭제하시고 page/inc/header.html의 태그를 사용하시면 됩니다.  -->
+    <div class="header-place"></div>
+    <!--// 헤더 임시 태그 : 실제 개발 시 삭제하시고 page/inc/header.html의 태그를 사용하시면 됩니다.  -->
+
+    <!-- 컨텐츠 영역 -->
+    <section class="container">
+      <!-- 컨텐츠 공통해더 : fixed -->
+      <div class="header">
+        <ul class="breadcrumb">
+          <li><a href="#">main</a></li>
+          <li><a href="#">충전기 모델 관리</a></li>
+          <li><a href="#">충전기 모델 변경</a></li>
+        </ul>
+        <h2>충전기 모델 변경</h2>
+      </div>
+ 
+      <!-- 공통영역은 고정 / container 내부 내용만 변경 -->
+      <form action="" class="content">
+        <ul class="input-table">
+          <li>
+            <label for="prd-name">품명 <i class="imp"></i></label>
+            <div class="input-txt">
+              <input type="text" class="notice" value="고속충전-마크2" id="prd-name">
+              <i class="clear"></i>
+            </div>
+          </li>
+          <li>
+            <label for="model-num">모델번호<i class="imp"></i></label>
+            <div class="input-txt">
+              <input type="text" class="notice" value="RX-018" id="model-num">
+              <i class="clear"></i>
+            </div>
+          </li>
+          <li>
+            <label for="prd-com">지원포트<i class="imp"></i></label>
+            <div class="ch-boxes">
+              <input type="checkbox" name="port" id="single"><label for="single">AC 단상</label>
+              <input type="checkbox" name="port" id="triple" checked><label for="triple">AC 3상</label>
+              <input type="checkbox" name="port" id="combo"><label for="combo">DC 콤보</label>
+              <input type="checkbox" name="port" id="demo"><label for="demo">차데모</label>
+            </div>
+          </li>
+          <li>
+            <label for="prd-vol">최대 충전 파워(kW)<i class="imp"></i></label>
+            <div class="input-txt">
+              <input type="text" class="notice" value="60" id="prd-vol">
+              <i class="clear"></i>
+            </div>
+          </li>
+          <li>
+            <label for="prd-vol">최대 방전 파워(kW)<i class="imp"></i></label>
+            <div class="input-txt">
+              <input type="text" class="notice" value="70" id="prd-vol">
+              <i class="clear"></i>
+            </div>
+          </li>
+          <li>
+            <label for="prd-vol">충전기 유형<i class="imp"></i></label>
+            <select name="" id="">
+              <option value="" selected>완속</option>
+            </select>
+          </li>
+          <li>
+            <label for="acad">AC/DC <i class="imp"></i></label>
+            <select name="" id="">
+              <option value="" selected>AC</option>
+            </select>
+          </li>
+          <li>
+            <label for="plug-qnt">플러그 수<i class="imp"></i></label>
+            <div class="input-txt">
+              <input type="text" class="notice" value="2" id="plug-qnt">
+              <i class="clear"></i>
+            </div>
+          </li>
+          <li>
+            <label for="date">출시 년월</label>
+            <div class="input-txt">
+              <input type="text" class="notice" value="2020.10" id="date">
+              <i class="clear"></i>
+            </div>
+          </li>
+          <li>
+            <label for="maker">제조사</label>
+            <div class="input-txt">
+              <input type="text" class="notice" value="제조사" id="maker">
+              <i class="clear"></i>
+            </div>
+          </li>
+          <li class="etc">
+            <label for="etc">비고</label>
+            <textarea name="" id="etc" placeholder="비고"></textarea>
+          </li>
+          <li class="btns">
+            <a href="./home.html" class="negative-btn">취소</a>
+            <button type="submit">등록</button>
+          </li>
+        </ul>
+      </form>
+    </section>
+
+  </div>
+
+
+  
+  <!-- 모달임시태그 , 아래의 태그를 완전히 지우고, 해당 위치에 dist/inc/modal의 태그를 사용하면됩니다.(스크립트제외)-->
+  <div class="modal-place"></div>
+  <!--// 모달임시태그 , 아래의 태그를 완전히 지우고, 해당 위치에 dist/inc/modal의 태그를 사용하면됩니다.(스크립트제외)-->
+ 
+
+  <!-- 레이아웃 조합용 스크립트입니다. 개발시 삭제해주세요.:파일까지 삭제 필요 -->
+  <script src="../../assets/js/ui-layout-script.js"></script>
+  <!--//레이아웃 조합용 스크립트입니다. 개발시 삭제해주세요. //-->
+</body>
+
+</html>

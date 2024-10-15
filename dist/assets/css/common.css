@@ -1,0 +1,187 @@
+/* init */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video ,button, input, textarea{
+	padding: 0;
+	margin: 0;
+	border: 0;
+	vertical-align: baseline;
+  box-sizing: border-box;
+  font-weight: normal;
+}
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+::-webkit-scrollbar{
+  background-color: transparent;
+}
+::-webkit-scrollbar-thumb{
+  background-color: #ccc;
+}
+input{
+  appearance: none;
+}
+
+/* variables  */
+
+@font-face {
+  font-family:"HyundaiSansHeadKROTFRegular";
+  src: url('../fonts/1586990078026-HyundaiSansHeadKROTFRegular.otf') format('opentype');
+}
+@font-face {
+  font-family:"HyundaiSansTextKROTFBold";
+  src: url('../fonts/1586990078026-HyundaiSansTextKROTFBold.otf') format('opentype');
+}
+@font-face {
+  font-family:"HyundaiSansTextKROTFMedium";
+  src: url('../fonts/1586990078026-HyundaiSansTextKROTFMedium.otf') format('opentype');
+}
+@font-face {
+  font-family:"HyundaiSansTextKROTFRegular";
+  src: url('../fonts/1586990078127-HyundaiSansTextKROTFRegular.otf') format('opentype');
+}
+@font-face {
+  font-family:"HyundaiSansHeadKROTFBold";
+  src: url('../fonts/1586990078128-HyundaiSansHeadKROTFBold.otf') format('opentype');
+}
+@font-face {
+  font-family:"HyundaiSansHeadKROTFLight";
+  src: url('../fonts/1586990078129-HyundaiSansHeadKROTFLight.otf') format('opentype');
+}
+@font-face {
+  font-family:"HyundaiSansHeadKROTFMedium";
+  src: url('../fonts/1586990078182-HyundaiSansHeadKROTFMedium.otf') format('opentype');
+}
+
+:root{
+  /* color */
+    --color-hyndai-blue: #002C5F;
+    --color-primary-blue:#4D5BD4;
+    --color-main-black:#000;
+    --color-active-blue: #00AAD2;
+    --color-background:#F5F7FA;
+    --color-active-red: #E63312;
+    --color-main-gray: #999999;
+    --color-main-line: #DEE0E0;
+    --color-table-header: #E3E8EF;
+    --color-unactive-red:#d19388;
+    --color-button-ative : #001833;
+    --color-button-disabled : #6284AC;
+    --color-input-disabled : #F3F3F3;
+    --timeline-border:#DEDFE0;
+    --timeline-background:#E3E8EF;
+
+    /* font */
+    --font-header-large : 30px "HyundaiSansHeadKROTFBold" ;
+    --font-header-medium : 24px "HyundaiSansHeadKROTFBold" ;
+    --font-header-small : 20px "HyundaiSansHeadKROTFBold" ;
+    --font-body-large : 18px "HyundaiSansHeadKROTFRegular" ;
+    --font-body-medium : 16px "HyundaiSansHeadKROTFRegular" ;
+    --font-body-small : 14px "HyundaiSansHeadKROTFRegular" ;
+    --font-body-caption : 12px "HyundaiSansHeadKROTFRegular" ;
+    --font-head-medium : 22px "HyundaiSansHeadKROTFMedium" ;
+
+    
+}
+
+/* icon */
+i.clear{ background-image: url('../images/common/clear.svg'); }
+i.close{ background-image: url('../images/common/close.svg'); }
+i.close_gr{ background-image: url('../images/common/close_gr.svg');width: 12px;height: 12px; }
+i.dashboard{ background-image: url('../images/common/dashboard.svg'); }
+i.logo{ background-image: url('../images/common/logo.svg'); }
+i.open{ background-image: url('../images/common/open.svg'); }
+i.search-icon{ background-image: url('../images/common/search.svg'); }
+i.setting{ background-image: url('../images/common/setting.svg'); }
+i.stats{ background-image: url('../images/common/stats.svg'); }
+i.profile-user2{ background-image: url('../images/common/profile-user2.svg'); }
+i.prvdb{ width: 10px;height: 12px; background-image: url('../images/common/prvdb.svg');}
+i.prv{ width: 6px; height: 12px; background-image: url('../images/common/prv.svg');}
+i.nxtdb{ width: 10px;height: 12px; background-image: url('../images/common/prvdb.svg'); transform: rotate(180deg);}
+i.nxt{width: 6px; height: 12px; background-image: url('../images/common/prv.svg'); transform: rotate(180deg);}
+i.add{background-image: url('../images/common/add.svg');}
+i.bill{background-image: url('../images/common/bill.svg');}
+i.admin{background-image: url('../images/common/admin.svg');}
+i.more{background-image: url('../images/common/more.svg');}
+i.cold{background-image: url('../images/common/cold.svg'); width: 50px; height: 28px;}
+i.warm{background-image: url('../images/common/warm.svg');width: 50px; height: 28px;}
+i.ham{background-image: url('../images/common/ham.svg');width: 30px;height: 22px;}
+i.place{background-image: url('../images/common/place.svg');width: 11px;height: 15px;}
+i.place-lg{background-image: url('../images/common/place-lg.svg');width: 28px;height: 28px;}
+i.mkel{background-image: url('../images/common/mkel.svg');width: 12px;height: 12px; }
+i.seel{background-image: url('../images/common/seel.svg');width: 34px;height: 12px;}
+i.spel{background-image: url('../images/common/spel.svg');width: 12px;height: 12px;}
+i.arr_more{background-image: url('../images/common/arr_more.svg');width: 16px;height: 16px;}
+i.cloudy-day{background-image: url('../images/common/cloudy-day.svg');width: 36px;height: 36px;}
+i.accure{background-image: url('../images/common/icon_accrue.svg'); width: 70px; height: 70px;}
+i.building{background-image: url('../images/common/icon_Building.svg'); width: 70px; height: 70px;}
+i.charging{background-image: url('../images/common/icon_charging.svg'); width: 70px; height: 70px;}
+i.dead{background-image: url('../images/common/icon_dead.svg'); width: 70px; height: 70px;}
+i.ess{background-image: url('../images/common/icon_ESS.svg'); width: 70px; height: 70px;}
+i.ev{background-image: url('../images/common/icon_EV.svg'); width: 70px; height: 70px;}
+i.money{background-image: url('../images/common/moeny.svg'); width: 70px; height: 70px;}
+i.energy{background-image: url('../images/common/energy.svg'); width: 70px; height: 70px;}
+i.evc{background-image: url('../images/common/icon_EVC.svg'); width: 70px; height: 70px;}
+i.meter{background-image: url('../images/common/icon_meter.svg'); width: 70px; height: 70px;}
+i.max{background-image: url('../images/common/icon_max.svg'); width: 70px; height: 70px;}
+i.min{background-image: url('../images/common/icon_min.svg'); width: 70px; height: 70px;}
+i.pv{background-image: url('../images/common/icon_PV.svg'); width: 70px; height: 70px;}
+i.time{background-image: url('../images/common/icon_time.svg'); width: 70px; height: 70px;}
+i.use{background-image: url('../images/common/icon_use.svg'); width: 70px; height: 70px;}
+i.view{background-image: url('../images/common/view.svg'); width: 24px;height: 24px; margin-right: 15px; cursor: pointer;}
+i.hidden{background-image: url('../images/common/hidden.svg'); width: 24px;height: 24px; margin-right: 15px; cursor: pointer;}
+i.warn{background-image: url('../images/common/warn.svg'); width: 24px;height: 24px; margin-right: 15px; cursor: pointer;}
+i.logo-big{background-image: url('../images/common/logo_big.svg'); width: 277px;height: 38px;}
+i.weather01{background-image: url('../images/common/weather01.svg'); width: 24px;height: 24px;}
+i.weather02{background-image: url('../images/common/weather02.svg'); width: 24px;height: 24px;}
+i.weather03{background-image: url('../images/common/weather03.svg'); width: 24px;height: 24px;}
+i.weather04{background-image: url('../images/common/weather04.svg'); width: 24px;height: 24px;}
+i.weather05{background-image: url('../images/common/weather05.svg'); width: 24px;height: 24px;}
+i.weather06{background-image: url('../images/common/weather06.svg'); width: 24px;height: 24px;}
+i.charger-gr{background-image: url('../images/common/charger-gr.svg'); width: 64px;height: 64px;}
+i.plug-gr{background-image: url('../images/common/plug-gr.svg'); width: 64px;height: 64px;}
+i.accure-gr{background-image: url('../images/common/accure-gr.svg'); width: 64px;height: 64px;}
+i.db-gr{background-image: url('../images/common/db-gr.svg'); width: 64px;height: 64px;}
+i.pv-gr{background-image: url('../images/common/pv-gr.svg'); width: 64px;height: 64px;}
+i.ele-gr{background-image: url('../images/common/ele-gr.svg'); width: 64px;height: 64px;}
+i.time-gr{background-image: url('../images/common/time-gr.svg'); width: 64px;height: 64px;}
+i.car-gr{background-image: url('../images/common/car-gr.svg'); width: 64px;height: 64px;}
+i.fan-gr{background-image: url('../images/common/fan-gr.svg'); width: 64px;height: 64px;}
+i.cold-gr{background-image: url('../images/common/cold-gr.svg'); width: 64px;height: 64px;}
+i.hot-gr{background-image: url('../images/common/hot-gr.svg'); width: 64px;height: 64px;}
+i.table-clear{background-image: url('../images/common/table_clear.svg'); width: 16px;height: 16px; margin-left: 4px; cursor: pointer;}
+i.work{background-image: url('../images/common/work.svg'); width: 40px;height: 18px;}
+i.broken{background-image: url('../images/common/broken.svg'); width: 40px;height: 18px;}
+i.charge{background-image: url('../images/common/charge.svg'); width: 40px;height: 18px;}
+i.wait{background-image: url('../images/common/wait.svg'); width: 40px;height: 18px;}
+i.driving{background-image: url('../images/common/driving.svg'); width: 40px;height: 18px;}
+i.imp{position: relative;}
+i.imp::after{display: block;position: absolute;top: 0;left: 0;width: 5px;height: 5px;margin: auto;border-radius: 50%;content: '';bottom: 0;background-color: var(--color-active-red);}
+i.lab{width: 12px;height: 12px;border-radius: 10px; background-color: var(--color-bg);}
+i.switch{width: 34px;height: 22px;background-color: #999999;border-radius: 30px;position: relative;cursor: pointer;transition: all 0.5s;}
+i.switch.on{background-color: var(--color-active-blue);}
+i.switch::before{content: '';display: block;position: absolute;left: 3px;width: 16px;height: 16px;background-color: #fff;border-radius: 50%;margin: auto;top: 0;bottom: 0;transition: all 0.5s;}
+i.switch.on::before{left: calc(34px - 3px - 16px);}

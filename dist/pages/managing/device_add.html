@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>현대차 홈 에너지 시스템</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- favicon -->
+  <!-- <link rel="icon" href="./assets/images/common/favicon.ico" type="image/x-icon" /> -->
+  <!-- //favicon -->
+  <link rel="stylesheet" href="../../assets/css/ui-style.css">
+  <script src="../../assets/lib/jquery-3.7.1.min.js"></script>
+  <script src="../../assets/js/ui-script.js"></script>
+</head>
+
+<body>
+  <div class="wrapper">
+    <!-- 헤더전용 임시 태그 : 실제 개발 시 삭제  -->
+        <!-- 헤더 임시 태그 : 실제 개발 시 삭제하시고 page/inc/header.html의 태그를 사용하시면 됩니다.  -->
+    <div class="header-place"></div>
+    <!--// 헤더 임시 태그 : 실제 개발 시 삭제하시고 page/inc/header.html의 태그를 사용하시면 됩니다.  -->
+
+    <!-- 컨텐츠 영역 -->
+    <section class="container">
+      <!-- 컨텐츠 공통해더 : fixed -->
+      <div class="header">
+        <ul class="breadcrumb">
+          <li><a href="#">main</a></li>
+          <li><a href="#">사이트 관리</a></li>
+          <li><a href="#">사이트 상세</a></li>
+        </ul> 
+        <h2>사이트 상세</h2>
+      </div>
+      <!-- 공통영역은 고정 / container 내부 내용만 변경 -->
+      <form action="./home_detail.html" class="content">
+        <ul class="input-table">
+          <li>
+            <label for="home-name">사이트 명</label>
+            <span class="val">home1</span>
+          </li>
+          <li>
+            <label>지역 </label>
+           <span class="val">국내</span>
+          </li>
+          <li>
+            <label>주소 </label>
+           <span class="val">경기도 오산시 수목원로 606</span>
+          </li>
+          <li class="etc">
+            <label for="etc">연결디바이스 </label>
+            <!-- 전체 수정 발생 :: 확인 후 해당 주석은 지워주세요! -->
+            <ul class="table-dev">
+              <li class="tbl-hdr">
+                <span>디바이스 분류</span>
+                <span>ID</span>
+              </li>
+              <li>
+                <span>스마트미터</span>
+                <ul class="dev-list">
+                  <li>
+                    <span>SM00001</span>
+                    <span class="btns">
+                      <button class="small-btn">수정</button>
+                      <button class="small-btn del">삭제</button>
+                    </span>
+                  </li>
+                  <!-- 디바이스 추가 시 아래의 형태로 추가 -->
+                  <!-- <li>
+                    <span>SM00001</span>
+                    <span class="btns">
+                      <button class="small-btn">수정</button>
+                      <button class="small-btn del">삭제</button>
+                    </span>
+                  </li>
+                  <li>
+                    <span>SM00001</span>
+                    <span class="btns">
+                      <button class="small-btn">수정</button>
+                      <button class="small-btn del">삭제</button>
+                    </span>
+                  </li> -->
+                </ul>
+              </li>
+
+              <li>
+                <span>PV</span>
+                <ul class="dev-list">
+                  <li>
+                    <span>SM00001</span>
+                    <span class="btns">
+                      <button class="small-btn">수정</button>
+                      <button class="small-btn del">삭제</button>
+                    </span>
+                  </li>
+                </ul>
+              </li>
+
+              <li>
+                <span>ESS</span>
+                <ul class="dev-list">
+                 <!--  없을경우 li삭제 -->
+                </ul>
+              </li>
+              <li>
+                <span>EVC</span>
+                <ul class="dev-list">
+                  <li>
+                    <span>SM00001</span>
+                    <span class="btns">
+                      <button class="small-btn">수정</button>
+                      <button class="small-btn del">삭제</button>
+                    </span>
+                  </li>
+                  <li>
+                    <span>SM00001</span>
+                    <span class="btns">
+                      <button class="small-btn">수정</button>
+                      <button class="small-btn del">삭제</button>
+                    </span>
+                  </li>
+                </ul>
+              </li>
+              <li class="btns"><span class="btn-add" target-modal=".modal.form"><i class="add"></i>디바이스 추가</span></li>
+            </ul>
+            <!-- 전체 수정 발생 :: 확인 후 해당 주석은 지워주세요! -->
+          </li>
+        </ul>
+      </form>
+    </section>
+  </div>
+
+  <div class="dev-place"></div>
+  <!-- 레이아웃 조합용 스크립트입니다. 개발시 삭제해주세요.:파일까지 삭제 필요 -->
+  <script src="../../assets/js/ui-layout-script.js"></script>
+  <!--//레이아웃 조합용 스크립트입니다. 개발시 삭제해주세요. //-->
+</body>
+
+</html>

@@ -1,0 +1,253 @@
+<div class="dimmed" style="display: none;">
+  <!-- 모달은 class active로 show/hide구분 : 필요한것만 쓰시면 됩니다.-->
+  <!-- 삭제 모달 -->
+  <div class="modal del">
+    <h2>삭제하기</h2>
+    <p>삭제하시겠습니까? <br>삭제시 복구가 불가합니다.</p>
+    <div class="btns">
+      <button type="button" class="modal-btn cnl">취소</button>
+      <button type="button" class="modal-btn del">삭제</button>
+    </div>
+  </div>
+
+  <!-- 확인 모달 -->
+  <div class="modal confirm">
+    <h2>내려받기</h2>
+    <p>체크된 항목을 내려받으시겠습니까?</p>
+    <div class="btns">
+      <button type="button" class="modal-btn cnl">취소</button>
+      <button type="button" class="modal-btn">내려받기</button>
+    </div>
+  </div>
+
+  <!-- 입력되지 않은 항목 모달 -->
+  <div class="modal notyet">
+    <p>입력되지 않은 항목이 있습니다.</p>
+    <div class="btns">
+      <button type="button" class="modal-btn">확인</button>
+    </div>
+  </div>
+
+  <!-- 요금제변경 모달 -->
+  <div class="modal change-fee">
+    <h2>요금제 변경</h2>
+    <p>요금제 변경 시 적용되어 있는 사이트에 <br>
+      일괄 적용 됩니다.<br>
+      요금제를 변경 하시겠습니까?</p>
+    <div class="btns">
+      <button type="button" class="modal-btn cnl">취소</button>
+      <button type="button" class="modal-btn">변경</button>
+    </div>
+  </div>
+
+  <!-- 삭제실패 모달 -->
+  <div class="modal fail">
+    <h2>삭제실패</h2>
+    <p>삭제하려는 사이트에 디바이스가 <br>
+      연결되어 있습니다. <br>
+      디바이스 연결 해제 후 삭제 가능합니다.</p>
+    <div class="btns">
+      <button type="button" class="modal-btn ck">확인</button>
+    </div>
+  </div>
+
+  <!-- 오류발생 모달 -->
+  <div class="modal error">
+    <p> 오류가 발생했습니다.</p>
+    <div class="btns">
+      <button type="button" class="modal-btn ck">확인</button>
+    </div>
+  </div>
+
+  <!-- 변경모달 -->
+  <div class="modal change">
+    <p>변경이 완료 되었습니다.</p>
+    <div class="btns">
+      <a href="#" class="modal-btn ck">확인</a>
+    </div>
+  </div>
+
+
+  <!-- 사이트현황 팝업 (Pool ID모달) -->
+  <div class="modal pool">
+    <h2>Pool ID</h2>
+    <div class="input-txt">
+      <input type="text" class="notice" placeholder="poolID를 입력해주세요" id="admin-email">
+    </div>
+    <div class="btns">
+      <button type="button" class="modal-btn cnl">취소</button>
+      <a href="#" class="modal-btn ck">등록</a>
+    </div>
+  </div>
+
+
+  <!-- EVC현황 팝업 (스마트모드모달) -->
+  <div class="modal mode">
+    <h2>스마트모드 변경</h2>
+    <div class="note">
+      <input type="radio" name="mode" id="on" checked> <label for="on">ON</label>
+      <input type="radio" name="mode" id="off"><label for="off">OFF</label>
+    </div>
+    <div class="btns">
+      <button type="button" class="modal-btn cnl">취소</button>
+      <a href="#" class="modal-btn ck">변경</a>
+    </div>
+  </div>
+
+  <!-- EV현황 팝업 (Target SOC 변경) -->
+  <div class="modal soc">
+    <h2>Target SOC 변경</h2>
+    <div class="note">
+      <select name="" id="">
+        <option value="">80</option>
+        <option value="">70</option>
+        <option value="">60</option>
+      </select>
+      <span>%</span>
+    </div>
+    <div class="btns">
+      <button type="button" class="modal-btn cnl">취소</button>
+      <a href="#" class="modal-btn ck">변경</a>
+    </div>
+  </div>
+
+  <!-- EV현황 팝업 (입차 출차 예정 시간  변경) -->
+  <div class="modal inout-time">
+    <h2>스케줄 변경</h2>
+    <div class="note">
+      <div>
+        <label for="">입차</label>
+        <select>
+          <option value="">00</option>
+          <option value="">...</option>
+          <option value="">24:00</option>
+        </select>
+        :
+        <select>
+          <option value="">00</option>
+          <option value="">...</option>
+          <option value="">59</option>
+        </select>
+      </div>
+      <div>
+        <label for="">출차</label>
+        <select>
+          <option value="">00</option>
+          <option value="">...</option>
+          <option value="">24:00</option>
+        </select>
+        :
+        <select>
+          <option value="">00</option>
+          <option value="">...</option>
+          <option value="">59</option>
+        </select>
+      </div>
+    </div>
+    <div class="btns">
+      <button type="button" class="modal-btn cnl">취소</button>
+      <a href="#" class="modal-btn ck">변경</a>
+    </div>
+  </div>
+
+  <!-- EV리스트 팝업 -->
+  <div class="modal ev-list">
+    <h2>EV 리스트 - <span>EVC1</span></h2>
+    <div class="note">
+      <div class="term">
+        <input type="date" value="2020-08-25">
+        <span> ~ </span>
+        <input type="date" value="2020-08-25">
+      </div>
+    </div>
+    <ul>
+      <li>차량명1</li>
+      <li>차량명2</li>
+      <li>차량명3</li>
+      <li>차량명4</li>
+      <li>차량명5</li>
+      <li>차량명6</li>
+      <li>차량명7</li>
+      <li>차량명8</li>
+      <li>차량명9</li>
+      <li>차량명10</li>
+    </ul>
+    <div class="pagination">
+      <a href="#">«</a>
+      <a href="#">&lt;</a>
+      <a href="#" class="pg active">1</a>
+      <a href="#">&gt;</a>
+      <a href="#">»</a>
+    </div>
+  </div>
+</div>
+
+
+<!-- 디바이스추가 폼 모달 -->
+
+<div class="modal form">
+  <h2>디바이스 추가</h2>
+  <form action="">
+    <ul class="input-table">
+      <li>
+        <label for="home-name">디바이스 종류</label>
+        <select>
+          <option value="">디바이스 선택</option>
+          <option value="">스마트 미터</option>
+          <option value="">EHP</option>
+          <option value="">EVC</option>
+          <option value="">EV</option>
+        </select>
+      </li>
+      <li>
+        <label for="home-name">EHP명 <i class="imp"></i></label>
+        <div class="input-txt">
+          <input type="text" placeholder="EHP명">
+          <i class="clear"></i>
+        </div>
+      </li>
+      <li>
+        <label for="home-name">설치일 <i class="imp"></i></label>
+        <div class="input-txt">
+          <input type="text" placeholder="YYYY, MM, DD">
+        </div>
+      </li>
+      <li>
+        <label for="home-name">제품명</label>
+        <div class="input-txt">
+          <input type="text" placeholder="제품명">
+          <i class="clear"></i>
+        </div>
+      </li>
+      <li>
+        <label for="home-name">제품 일련번호</label>
+        <div class="input-txt">
+          <input type="text" placeholder="제품 일련번호">
+          <i class="clear"></i>
+        </div>
+      </li>
+      <li>
+        <label for="home-name">제조사</label>
+        <div class="input-txt">
+          <input type="text" placeholder="제조사">
+          <i class="clear"></i>
+        </div>
+      </li>
+      <li>
+        <label for="home-name">정격소비전력 </label>
+        <div class="input-txt w140">
+          <input type="text" placeholder="100">
+        </div>
+        <span>kW</span>
+      </li>
+      <li class="etc">
+        <label for="etc">비고</label>
+        <textarea name="" id="etc" placeholder="비고"></textarea>
+      </li>
+      <li class="btns">
+        <button type="button" class="modal-btn cnl">취소</button>
+        <button type="button" class="modal-btn">등록</button>
+      </li>
+    </ul>
+  </form>
+</div>

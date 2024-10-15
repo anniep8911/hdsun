@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <title>컴포넌트 가이드</title>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="../dist/assets/css/ui-style.css">
+  <style>
+    body {
+      overflow: auto;
+    }
+
+    header {
+      height: 100vh;
+    }
+
+    header .categories>li {
+      line-height: 70px;
+      padding: 0px 20px;
+      cursor: pointer;
+      text-transform: capitalize;
+
+    }
+
+    header .categories>li:hover {
+      text-decoration: underline;
+    }
+
+    section.container {
+      padding-top: 0;
+    }
+
+    h2:nth-of-type(1) {
+      margin-top: 0;
+    }
+    span,h4{
+      text-align-last: left;
+    }
+    h2 {
+      width: 100%;
+      font-size: 20px;
+      line-height: 40px;
+      color: #fff;
+      margin-top: 20px;
+      background-color: var(--color-hyndai-blue);
+      padding-left: 12px;
+      text-transform: uppercase;
+    }
+
+    table {
+      border: 1px solid #ccc;
+      margin-top: 20px;
+      margin-left: 50px;
+      border-spacing: 0px;
+      border-bottom: 0px;
+    }
+
+    table td:nth-of-type(1) {
+      border-left: 0px;
+    }
+
+    table td.wide {
+      width: 400px;
+      line-height: 20px;
+      text-align: left;
+    }
+
+    table td>.pagination {
+      margin-top: 0;
+    }
+
+    table td {
+      padding: 0 20px;
+      line-height: 70px;
+      border-left: 1px solid #ccc;
+      border-bottom: 1px solid #ccc;
+      text-align: center;
+      background-color: #fff;
+      vertical-align: top;
+      padding-top: 20px;
+    }
+
+    table td.tag {
+      line-height: 1;
+    }
+    table.icons td:nth-child(2){
+      background-color: #bcc6ca;
+    }
+
+    p {
+      width: 95%;
+      padding: 15px;
+      margin: 0 auto;
+      font-size: 16px;
+      line-height: 20px;
+      border-radius: 20px;
+      margin-top: 20px;
+      background-color: #ccc;
+      margin-top: 12px;
+    }
+    p b {
+      background-color: #fc0;
+    }
+    .labels-select {
+      display: flex;
+      column-gap: 8px;
+      align-items: center;
+    }
+    .labels-select select{
+      width: 138px;
+    }
+    .labels-select input{
+      width: 138px;
+      height: 45px;
+    }
+    </style>
+</head>
+
+<body>
+  <div id="wrap">
+    <header class="gnb">
+      <ul class="categories">
+      </ul>
+    </header>
+    <section class="container">
+      <h2>button</h2>
+      <table class="btnTable">
+        <tr>
+          <td>class</td>
+          <td>default</td>
+          <td>tag</td>
+          <td>unactive</td>
+          <td>tag</td>
+        </tr>
+      </table>
+      <h2>check/radio</h2>
+      <table class="inputs">
+        <tr>
+          <td>class</td>
+          <td>default</td>
+          <td>tag</td>
+          <td>unactive</td>
+          <td>tag</td>
+        </tr>
+      </table>
+      <h2>icons</h2>
+      <table class="icons">
+        <tr>
+          <td>class</td>
+          <td>default</td>
+          <td>tag</td>
+        </tr>
+      </table>
+
+      <h2>dropdown</h2>
+      <table class="dropdown">
+        <tr>
+          <td>class</td>
+          <td>default</td>
+          <td>tag</td>
+          <td>unactive</td>
+          <td>tag</td>
+        </tr>
+      </table>
+
+      <h2>pagination</h2>
+      <table class="paginationtb">
+        <tr>
+          <td>class</td>
+          <td>default</td>
+          <td>tag</td>
+        </tr>
+      </table>
+
+      <h2>field box</h2>
+      <p>전체적인 폼 구조는 다음과 같습니다. <br>
+        &lt;form action=""> <br><br>
+        ✔ 전체적 테이블을 감싸는 요소는 <b>ul태그를 이용, 테이블명은 input-table</b>입니다.<br>
+        &nbsp;&lt;ul class="input-table"> <br><br>
+        ✔ 모든 <b>가로 카테고리는 li</b>로 구분합니다.<br>
+        &nbsp;&nbsp;&lt;li> <br><br>
+        ✔ <b>제목은 label</b>을 사용합니다.<br>
+        &nbsp;&nbsp;&nbsp;&lt;label for="home-name">디바이스 종류&lt;/label> <br><br>
+        <br>
+        ✔ <b>"필수값" 은 라벨명 뒤에 i.imp를 붙이면 됩니다.</b><br>
+        &nbsp;&nbsp;&nbsp;&lt;label for="home-name">디바이스 종류 &lt;i class="imp"> &lt/i> &lt;/label> <br><br>
+        ✔ <b>제목의 형제요소로 내용</b>을 넣으면 되는데, 이 부분은 아래의 컴포넌트 가이드를 참고해주세요<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="input-txt"> <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;input type="text" class="notice" placeholder="home명" id="home-name"> <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;i class="clear"></i> <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&lt;/div> <br><br>
+        &nbsp;&nbsp;&lt;/li> <br>
+        &nbsp;&lt;/ul> <br>
+        &lt;/form> <br>
+        </form>
+      </p>
+      <table class="fieldbox">
+        <tr>
+          <td>class</td>
+          <td>default</td>
+          <td>tag</td>
+        </tr>
+      </table>
+
+      <h2>sarch box</h2>
+      <p>   
+        스크립트는 <b>dist/assets/js/ui-script.js</b>에 위치해있습니다. <br>
+        해당 스크립트는 jquery 로딩이 먼저 반드시 필요하며 이 프로젝트에서 <b>jquery는 v3.7.1</b>을 사용하였습니다</p>
+      <table class="srchdbox">
+        <tr>
+          <td>class</td>
+          <td>default</td>
+          <td>tag</td>
+          <td>script</td>
+        </tr>
+      </table>
+
+      <h2>테이블(리스트)</h2>
+      <p>전체적인 테이블 구조는 다음과 같습니다. <br> <br>
+        ✔ 전체적 테이블을 감싸는 요소는 <b>div태그를 이용, 클래스명은 table</b>입니다.<br>
+        &lt;div class="table"> <br><br>
+        ✔ 행을 먼저 나누게 되는데, 크게 제목과 내용으로 나뉩니다. <br>
+        ✔ 제목은 div를 사용하며, 클래스 명은 tbl-header입니다. 제목영역에는 전체선택과 버튼들이 같이 포함되어있습니다 <br>  
+        &nbsp;&lt;div class="tbl-header"> <br><br>
+
+        ✔ 테이블 위의 전체 선택부분과 버튼이 모여있는 부분은 아래와 같이 제목의 형제단위로 작성합니다.<br>  
+        &nbsp;&nbsp;&lt;div class="sel-all"> <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&lt;input type="checkbox" name="select-all" id="sel-all"> &lt;label for="sel-all">전체선택&lt;/label>
+        &nbsp;&nbsp;&lt;/div> <br>
+        &nbsp;&nbsp;&lt;div class="btns"> <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&lt;button type="button" class="table-btn del" target-modal=".modal.del">삭제</button> <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&lt;button type="button" class="table-btn down" target-modal=".modal.confirm">다운로드</button> <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&lt;a href="#" class="table-btn new">신규</a> <br>
+        &nbsp;&nbsp;&lt;/div> <br><br>
+        
+        ✔ 테이블타이틀은 ul태그로 작성하며, 앞으로 테이블 '행'의 기준은 ul 태그, '열'의 기준은 li태그로 보시면 됩니다.<br>   
+        
+        &nbsp;&nbsp;&lt;ul> <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&lt;li>&lt;input type="checkbox" name="list-check">&lt;/li> <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&lt;li>ID&lt;/li> <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&lt;li class="w300">Home명&lt;/li> <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&lt;li>상태&lt;/li> <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&lt;li>고객명&lt;/li> <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&lt;li>지역&lt;/li> <br> <br>
+        ✔ <b>이때 '열'의 기준인 li의 카테고리 및 내용이 [영문18글자, 국문 14글자]를 준수해야한다면  class=w300을 추가합니다. <br>타이틀을 기준으로 셀의 내용에 대한 li에도 동일하게 추가합니다</b><br>   
+        &nbsp;&nbsp;&nbsp;&nbsp;&lt;li class="w300">위치&lt;/li> <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&lt;li>등록일&lt;/li> <br> <br>
+        
+        ✔ <b>맨 마지막 버튼 부분이 3개일땐 w300클래스명을, 3개 초과일땐 w350클래스명을 추가합니다</b><br>   
+        &nbsp;&nbsp;&nbsp;&nbsp;&lt;li class="w300">&lt;/li> <br>
+        &nbsp;&nbsp;&lt;/ul> <br>
+        &nbsp;&lt;/div> <br><br>
+
+        ✔ 테이블의 데이터 내용은 위에 설명한 타이틀과 동일하며,  클래스는 tlb-list로 구분됩니다.<br>   
+          &nbsp;&nbsp;&lt;ul class="tbl-list"> <br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&lt;li>&lt;input type="checkbox">&lt;/li> <br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&lt;li>아이디노출됩니다&lt;/li> <br><br>
+          ✔ <b>!여기서 중요한점은 title li에 사용한 n번째의 li에 똑같이 w300 혹은 w350을 추가합니다!</b><br>   
+          &nbsp;&nbsp;&nbsp;&nbsp;&lt;li class="w300">ABCDEFGHIJKLMNOPQR&lt;/li> <br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&lt;li>상태&lt;/li> <br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&lt;li>고객명&lt;/li> <br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&lt;li>국내&lt;/li> <br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&lt;li class="w300">경기도 오산시 수목원로 606&lt;/li> <br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&lt;li>2024-11-30&lt;/li> <br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&lt;li class="w300"> <br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;a href="#" class="small-btn">상세보기</a> <br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;a href="#" class="small-btn">정보변경</a> <br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;button type="button" class="small-btn del" target-modal=".modal.del">삭제</button><br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&lt;/li><br>
+          &nbsp;&nbsp;&lt;/ul><br>
+          <!-- //테이블 데이터 컴포넌트 -->
+        &lt;/div>
+        
+      </p>
+      <table class="table-lists">
+        <tr>
+          <td>class</td>
+          <td>설명</td>
+          <td>예시</td>
+        </tr>
+      </table>
+
+    </section>
+  </div>
+
+  <!-- script -->
+  <script type="text/javascript" src="../dist/assets/lib/jquery-3.7.1.min.js"></script>
+  <script>
+    $(function() {
+      let tableLists = [
+        {
+          class: 'w300',
+          js: ` - 버튼 3개 이하일 경우 
+                - 한글 14글자, 영문 18글자 조건의 데이터`,
+          exp: `<li class="w300"></li>`,
+        },
+        {
+          class: 'w350',
+          js: ` - 버튼 3개 초과일 경우`,
+          exp: `<li class="w350"></li>`,
+        },
+      ];
+      let btns = [{
+          class: 'button',
+          tag: `<button>기본버튼</button>`,
+          disabled: `<button  type="button" disabled>기본버튼</button>`,
+        },
+        {
+          class: 'basic',
+          tag: `<button  type="button"class="basic">기본버튼</button>`,
+          disabled: `<button  type="button"class="basic" disabled>기본버튼</button>`,
+        },
+        {
+          class: 'negative-btn',
+          tag: `<button  type="button"class="negative-btn">기본버튼</button>`,
+          disabled: `<button  type="button"class="negative-btn" disabled>기본버튼</button>`,
+        },
+        {
+          class: 'table-btn',
+          tag: `<button  type="button"class="table-btn">기본버튼</button>`,
+          disabled: `<button  type="button"class="table-btn" disabled>기본버튼</button>`,
+        },
+        {
+          class: 'table-btn del',
+          tag: `<button  type="button"class="table-btn del">삭제</button>`,
+          disabled: `<button  type="button"class="table-btn del" disabled>삭제</button>`,
+        },
+        {
+          class: 'table-btn down',
+          tag: `<button  type="button"class="table-btn down">다운로드</button>`,
+          disabled: `<button  type="button"class="table-btn down" disabled>다운로드</button>`,
+        },
+        {
+          class: 'table-btn new',
+          tag: `<button  type="button"class="table-btn new">신규</button>`,
+          disabled: `<button  type="button"class="table-btn new" disabled>신규</button>`,
+        },
+        {
+          class: 'small-btn',
+          tag: `<button  type="button"class="small-btn">버튼명</button>`,
+          disabled: `<button  type="button"class="small-btn" disabled>버튼명</button>`,
+        },
+        {
+          class: 'small-btn del',
+          tag: `<button  type="button"class="small-btn del">삭제</button>`,
+          disabled: `<button  type="button"class="small-btn del" disabled>삭제</button>`,
+        },
+        {
+          class: 'modal-btn',
+          tag: `<button  type="button"class="modal-btn">Positive</button>`,
+          disabled: `<button  type="button"class="modal-btn" disabled>Positive</button>`,
+        },
+        {
+          class: 'modal-btn cnl',
+          tag: `<button  type="button"class="modal-btn cnl">Cancle</button>`,
+          disabled: `<button  type="button"class="modal-btn cnl" disabled>Cancle</button>`,
+        },
+        {
+          class: 'modal-btn del',
+          tag: `<button  type="button"class="modal-btn del">Negative</button>`,
+          disabled: `<button  type="button"class="modal-btn del" disabled>Negative</button>`,
+        },
+      ];
+
+      const inputs = [{
+          class: '',
+          tag: `<input type="checkbox">`,
+          disabled: `<input type="checkbox" disabled>`,
+        },
+        {
+          class: '',
+          tag: `<input type="checkbox" checked>`,
+          disabled: `<input type="checkbox" checked disabled>`,
+        },
+        {
+          class: '',
+          tag: `<input type="radio">`,
+          disabled: `<input type="radio" disabled>`,
+        },
+        {
+          class: '',
+          tag: `<input type="radio" checked>`,
+          disabled: `<input type="radio" checked disabled>`,
+        },
+      ]
+      const icons = []
+      let icos = `
+     i.clear{ background-image: url('../images/common/clear.svg'); }
+i.close{ background-image: url('../images/common/close.svg'); }
+i.close_gr{ background-image: url('../images/common/close_gr.svg');width: 12px;height: 12px; }
+i.dashboard{ background-image: url('../images/common/dashboard.svg'); }
+i.logo{ background-image: url('../images/common/logo.svg'); }
+i.open{ background-image: url('../images/common/open.svg'); }
+i.search-icon{ background-image: url('../images/common/search.svg'); }
+i.setting{ background-image: url('../images/common/setting.svg'); }
+i.stats{ background-image: url('../images/common/stats.svg'); }
+i.profile-user2{ background-image: url('../images/common/profile-user2.svg'); }
+i.prvdb{ width: 10px;height: 12px; background-image: url('../images/common/prvdb.svg');}
+i.prv{ width: 6px; height: 12px; background-image: url('../images/common/prv.svg');}
+i.nxtdb{ width: 10px;height: 12px; background-image: url('../images/common/prvdb.svg'); transform: rotate(180deg);}
+i.nxt{width: 6px; height: 12px; background-image: url('../images/common/prv.svg'); transform: rotate(180deg);}
+i.add{background-image: url('../images/common/add.svg');}
+i.bill{background-image: url('../images/common/bill.svg');}
+i.admin{background-image: url('../images/common/admin.svg');}
+i.more{background-image: url('../images/common/more.svg');}
+i.cold{background-image: url('../images/common/cold.svg'); width: 50px; height: 28px;}
+i.warm{background-image: url('../images/common/warm.svg');width: 50px; height: 28px;}
+i.ham{background-image: url('../images/common/ham.svg');width: 30px;height: 22px;}
+i.place{background-image: url('../images/common/place.svg');width: 11px;height: 15px;}
+i.place-lg{background-image: url('../images/common/place-lg.svg');width: 28px;height: 28px;}
+i.mkel{background-image: url('../images/common/mkel.svg');width: 12px;height: 12px; }
+i.seel{background-image: url('../images/common/seel.svg');width: 34px;height: 12px;}
+i.spel{background-image: url('../images/common/spel.svg');width: 12px;height: 12px;}
+i.arr_more{background-image: url('../images/common/arr_more.svg');width: 16px;height: 16px;}
+i.cloudy-day{background-image: url('../images/common/cloudy-day.svg');width: 36px;height: 36px;}
+i.accure{background-image: url('../images/common/icon_accrue.svg'); width: 70px; height: 70px;}
+i.building{background-image: url('../images/common/icon_Building.svg'); width: 70px; height: 70px;}
+i.charging{background-image: url('../images/common/icon_charging.svg'); width: 70px; height: 70px;}
+i.dead{background-image: url('../images/common/icon_dead.svg'); width: 70px; height: 70px;}
+i.ess{background-image: url('../images/common/icon_ESS.svg'); width: 70px; height: 70px;}
+i.ev{background-image: url('../images/common/icon_EV.svg'); width: 70px; height: 70px;}
+i.money{background-image: url('../images/common/moeny.svg'); width: 70px; height: 70px;}
+i.energy{background-image: url('../images/common/energy.svg'); width: 70px; height: 70px;}
+i.evc{background-image: url('../images/common/icon_EVC.svg'); width: 70px; height: 70px;}
+i.meter{background-image: url('../images/common/icon_meter.svg'); width: 70px; height: 70px;}
+i.max{background-image: url('../images/common/icon_max.svg'); width: 70px; height: 70px;}
+i.min{background-image: url('../images/common/icon_min.svg'); width: 70px; height: 70px;}
+i.pv{background-image: url('../images/common/icon_PV.svg'); width: 70px; height: 70px;}
+i.time{background-image: url('../images/common/icon_time.svg'); width: 70px; height: 70px;}
+i.use{background-image: url('../images/common/icon_use.svg'); width: 70px; height: 70px;}
+i.view{background-image: url('../images/common/view.svg'); width: 24px;height: 24px; margin-right: 15px; cursor: pointer;}
+i.hidden{background-image: url('../images/common/hidden.svg'); width: 24px;height: 24px; margin-right: 15px; cursor: pointer;}
+i.warn{background-image: url('../images/common/warn.svg'); width: 24px;height: 24px; margin-right: 15px; cursor: pointer;}
+i.logo-big{background-image: url('../images/common/logo_big.svg'); width: 277px;height: 38px;}
+i.weather01{background-image: url('../images/common/weather01.svg'); width: 24px;height: 24px;}
+i.weather02{background-image: url('../images/common/weather02.svg'); width: 24px;height: 24px;}
+i.weather03{background-image: url('../images/common/weather03.svg'); width: 24px;height: 24px;}
+i.weather04{background-image: url('../images/common/weather04.svg'); width: 24px;height: 24px;}
+i.weather05{background-image: url('../images/common/weather05.svg'); width: 24px;height: 24px;}
+i.weather06{background-image: url('../images/common/weather06.svg'); width: 24px;height: 24px;}
+i.charger-gr{background-image: url('../images/common/charger-gr.svg'); width: 64px;height: 64px;}
+i.plug-gr{background-image: url('../images/common/plug-gr.svg'); width: 64px;height: 64px;}
+i.accure-gr{background-image: url('../images/common/accure-gr.svg'); width: 64px;height: 64px;}
+i.db-gr{background-image: url('../images/common/db-gr.svg'); width: 64px;height: 64px;}
+i.pv-gr{background-image: url('../images/common/pv-gr.svg'); width: 64px;height: 64px;}
+i.ele-gr{background-image: url('../images/common/ele-gr.svg'); width: 64px;height: 64px;}
+i.time-gr{background-image: url('../images/common/time-gr.svg'); width: 64px;height: 64px;}
+i.fan-gr{background-image: url('../images/common/fan-gr.svg'); width: 64px;height: 64px;}
+i.cold-gr{background-image: url('../images/common/cold-gr.svg'); width: 64px;height: 64px;}
+i.hot-gr{background-image: url('../images/common/hot-gr.svg'); width: 64px;height: 64px;}
+i.table-clear{background-image: url('../images/common/table_clear.svg'); width: 16px;height: 16px; margin-left: 4px; cursor: pointer;}
+i.work{background-image: url('../images/common/work.svg'); width: 40px;height: 18px;}
+i.broken{background-image: url('../images/common/broken.svg'); width: 40px;height: 18px;}
+i.charge{background-image: url('../images/common/charge.svg'); width: 40px;height: 18px;}
+i.wait{background-image: url('../images/common/wait.svg'); width: 40px;height: 18px;}
+i.driving{background-image: url('../images/common/driving.svg'); width: 40px;height: 18px;}
+        `;
+
+      // console.log(icos.split('\n'));
+      icos = icos.split('\n').map(m=>m.trim()).filter(f=>f!=='');
+
+      icos.forEach(e=>{
+        let clas = e.split('.')[1].split('{')[0];
+        icons.push({class:clas, tag:`<i class="${clas}"></i>`})
+      });
+
+      const dropdown = [{
+          class: 'table-sorting',
+          tag: `
+            <select class="table-sorting">
+                <option value="">action</option>
+                <option value="">리셋</option>
+                <option value="">충전 종료</option>
+                <option value="">대기</option>
+            </select>
+          `,
+          disabled: `<select class="table-sorting" disabled>
+                <option value="">action</option>
+                <option value="">리셋</option>
+                <option value="">충전 종료</option>
+                <option value="">대기</option>
+            </select>
+          `,
+        },
+        {
+          class: 'page-location',
+          tag: `<select class="page-location">
+                  <option value="">국내</option>
+                  <option value="">해외</option>
+                </select>`,
+          disabled: `<select class="page-location" disabled>
+                  <option value="">국내</option>
+                  <option value="">해외</option>
+                </select>`,
+        },
+        {
+          class: 'page-date',
+          tag: `<select class="page-date">
+                  <option value="">현재</option>
+                  <option value="">일</option>
+                  <option value="">월</option>
+                  <option value="">년</option>
+                </select>`,
+          disabled: `<select class="page-date" disabled>
+                  <option value="">현재</option>
+                  <option value="">일</option>
+                  <option value="">월</option>
+                  <option value="">년</option>
+                </select>`,
+        },
+
+      ];
+      const pagination = [{
+        class: 'pg',
+        tag: `
+        <div class="pagination">
+          <a href="javascript:location.reload()">«</a>
+          <a href="javascript:location.reload()">&lt;</a>
+          <a href="#" class="pg active">1</a>
+          <a href="#" class="pg">2</a>
+          <a href="#" class="pg">3</a>
+          <a href="#" class="pg">4</a>
+          <a href="#" class="pg">5</a>
+          <a href="#" class="pg">6</a>
+          <a href="javascript:location.reload()">&gt;</a>
+          <a href="javascript:location.reload()">»</a>
+        </div>
+        `
+      }];
+
+      const fieldbox = [{
+          class: 'input-txt',
+          tag: `<div class="input-txt">
+              <input type="text" class="notice" placeholder="home명" id="home-name">
+              <i class="clear"></i>
+            </div>`
+        },
+        {
+          class: 'input-txt err',
+          tag: `<div class="input-txt err">
+              <input type="text" class="notice" placeholder="home명" id="home-name">
+              <i class="clear"></i>
+              <span class="msg">Home 명이 중복되었습니다. 다른 Home 명을 입력해 주세요.</span>
+            </div>`
+        },
+        {
+          class: 'input-txt',
+          tag: `<div class="input-txt" state="disabled">
+              <input type="text" class="notice" value="home명" id="home-name">
+              <i class="clear"></i>
+            </div>`
+        },
+        {
+          class: 'select-box',
+          tag: `<select>
+                  <option value="">action</option>
+                  <option value="">리셋</option>
+                  <option value="">충전 종료</option>
+                  <option value="">대기</option>
+                </select>`
+        },
+        {
+          class: 'select-box',
+          tag: `<select disabled>
+                  <option value="">action</option>
+                  <option value="">리셋</option>
+                  <option value="">충전 종료</option>
+                  <option value="">대기</option>
+                </select>`
+        },
+        {
+          class: 'search',
+          tag: `<div class="search" state="">
+                <input type="text" placeholder="home명 검색">
+                <i class="search-icon"></i>
+                </div>`
+        },
+        {
+          class: 'labels-select',
+          tag: `  
+          <ul class="labels-select">
+            <li>
+              <!-- 일 선택 컴포넌트 -->
+              <input type="date" value="2020-08-25" class="day">
+
+              <!-- 월 선택 컴포넌트 -->
+              <select name="" id="" class="month">
+                <option value="">1</option>
+                <option value="">...</option>
+                <option value="">12</option>
+              </select>
+
+              <!-- 년 선택 컴포넌트 -->
+              <select name="" id="" class="year">
+                <option value="">2024</option>
+                <option value="">...</option>
+                <option value="">2020</option>
+              </select>
+
+              <!-- 기간 선택 컴포넌트 -->
+              <div class="term">
+                <input type="date" value="2020-08-25">
+                <span> ~ </span>
+                <input type="date" value="2020-08-25">
+              </div>
+            </li>
+
+            <li>
+              <select name="" id="" class="sel_date">
+                <!-- 여기서 value값을 ui임시노출용으로 변경하였습니다. 개발에 맞게 수정하시면 됩니다! -->
+                <option value="day" selected>일</option>
+                <option value="month">월</option>
+                <option value="year" >년</option>
+                <option value="term">기간</option>
+              </select>
+            </li>
+
+          </ul>`,
+          script:'dlikfdlkflk'
+        },
+      ];
+
+      const srchdbox = [{
+          class: 'addr',
+          tag: `<div class="site-find">
+              <div class="input-txt">
+                <i class="place"></i>
+                <span>Site 찾기</span>
+
+                <!-- 이미 선택이 된 데이터를 불러오려면 이 부분에 class="selected"추가 -->
+                <span class="">서울특별시 마포구 잔나비길 1 가동 707호</spans>
+
+              </div>
+
+              <div class="addr">
+                <div class="header">
+                  <select name="" id="">
+                    <option value="">도/시</option>
+                    <option value="">서울시</option>
+                    <option value="">경기도</option>
+                  </select>
+                  <select name="" id="">
+                    <option value="">시/군/구</option>
+                  </select>
+                  <div class="input-txt" auto-srch="true">
+                    <input type="text">
+                  </div>
+                  <button type="button">검색</button>
+                </div>
+  
+                <div class="section">
+                  <h4>검색결과 <span>0</span> 건</h4>
+                  <ul class="result">
+                    <!-- 검색결과 컴포넌트-->
+                    <li>
+                      <i class="place-lg"></i>
+                      <span class="dts">
+                        <span>남양연구소</span>
+                        <span>경기도 화성시 남양읍 현대연구소로 150</span>
+                      </span>
+                    </li>
+                    
+                    <li>
+                      <i class="place-lg"></i>
+                      <span class="dts">
+                        <span>구로발전소</span>
+                        <span>서울시 구로구 남구로동 현대연구소로 150</span>
+                      </span>
+                    </li>
+
+                    <li>
+                      <i class="place-lg"></i>
+                      <span class="dts">
+                        <span>신도시연구소</span>
+                        <span>서울시 강서구 마곡동 현대연구소로 150</span>
+                      </span>
+                    </li>
+
+
+                    <li>
+                      <i class="place-lg"></i>
+                      <span class="dts">
+                        <span>테스트연구소</span>
+                        <span>서울시 테스트 마곡동 현대연구소로 150</span>
+                      </span>
+                    </li>
+                    
+                  </ul>
+                </div>
+              </div>
+
+            </div>`,
+            js:`
+                // 사이트 찾기 이벤트
+                // 사이트 찾기 검색결과 일치 단어 컬러변경 이벤트
+                txt.keyup(function() {
+                  if($(this).attr('auto-srch')){
+                    let srWd=$(this).children('input').val();
+                    let lists =  document.querySelectorAll('.addr .result li span.dts span:nth-of-type(1)');
+
+                    // 현재 찾고있는 단어를 리스트 내에서 찾아내면 그 안에 b태그를 추가하여 단어를 변경해줌
+                    lists.forEach(e=>{
+                      let txt = e.innerText.replace(srWd,\`<b>$\{srWd}</b>\`);
+                      e.innerHTML = txt;
+                    })
+                  }
+                });
+                // 컬러변경 이벤트 끝
+
+
+                // 사이트 찾기 클릭 이벤트
+                const fndSite =$('.site-find .input-txt'); 
+                fndSite.click(function(e){
+                  $(this).toggleClass('active');
+                });
+                
+                // 사이트 찾기 상세 검색결과 클릭이벤트
+                $('.addr .result li').click(function(){
+                
+                //  사이트 찾기 검색결과 클릭 시 사이트 제목, 주소를 각각 받아서 원래의 srch-box에 추가
+                  let srchName =  $(this).children('span').children('span')[0].innerText;
+                  let srchAdd =  $(this).children('span').children('span')[1].innerText;
+                  fndSite.removeClass('active');
+                  fndSite.children('span:nth-of-type(1)').text(srchName);
+                  fndSite.children('span:nth-of-type(2)').text(srchAdd);
+                  fndSite.children('span:nth-of-type(2)').addClass('selected');
+                })
+
+
+            
+            `
+        },];
+      const catAdd = () => {
+        document.querySelectorAll('h2').forEach(e => {
+          $('.categories').append(
+            `<li><h3 class="ct-title"><span>${e.textContent}</span></h3></li>`
+          )
+        })
+      }
+
+      catAdd();
+      $('.categories li').click(function() {
+        let nw = document.querySelectorAll('h2');
+        window.scrollTo(0, nw[$(this).index()].offsetTop + 3);
+      });
+
+      function tagMaker(data, table) {
+        data.forEach(e => {
+          let tr = document.createElement('tr');
+          for (let key in e) {
+            if (key === 'tag') {
+              for (let i = 0; i <2; i++) {
+                let td = document.createElement('td');
+                i == 0 ? td.innerHTML = e[key] : (td.innerText = e[key], td.className += 'wide');
+                tr.append(td);
+              }
+            } else if (key === 'disabled') {
+              for (let i = 0; i < 2; i++) {
+                let td = document.createElement('td');
+                i == 0 ? td.innerHTML = e[key] : (td.innerText = e[key], td.className += 'wide');
+                tr.append(td);
+              }
+            } else if (key === 'class') {
+              let td = document.createElement('td');
+              td.innerHTML = e[key];
+              tr.append(td);
+            }else if(key === 'js' ||key === 'exp'){
+              let td = document.createElement('td');
+              td.innerText = e[key];
+               td.className += 'wide';
+              tr.append(td);
+            }
+          }
+          table.append(tr);
+        });
+
+      }
+
+      tagMaker(tableLists, $('.table-lists'));
+      tagMaker(btns, $('.btnTable'));
+      tagMaker(inputs, $('.inputs'));
+      tagMaker(icons, $('.icons'));
+      tagMaker(dropdown, $('.dropdown'));
+      tagMaker(pagination, $('.paginationtb'));
+      tagMaker(fieldbox, $('.fieldbox'));
+      tagMaker(srchdbox, $('.srchdbox'));
+
+      // 일, 월, 년 선택 시 케이스 추가 
+    $('.labels-select li:nth-of-type(1)').children().css('display','none');
+    console.log($('.sel_date').val()); 
+    $('.labels-select li:nth-of-type(1)').children( `.${$('.sel_date').val()}`).css('display','block');
+    $('.sel_date').change(function() {
+      $('.labels-select li:nth-of-type(1)').children().css('display','none'); 
+      let now =$(this).val();
+      let par= $(this).parent().prev();
+      par.children(`.${now}`).css('display','block');
+    })
+    })  
+
+
+
+  </script>
+  <script src="../dist/assets/js/ui-script.js"></script>
+  <!-- //script -->
+</body>
+
+</html>

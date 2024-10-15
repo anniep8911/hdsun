@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>현대차 홈 에너지 시스템</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- favicon -->
+  <link rel="icon" href="./assets/images/common/favicon.ico" type="image/x-icon" />
+  <link rel="stylesheet" href="../../assets/css/ui-style.css">
+  <script src="../../assets/lib/jquery-3.7.1.min.js"></script>
+  <script src="../../assets/js/ui-script.js"></script>
+</head>
+
+<body>
+  <div class="wrapper">
+    <!-- 헤더전용 임시 태그 : 실제 개발 시 삭제  -->
+    <!-- 헤더 임시 태그 : 실제 개발 시 삭제하시고 page/inc/header.html의 태그를 사용하시면 됩니다.  -->
+    <div class="header-place"></div>
+    <!--// 헤더 임시 태그 : 실제 개발 시 삭제하시고 page/inc/header.html의 태그를 사용하시면 됩니다.  -->
+
+    <!-- 컨텐츠 영역 -->
+    <section class="container">
+
+      <!-- 컨텐츠 공통해더 : fixed -->
+      <div class="header">
+        <ul class="breadcrumb">
+          <li><a href="#">main</a></li>
+          <li><a href="#">EHP 모델 관리</a></li>
+        </ul>
+        <h2>EHP 모델 관리</h2>
+      </div>
+
+      <!-- 콘텐츠 영역: 내용변경 영역 -->
+      <form action="" class="content">
+        <div class="search">
+          <input type="text" placeholder="ID 검색">
+          <i class="search-icon"></i>
+        </div>
+        <div class="table">
+          <div class="tbl-header">
+            <div class="sel-all">
+              <input type="checkbox" name="select-all" id="sel-all"> <label for="sel-all">전체선택</label>
+            </div>
+            <div class="btns">
+              <select class="table-sorting">
+                <option value="">action</option>
+                <option value="">리셋</option>
+                <option value="">충전 종료</option>
+                <option value="">대기</option>
+              </select>
+
+              <!-- 비활성화 시 disabled 추가 -->
+              <button type="button" class="table-btn del" target-modal=".modal.del">삭제</button>
+              <button type="button" class="table-btn down" target-modal=".modal.confirm">다운로드</button>
+              <a href="#" class="table-btn new">신규</a>
+            </div>
+            <ul>
+              <li><input type="checkbox" name="list-check"></li>
+              <li class="w300">ID</li>
+              <li>상태</li>
+              <li class="w300">Site</li>
+              <li>설치일</li>
+              <li class="w350"></li>
+            </ul>
+          </div>
+
+          <!-- 테이블 데이터 컴포넌트-->
+          <ul class="tbl-list">
+            <li><input type="checkbox"></li>
+            <li class="w300">ABCDEFGHIJKLMNOPQR</li>
+            <li>Active</li>
+            <li class="w300">ABCDEFGHIJKLMNOPQR</li>
+            <li>2024.11.30</li>
+            <li class="w350">
+              <button type="button" class="small-btn">복사</button>
+              <a href="./smartmeter_detail.html" class="small-btn">현황보기</a>
+              <a href="#" class="small-btn">정보변경</a>
+              <button type="button" class="small-btn del" target-modal=".modal.del">삭제</button>
+            </li>
+          </ul>
+        </div>
+
+
+        <div class="pagination">
+          <!-- 확인후 주석삭제: href 내 reload는 개발시 삭제 pressed ui구현을 위함(테스트목적) -->
+          <a href="javascript:location.reload()"><i class="prvdb"></i></a>
+          <a href="javascript:location.reload()"><i class="prv"></i></a>
+          <a href="#" class="pg active">1</a>
+          <a href="#" class="pg">2</a>
+          <a href="#" class="pg">3</a>
+          <a href="#" class="pg">4</a>
+          <a href="#" class="pg">5</a>
+          <a href="#" class="pg">6</a>
+          <a href="javascript:location.reload()"><i class="nxt"></i></a>
+          <a href="javascript:location.reload()"><i class="nxtdb"></i></a>
+        </div>
+      </form>
+    </section>
+  </div>
+
+
+  <!-- 모달임시태그 , 아래의 태그를 완전히 지우고, 해당 위치에 dist/inc/modal의 태그를 사용하면됩니다.(스크립트제외)-->
+  <div class="modal-place"></div>
+  <!--// 모달임시태그 , 아래의 태그를 완전히 지우고, 해당 위치에 dist/inc/modal의 태그를 사용하면됩니다.(스크립트제외)-->
+
+  <!-- 레이아웃 조합용 스크립트입니다. 개발시 삭제해주세요.:파일까지 삭제 필요 -->
+  <script src="../../assets/js/ui-layout-script.js"></script>
+  <!--//레이아웃 조합용 스크립트입니다. 개발시 삭제해주세요. //-->
+</body>
+
+</html>

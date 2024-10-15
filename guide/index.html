@@ -1,0 +1,1786 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <title></title>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <link rel="stylesheet" href="../dist/assets/css/common.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: "HyundaiSansHeadKROTFMedium";
+    }
+
+    .is-emphasis {
+      font-weight: 700;
+      color: #ff4040;
+    }
+
+    .is-emphasis.is-mwk {
+      color: #1919ff;
+    }
+
+    .index-wrap {
+      box-sizing: border-box;
+      min-width: 1900px;
+      padding: 20px;
+    }
+
+    .index-title {
+      font-size: 30px;
+      line-height: 40px;
+      margin: 0 0 20px;
+    }
+
+    .index-links:before {
+      content: '';
+      display: table;
+    }
+
+    .index-links__inner {
+      margin: -10px 0 0 -10px;
+    }
+
+    .index-links__inner:after {
+      content: '';
+      display: table;
+      clear: both;
+    }
+
+    .index-links a {
+      display: block;
+      margin: 10px 0 0 10px;
+      float: left;
+      padding: 5px 15px;
+      font-size: 14px;
+      line-height: 20px;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 5px;
+      background: #666;
+    }
+
+    .index-gnb {
+      margin: 20px 0;
+    }
+
+    .index-bottom {
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      min-width: 1900px;
+      box-sizing: border-box;
+      padding: 10px 20px;
+      background: rgba(0, 0, 0, 0.4);
+    }
+
+    .index-bottom a {
+      background-color: #066cb3;
+    }
+
+    .index-section+.index-section {
+      margin-top: 20px;
+    }
+
+    .index-section--clicked {
+      border-radius: 5px;
+      -webkit-animation: index-section-clicked 1s linear;
+      animation: index-section-clicked 1s linear;
+    }
+
+    @-webkit-keyframes index-section-clicked {
+      0% {
+        background-color: rgba(255, 255, 255, 0);
+      }
+
+      30% {
+        background-color: rgb(195, 223, 237);
+      }
+
+      70% {
+        background-color: rgb(199, 232, 251);
+      }
+
+      100% {
+        background-color: rgba(255, 255, 255, 0);
+      }
+    }
+
+    @keyframes index-section-clicked {
+      0% {
+        background-color: rgba(255, 255, 255, 0);
+      }
+
+      30% {
+        background-color: rgb(195, 223, 237);
+      }
+
+      70% {
+        background-color: rgb(199, 232, 251);
+      }
+
+      100% {
+        background-color: rgba(255, 255, 255, 0);
+      }
+    }
+
+    .index-section__title {
+      margin: 0;
+      padding: 5px 15px;
+      font-size: 14px;
+      line-height: 20px;
+      color: #fff;
+      border-radius: 5px 5px 0 0;
+      background: #333;
+    }
+
+    .index-table>table {
+      width: 100%;
+      table-layout: fixed;
+      margin: 0;
+      padding: 0;
+      border-spacing: 0;
+      box-sizing: border-box;
+    }
+
+    .index-table>table>thead>tr>th,
+    .index-table>table>tbody>tr>th,
+    .index-table>table>tbody>tr>td {
+      box-sizing: border-box;
+      font-size: 12px;
+      line-height: 18px;
+      text-align: left;
+      padding: 5px 15px;
+      border: 0 solid #cdcdcd;
+      border-width: 0 1px 1px 0;
+      background: none;
+      word-break: keep-all;
+      word-wrap: break-word;
+    }
+
+    .index-table>table>tbody>tr:hover>th,
+    .index-table>table>tbody>tr:hover>td {
+      background-color: #f6f6f6;
+    }
+
+    .index-table>table>thead>tr>th:first-child,
+    .index-table>table>tbody>tr>th:first-child,
+    .index-table>table>tbody>tr>td:first-child {
+      border-left-width: 1px;
+    }
+
+    .index-table>table>thead>tr>th {
+      border-top-width: 1px;
+    }
+
+    .index-table>table>thead>tr>th,
+    .index-table>table>tbody>tr>th {
+      background-color: #e8e8e8;
+    }
+
+    .index-table>table>tbody>tr:last-child>td:first-child {
+      border-radius: 0 0 0 5px;
+    }
+
+    .index-table>table>tbody>tr:last-child>td:last-child {
+      border-radius: 0 0 5px 0;
+    }
+
+    .index-status {
+      display: block;
+      padding: 3px 8px;
+      margin: -3px 0;
+      background: #999;
+      color: #fff;
+      border-radius: 5px;
+      text-align: center;
+    }
+
+    .index-status--confirm {
+      background-color: #ffb01a;
+    }
+
+    .index-status--end {
+      background-color: #00a6a0;
+    }
+
+    .index-status--moding {
+      background-color: #ff4594;
+    }
+
+    .index-log {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .index-log__item {
+      position: relative;
+      padding-left: 72px;
+    }
+
+    .index-log__item__date {
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    .index-text {
+      margin-bottom: 20px;
+    }
+
+    .index-type {
+      color: #2b5cd9;
+    }
+  </style>
+  <!-- //style -->
+</head>
+
+<body>
+  <div class="index-wrap">
+    <h1 class="index-title"></h1>
+    <div class="index-gnb">
+      <div class="index-links">
+        <div class="index-links__inner">
+          <a href="./guide-component.html" target="_blank">컴포넌트 가이드</a>
+          <a href="./guide-popup.html" target="_blank">모달창 가이드</a>
+          <a href="./guide-dash.html" target="_blank">대시보드 가이드</a>
+          <a href="./guide-stats.html" target="_blank">통계페이지 가이드</a>
+          <!-- <a href="./guide-script.html" target="_blank">UI스크립트 가이드</a> -->
+        </div>
+      </div>
+    </div>
+    <div class="index-bottom">
+      <div class="index-links">
+        <div class="index-links__inner" id="nav"></div>
+      </div>
+    </div>
+
+    <div class="index-datas" id="indexTable"></div>
+  </div>
+
+  <div class="index-fake-botttom"></div>
+
+  <!-- script -->
+  <script type="text/javascript" src="../dist/assets/lib/jquery-3.7.1.min.js"></script>
+  <script>
+    var title = '현대 홈 에너지 모니터링 시스템 -PC';
+    var tableData = [{
+        depth1: '공통',
+        data: [{
+          depthOnly: false,
+          id: '',
+          depth2: '디바이스관리',
+          depth3: 'Main',
+          depth4: '상세보기',
+          depth5: '디바이스추가',
+          depth6: '',
+          path: 'dist/pages/managing/device_add.html',
+          status: 'end',
+          create: '2024.07.01',
+          log: [{
+            date: '2024.08.22',
+            text: 'v0.73 업데이트 [각 카테고리별 폼 내용 작업 [inc/form_modal.html] 주석처리 참고]',
+          }]
+        }],
+      },
+      {
+        depth1: '대시보드',
+        data: [{
+            depthOnly: false,
+            id: '',
+            depth2: '대시보드',
+            depth3: '',
+            depth4: '',
+            depth5: '',
+            depth6: '',
+            path: 'dist/pages/dash/dashboard.html',
+            status: 'end',
+            create: '2024.07.05',
+            log: [{
+                date: '2024.07.15',
+                text: '전력소비량(오늘) 디자인 변경건 반영',
+              },
+              {
+                date: '2024.07.24',
+                text: '대시보드 0.7업데이트 반영',
+              },
+              {
+                date: '2024.07.26',
+                text: '하단 기간별 차트영역 스텝사이즈 수정<br> 누적소비전력 중간 그리드 수정',
+              },
+              {
+                date: '2024.08.28',
+                text: 'v0.73 업데이트',
+              },
+              {
+                date: '2024.09.04',
+                text: 'v0.74 업데이트',
+              },
+              {
+                date: '2024.09.12',
+                text: '디바이스별 unactive 케이스 추가',
+              }
+            ]
+          },
+          {
+            depthOnly: false,
+            id: '',
+            depth2: '대시보드',
+            depth3: '',
+            depth4: '',
+            depth5: '',
+            depth6: '',
+            path: 'dist/pages/dash/dashboard_unactive.html',
+            status: 'end',
+            create: '2024.07.05',
+            log: [{
+                date: '2024.07.15',
+                text: '전력소비량(오늘) 디자인 변경건 반영',
+              },
+              {
+                date: '2024.07.24',
+                text: '대시보드 0.7업데이트 반영',
+              },
+              {
+                date: '2024.07.26',
+                text: '하단 기간별 차트영역 스텝사이즈 수정<br> 누적소비전력 중간 그리드 수정',
+              },
+              {
+                date: '2024.09.04',
+                text: 'v0.74 업데이트 및 unactive diagram flow제거',
+              },
+              {
+                date: '2024.09.12',
+                text: '디바이스별 unactive 케이스 추가',
+              }
+            ]
+          }
+        ],
+      },
+      {
+        depth1: '통계',
+        data: [{
+            depthOnly: false,
+            id: '',
+            depth2: '통계',
+            depth3: 'Main',
+            depth4: '사이트 현황',
+            depth5: '',
+            depth6: '',
+            path: 'dist/pages/stats/livesite.html',
+            status: 'end',
+            create: '2024.07.15',
+            log: [{
+                date: '2024.07.26',
+                text: '기획서버전 0.7 업데이트 반영',
+              },
+              {
+                date: '2024.08.02',
+                text: '일, 기간, 월, 년별 selectbox 케이스 추가 ',
+              },
+              {
+                date: '2024.08.20',
+                text: 'v0.73 하단 그래프 반영, 툴팁반영',
+              },
+              {
+                date: '2024.09.04',
+                text: 'v0.74 업데이트',
+              },
+              {
+                date: '2024.09.12',
+                text: 'v0.742 업데이트',
+              }
+
+            ]
+          },
+          {
+            depthOnly: false,
+            id: '',
+            depth2: '통계',
+            depth3: 'Main',
+            depth4: '사이트 현황',
+            depth5: '개별현황',
+            depth6: '',
+            path: 'dist/pages/stats/livesite_ind.html',
+            status: 'end',
+            create: '2024.07.31',
+            log: [{
+                date: '2024.08.02',
+                text: '일, 기간, 월, 년별 selectbox 케이스 추가 ',
+              },
+              {
+                date: '2024.08.16',
+                text: 'EV리스트보기 모달창 추가',
+              },
+              {
+                date: '2024.08.22',
+                text: 'v0.73 버전 타임라인 반영',
+              },
+              {
+                date: '2024.09.12',
+                text: 'v0.742 업데이트 및 EV리스트 깨짐 수정',
+              }
+            ]
+          },
+          {
+            depthOnly: false,
+            id: '',
+            depth2: '통계',
+            depth3: 'Main',
+            depth4: 'EVC현황',
+            depth5: '',
+            depth6: '',
+            path: 'dist/pages/stats/liveEVC.html',
+            status: 'end',
+            create: '2024.08.01',
+            log: [{
+                date: '2024.08.02',
+                text: '일, 기간, 월, 년별 selectbox 케이스 추가 ',
+              },
+              {
+                date: '2024.08.16',
+                text: '일자별현황영역 article에 ver클래스 추가',
+              },
+              {
+                date: '2024.08.20',
+                text: 'v0.73 충전/방전그래프 차트 변경',
+              },
+              {
+                date: '2024.08.27',
+                text: 'EVC커넥터현황 툴팁 노출 수정',
+              },
+              {
+                date: '2024.09.04',
+                text: 'v0.74 업데이트',
+              }
+            ]
+          },
+          {
+            depthOnly: false,
+            id: '',
+            depth2: '통계',
+            depth3: 'Main',
+            depth4: 'EVC현황',
+            depth5: '사이트',
+            depth6: '',
+            path: 'dist/pages/stats/liveEVC_site.html',
+            status: 'end',
+            create: '2024.08.05',
+            log: [{
+                date: '2024.08.22',
+                text: 'v0.73 버전 타임라인 반영',
+              },
+              {
+                date: '2024.09.04',
+                text: 'v0.74 업데이트',
+              },
+              {
+                date: '2024.09.12',
+                text: 'v0.742 업데이트',
+              }
+            ]
+          },
+          {
+            depthOnly: false,
+            id: '',
+            depth2: '통계',
+            depth3: 'Main',
+            depth4: 'EVC현황',
+            depth5: '개별',
+            depth6: '',
+            path: 'dist/pages/stats/liveEVC_ind.html',
+            status: 'end',
+            create: '2024.08.16',
+            log: [{
+                date: '2024.09.04',
+                text: 'v0.74 업데이트',
+              },
+              {
+                date: '2024.09.12',
+                text: 'v0.742 업데이트',
+              }
+            ]
+          },
+          {
+            depthOnly: false,
+            id: '',
+            depth2: '통계',
+            depth3: 'Main',
+            depth4: 'EV현황',
+            depth5: '',
+            depth6: '',
+            path: 'dist/pages/stats/liveEV.html',
+            status: 'end',
+            create: '2024.08.05',
+            log: [{
+                date: '2024.09.04',
+                text: 'v0.74 업데이트',
+              },
+              {
+                date: '2024.09.12',
+                text: 'v0.742 업데이트',
+              }
+            ]
+          },
+          {
+            depthOnly: false,
+            id: '',
+            depth2: '통계',
+            depth3: 'Main',
+            depth4: 'EV현황',
+            depth5: '개별',
+            depth6: '',
+            path: 'dist/pages/stats/liveEV_ind.html',
+            status: 'end',
+            create: '2024.08.16',
+            log: [{
+                date: '2024.08.22',
+                text: 'v0.73 버전 타임라인 반영',
+              },
+              {
+                date: '2024.09.04',
+                text: 'v0.74 업데이트',
+              },
+              {
+                date: '2024.09.12',
+                text: 'v0.742 업데이트',
+              }
+            ]
+          },
+          {
+            depthOnly: false,
+            id: '',
+            depth2: '통계',
+            depth3: 'Main',
+            depth4: 'PV현황',
+            depth5: '',
+            depth6: '',
+            path: 'dist/pages/stats/livePV.html',
+            status: 'end',
+            create: '2024.08.05',
+            log: [{
+              date: '2024.09.04',
+              text: 'v0.74 업데이트',
+            }]
+          },
+          {
+            depthOnly: false,
+            id: '',
+            depth2: '통계',
+            depth3: 'Main',
+            depth4: 'PV현황',
+            depth5: '개별',
+            depth6: '',
+            path: 'dist/pages/stats/livePV_ind.html',
+            status: 'end',
+            create: '2024.08.16',
+            log: [{
+              date: '2024.09.04',
+              text: 'v0.74 업데이트',
+            }]
+          },
+          {
+            depthOnly: false,
+            id: '',
+            depth2: '통계',
+            depth3: 'Main',
+            depth4: 'ESS현황',
+            depth5: '',
+            depth6: '',
+            path: 'dist/pages/stats/liveESS.html',
+            status: 'end',
+            create: '2024.08.05',
+            log: [{
+                date: '2024.08.20',
+                text: 'v0.73 충전,방전량 그래프 전일 충전, 방전량 추가',
+              },
+              {
+                date: '2024.09.04',
+                text: 'v0.74 업데이트',
+              }
+            ]
+          },
+          {
+            depthOnly: false,
+            id: '',
+            depth2: '통계',
+            depth3: 'Main',
+            depth4: 'ESS현황',
+            depth5: '개별',
+            depth6: '',
+            path: 'dist/pages/stats/liveESS_ind.html',
+            status: 'end',
+            create: '2024.08.16',
+            log: [{
+                date: '2024.08.20',
+                text: 'v0.73 충전,방전량 그래프 전일 충전, 방전량 추가',
+              },
+              {
+                date: '2024.09.04',
+                text: 'v0.74 업데이트',
+              }
+            ]
+          },
+          {
+            depthOnly: false,
+            id: '',
+            depth2: '통계',
+            depth3: 'Main',
+            depth4: 'EHP현황',
+            depth5: '',
+            depth6: '',
+            path: 'dist/pages/stats/liveEHP.html',
+            status: 'end',
+            create: '2024.08.05',
+            log: [{
+              date: '2024.09.04',
+              text: 'v0.74 업데이트',
+            }]
+          },
+          {
+            depthOnly: false,
+            id: '',
+            depth2: '통계',
+            depth3: 'Main',
+            depth4: 'EHP현황',
+            depth5: '개별',
+            depth6: '',
+            path: 'dist/pages/stats/liveEHP_ind.html',
+            status: 'end',
+            create: '2024.08.16',
+            log: [{
+              date: '2024.09.04',
+              text: 'v0.74 업데이트',
+            }]
+          },
+          {
+            depthOnly: false,
+            id: '',
+            depth2: '통계',
+            depth3: 'Main',
+            depth4: '건물현황',
+            depth5: '',
+            depth6: '',
+            path: 'dist/pages/stats/liveBuilding.html',
+            status: 'end',
+            create: '2024.08.05',
+            log: [{
+              date: '2024.09.04',
+              text: 'v0.74 업데이트',
+            }]
+          },
+          {
+            depthOnly: false,
+            id: '',
+            depth2: '통계',
+            depth3: 'Main',
+            depth4: '건물현황',
+            depth5: '개별',
+            depth6: '',
+            path: 'dist/pages/stats/liveBuilding_ind.html',
+            status: 'end',
+            create: '2024.08.16',
+            log: [{
+              date: '2024.09.04',
+              text: 'v0.74 업데이트',
+            }]
+          },
+        ],
+      },
+      {
+        depth1: 'Main',
+        data: [{
+            depthOnly: false,
+            id: '',
+            depth2: '디바이스 관리',
+            depth3: 'Main',
+            depth4: '사이트 관리',
+            depth5: '',
+            depth6: '',
+            path: 'dist/pages/managing/home.html',
+            status: 'end',
+            create: '2024.06.18',
+            log: [{
+                date: '2024.06.24',
+                text: '◾헤더 수정(카테고리 높이스크롤 처리) <br> ◾헤더 이아콘 변경',
+              },
+              {
+                date: '2024.07.01',
+                text: '◾브래드크럼 변경 (main>site관리)',
+              },
+              {
+                date: '2024.07.02',
+                text: '◾최대 글자수 설정에 따른 테이블일부 class 추가',
+              },
+              {
+                date: '2024.07.19',
+                text: '◾0.51버전(2024.0705) 디자인검수 반영',
+              },
+              {
+                date: '2024.08.16',
+                text: '◾버튼 4개 이상 추가 시 케이스 적용',
+              },
+              {
+                date: '2024.08.22',
+                text: 'v0.73 업데이트 [테이블 내용 변경]',
+              },
+              {
+                date: '2024.09.04',
+                text: 'v0.74 업데이트',
+              },
+              {
+                date: '2024.09.12',
+                text: 'v0.742 업데이트',
+              }
+
+            ],
+          },
+          {
+            depthOnly: false,
+            id: '',
+            depth2: '디바이스관리',
+            depth3: 'Main',
+            depth4: 'Site관리',
+            depth5: 'Site등록',
+            depth6: '',
+            path: 'dist/pages/managing/home_new.html',
+            status: 'end',
+            create: '2024.06.24',
+            log: [{
+                date: '2024.07.01',
+                text: '◾브래드크럼 변경 (main>site관리>site등록) <br> ◾select option태그 변경 및 스타일지정 <br> ◾err메세지 겹침현상 수정',
+              },
+              {
+                date: '2024.07.19',
+                text: '◾0.51버전(2024.0705) 디자인검수 반영',
+              },
+              {
+                date: '2024.08.22',
+                text: 'v0.73 업데이트 [배선사업자, 송선사업자 추가]',
+              },
+            ],
+          },
+          {
+            depthOnly: false,
+            id: '',
+            depth2: '디바이스관리',
+            depth3: 'Main',
+            depth4: 'Site관리',
+            depth5: 'Site변경',
+            depth6: '',
+            path: 'dist/pages/managing/home_change.html',
+            status: 'end',
+            create: '2024.06.24',
+            log: [{
+                date: '2024.07.01',
+                text: '◾브래드크럼 변경 (main>site관리>site변경) <br> ◾select option태그 변경 및 스타일지정 <br> ◾err메세지 겹침현상 수정',
+              },
+              {
+                date: '2024.08.22',
+                text: 'v0.73 업데이트 [배선사업자, 송선사업자 추가]',
+              },
+              {
+                date: '2024.08.28',
+                text: 'v0.73 업데이트',
+              },
+            ],
+          },
+          {
+            depthOnly: false,
+            id: '',
+            depth2: '디바이스관리',
+            depth3: 'Main',
+            depth4: '사이트 관리',
+            depth5: '사이트 상세',
+            depth6: '',
+            path: 'dist/pages/managing/home_detail.html',
+            status: 'end',
+            create: '2024.06.24',
+            log: [{
+                date: '2024.07.01',
+                text: '◾브래드크럼 변경 (main>site관리>site상세)',
+              },
+              {
+                date: '2024.07.19',
+                text: '◾0.51버전(2024.0705) 디자인검수 반영',
+              },
+            ],
+          },
+          {
+            depthOnly: false,
+            id: '',
+            depth2: '디바이스관리',
+            depth3: 'Main',
+            depth4: '스마트미터(계량기)관리',
+            depth5: '',
+            depth6: '',
+            path: 'dist/pages/managing/smartmeter.html',
+            status: 'end',
+            create: '2024.06.24',
+            log: [{
+                date: '2024.07.01',
+                text: '◾브래드크럼 변경 (Main>스마트 미터(계량기)관리)',
+              },
+              {
+                date: '2024.07.02',
+                text: '◾복사 버튼 추가 <br>◾현황보기> 현황보기 버튼변경<br>◾추가요소변경(사이트 명, 스마트미터명)',
+              },
+            ],
+          },
+          {
+            depthOnly: false,
+            id: '',
+            depth2: '디바이스관리',
+            depth3: 'Main',
+            depth4: '스마트미터(계량기)관리',
+            depth5: '스마트미터(계량기) 등록',
+            depth6: '',
+            path: 'dist/pages/managing/smartmeter_new.html',
+            status: 'end',
+            create: '2024.07.03',
+            log: [{
+                date: '2024.07.19',
+                text: '◾0.51버전(2024.0705) 디자인검수 반영',
+
+              },
+              {
+                date: '2024.08.26',
+                text: 'v0.73 업데이트 폼 내용 변경'
+              }
+            ],
+          },
+          {
+            depthOnly: false,
+            id: '',
+            depth2: '디바이스관리',
+            depth3: 'Main',
+            depth4: '스마트미터(계량기)관리',
+            depth5: '스마트미터(계량기) 변경',
+            depth6: '',
+            path: 'dist/pages/managing/smartmeter_change.html',
+            status: 'end',
+            create: '2024.07.03',
+            log: [{
+              date: '2024.08.26',
+              text: 'v0.73 업데이트 폼 내용 변경'
+            }],
+          },
+          {
+            depthOnly: false,
+            id: '',
+            depth2: '디바이스관리',
+            depth3: 'Main',
+            depth4: 'PV관리',
+            depth5: '',
+            depth6: '',
+            path: 'dist/pages/managing/PV.html',
+            status: 'end',
+            create: '2024.06.24',
+            log: [{
+                date: '2024.07.01',
+                text: '◾브래드크럼 변경 (Main>PV관리)',
+              },
+              {
+                date: '2024.07.02',
+                text: '◾복사 버튼 추가 <br>◾현황보기> 현황보기 버튼변경 <br>◾추가요소변경(PV명, Site, 설치용량)',
+              },
+            ],
+          },
+          {
+            depthOnly: false,
+            id: '',
+            depth2: '디바이스관리',
+            depth3: 'Main',
+            depth4: 'PV등록',
+            depth5: '',
+            depth6: '',
+            path: 'dist/pages/managing/PV_new.html',
+            status: 'end',
+            create: '2024.07.03',
+            log: [{
+              date: '2024.08.28',
+              text: 'v0.73 업데이트',
+            }, ],
+          },
+          {
+            depthOnly: false,
+            id: '',
+            depth2: '디바이스관리',
+            depth3: 'Main',
+            depth4: 'PV관리',
+            depth5: 'PV변경',
+            depth6: '',
+            path: 'dist/pages/managing/PV_change.html',
+            status: 'end',
+            create: '2024.07.03',
+            log: [{
+              date: '2024.08.28',
+              text: 'v0.73 업데이트',
+            }, ],
+          },
+          {
+            depthOnly: false,
+            id: '',
+            depth2: '디바이스관리',
+            depth3: 'Main',
+            depth4: 'ESS관리',
+            depth5: '',
+            depth6: '',
+            path: 'dist/pages/managing/ESS.html',
+            status: 'end',
+            create: '2024.06.24',
+            log: [{
+                date: '2024.07.01',
+                text: '◾브래드크럼 변경 (Main>ESS관리) <br> ◾ select박스 태그변경',
+              },
+              {
+                date: '2024.07.02',
+                text: '◾복사 버튼 추가 <br>◾현황보기> 현황보기 버튼변경 <br>◾추가요소변경(PV명, Site, 설치용량)<br>◾카테고리 변경 (home> site)',
+              },
+              {
+                date: '2024.08.28',
+                text: 'v0.73 업데이트',
+              },
+            ],
+          },
+          {
+            depthOnly: false,
+            id: '',
+            depth2: '디바이스관리',
+            depth3: 'Main',
+            depth4: 'ESS관리',
+            depth5: 'ESS등록',
+            depth6: '',
+            path: 'dist/pages/managing/ESS_new.html',
+            status: 'end',
+            create: '2024.07.04',
+            log: [{
+              date: '2024.08.28',
+              text: 'v0.73 업데이트',
+            }],
+          },
+          {
+            depthOnly: false,
+            id: '',
+            depth2: '디바이스관리',
+            depth3: 'Main',
+            depth4: 'ESS관리',
+            depth5: 'ESS변경',
+            depth6: '',
+            path: 'dist/pages/managing/ESS_change.html',
+            status: 'end',
+            create: '2024.07.04',
+            log: [{
+              date: '2024.08.28',
+              text: 'v0.73 업데이트',
+            }],
+          },
+          {
+            depthOnly: false,
+            id: '',
+            depth2: '디바이스관리',
+            depth3: 'Main',
+            depth4: 'EHP모델관리',
+            depth5: '',
+            depth6: '',
+            path: 'dist/pages/managing/EHPmodel.html',
+            status: 'end',
+            create: '2024.06.24',
+            log: [{
+                date: '2024.07.01',
+                text: '◾브래드크럼 변경 (Main>EHP모델관리) <br> ◾ select박스 태그변경',
+              },
+              {
+                date: '2024.07.02',
+                text: '◾복사 버튼 추가 <br>◾현황보기> 현황보기 버튼변경 <br>◾요소변경( ID, Site )<br>◾카테고리 변경 (home> site)',
+              },
+            ],
+          },
+          {
+            depthOnly: false,
+            id: '',
+            depth2: '디바이스관리',
+            depth3: 'Main',
+            depth4: 'EHP 관리',
+            depth5: 'EHP 등록',
+            depth6: '',
+            path: 'dist/pages/managing/EHPmodel_new.html',
+            status: 'end',
+            create: '2024.07.03',
+            log: [{
+              date: '2024.08.28',
+              text: 'v0.73 업데이트',
+            }, ],
+          },
+          {
+            depthOnly: false,
+            id: '',
+            depth2: '디바이스관리',
+            depth3: 'Main',
+            depth4: 'EHP 관리',
+            depth5: 'EHP 변경',
+            depth6: '',
+            path: 'dist/pages/managing/EHPmodel_change.html',
+            status: 'end',
+            create: '2024.07.03',
+            log: [{
+              date: '2024.08.28',
+              text: 'v0.73 업데이트',
+            }, ],
+          },
+          {
+            depthOnly: false,
+            id: '',
+            depth2: '디바이스관리',
+            depth3: 'Main',
+            depth4: 'EVC관리',
+            depth5: '',
+            depth6: '',
+            path: 'dist/pages/managing/EVC.html',
+            status: 'end',
+            create: '2024.06.24',
+            log: [{
+                date: '2024.07.01',
+                text: '◾브래드크럼 변경 (Main>EVC관리) <br> ◾ select박스 태그변경',
+              },
+              {
+                date: '2024.07.02',
+                text: '◾복사 버튼 추가 <br>◾현황보기> 현황보기 버튼변경 <br>◾요소변경( ID, EVC명 )<br>◾카테고리 변경 (home> EVC명)',
+              },
+              {
+                date: '2024.08.28',
+                text: 'v0.73 업데이트',
+              },
+            ],
+          },
+          {
+            depthOnly: false,
+            id: '',
+            depth2: '디바이스관리',
+            depth3: 'Main',
+            depth4: 'EVC관리',
+            depth5: 'EVC등록',
+            depth6: '',
+            path: 'dist/pages/managing/EVC_new.html',
+            status: 'end',
+            create: '2024.07.03',
+            log: [{
+                date: '2024.07.19',
+                text: '◾0.51버전(2024.0705) 디자인검수 반영',
+              },
+              {
+                date: '2024.08.28',
+                text: 'v0.73 업데이트',
+              }
+            ],
+          },
+          {
+            depthOnly: false,
+            id: '',
+            depth2: '디바이스관리',
+            depth3: 'Main',
+            depth4: 'EVC관리',
+            depth5: 'EVC변경',
+            depth6: '',
+            path: 'dist/pages/managing/EVC_change.html',
+            status: 'end',
+            create: '2024.07.03',
+            log: [{
+              date: '2024.08.28',
+              text: 'v0.73 업데이트',
+            }, ],
+          },
+          {
+            depthOnly: false,
+            id: '',
+            depth2: '디바이스관리',
+            depth3: 'Main',
+            depth4: 'EV관리',
+            depth5: '',
+            depth6: '',
+            path: 'dist/pages/managing/EVmodel.html',
+            status: 'end',
+            create: '2024.06.24',
+            log: [{
+                date: '2024.07.01',
+                text: '◾브래드크럼 변경 (Main>EV관리) <br> ◾select박스 태그변경',
+              },
+              {
+                date: '2024.07.02',
+                text: '◾복사 버튼 추가 <br>◾현황보기> 현황보기 버튼변경 <br>◾요소변경( ID, EVC명 )<br>◾카테고리 변경 (home> Site)',
+              },
+            ],
+          },
+          {
+            depthOnly: false,
+            id: '',
+            depth2: '디바이스관리',
+            depth3: 'Main',
+            depth4: 'EV추가',
+            depth5: 'EV추가',
+            depth6: '',
+            path: 'dist/pages/managing/EVmodel_new.html',
+            status: 'end',
+            create: '2024.07.03',
+            log: [{
+                date: '2024.08.28',
+                text: 'v0.73 업데이트',
+              },
+              {
+                date: '2024.09.04',
+                text: 'v0.74 업데이트',
+              },
+              {
+                date: '2024.09.12',
+                text: 'v0.742 업데이트',
+              }
+            ],
+          },
+          {
+            depthOnly: false,
+            id: '',
+            depth2: '디바이스관리',
+            depth3: 'Main',
+            depth4: 'EV변경',
+            depth5: 'EV변경',
+            depth6: '',
+            path: 'dist/pages/managing/EVmodel_change.html',
+            status: 'end',
+            create: '2024.07.03',
+            log: [{
+                date: '2024.08.28',
+                text: 'v0.73 업데이트',
+              },
+              {
+                date: '2024.09.04',
+                text: 'v0.74 업데이트',
+              },
+              {
+                date: '2024.09.12',
+                text: 'v0.742 업데이트',
+              }
+            ],
+          },
+          {
+            depthOnly: false,
+            id: '',
+            depth2: '건물관리',
+            depth3: 'main',
+            depth4: '건물관리',
+            depth5: '',
+            depth6: '',
+            path: 'dist/pages/managing/building.html',
+            status: 'end',
+            create: '2024.08.26',
+            log: [{
+              date: '2024.08.26',
+              text: 'v0.73 업데이트 신규페이지 추가',
+            }, ],
+          },
+          {
+            depthOnly: false,
+            id: '',
+            depth2: '건물관리',
+            depth3: 'main',
+            depth4: '건물관리',
+            depth5: '건물등록',
+            depth6: '',
+            path: 'dist/pages/managing/building_new.html',
+            status: 'end',
+            create: '2024.08.26',
+            log: [{
+                date: '2024.08.26',
+                text: 'v0.73 업데이트 신규페이지 추가',
+              },
+              {
+                date: '2024.09.04',
+                text: 'v0.74 업데이트',
+              },
+              {
+                date: '2024.09.12',
+                text: 'v0.742 업데이트',
+              }
+            ],
+          },
+          {
+            depthOnly: false,
+            id: '',
+            depth2: '건물관리',
+            depth3: 'main',
+            depth4: '건물관리',
+            depth5: '건물변경',
+            depth6: '',
+            path: 'dist/pages/managing/building_change.html',
+            status: 'end',
+            create: '2024.08.26',
+            log: [{
+                date: '2024.08.26',
+                text: 'v0.73 업데이트 신규페이지 추가',
+              },
+              {
+                date: '2024.09.04',
+                text: 'v0.74 업데이트',
+              },
+              {
+                date: '2024.09.12',
+                text: 'v0.742 업데이트',
+              }
+            ],
+          },
+          {
+            depthOnly: false,
+            id: '',
+            depth2: '디바이스관리',
+            depth3: 'Main',
+            depth4: '충전기모델관리',
+            depth5: '',
+            depth6: '',
+            path: 'dist/pages/managing/chargeModel.html',
+            status: 'end',
+            create: '2024.06.24',
+            log: [{
+                date: '2024.07.01',
+                text: '◾브래드크럼 변경 (Main>충전기모델관리) <br> ◾select박스 태그변경',
+              },
+              {
+                date: '2024.07.02',
+                text: '◾카테고리 변경 (제조사(수입원)> 제조사 ,최대전력> 정격출력 , 모델명> 모델번호)',
+              },
+              {
+                date: '2024.08.26',
+                text: 'v0.73 업데이트 수정',
+              }
+            ],
+          },
+          {
+            depthOnly: false,
+            id: '',
+            depth2: '디바이스관리',
+            depth3: 'Main',
+            depth4: '충전기모델관리',
+            depth5: '충전기 모델 추가',
+            depth6: '',
+            path: 'dist/pages/managing/chargeModel_new.html',
+            status: 'end',
+            create: '2024.07.03',
+            log: [{
+                date: '2024.08.26',
+                text: 'v0.73 업데이트 수정',
+              },
+              {
+                date: '2024.09.04',
+                text: 'v0.74 업데이트',
+              },
+              {
+                date: '2024.09.12',
+                text: 'v0.742 업데이트',
+              }
+            ],
+          },
+          {
+            depthOnly: false,
+            id: '',
+            depth2: '디바이스관리',
+            depth3: 'Main',
+            depth4: '충전기모델관리',
+            depth5: '충전기 모델 변경',
+            depth6: '',
+            path: 'dist/pages/managing/chargeModel_change.html',
+            status: 'end',
+            create: '2024.07.03',
+            log: [{
+                date: '2024.08.26',
+                text: 'v0.73 업데이트 수정',
+              },
+              {
+                date: '2024.09.12',
+                text: 'v0.742 업데이트',
+              }
+            ],
+          },
+          {
+            depthOnly: false,
+            id: '',
+            depth2: '디바이스관리',
+            depth3: 'Main',
+            depth4: '건물관리',
+            depth5: '',
+            depth6: '',
+            path: 'dist/pages/managing/building.html',
+            status: 'end',
+            create: '2024.07.03',
+            log: [{
+              date: '2024.08.26',
+              text: 'v0.73 업데이트 수정',
+            }],
+          },
+          {
+            depthOnly: false,
+            id: '',
+            depth2: '디바이스관리',
+            depth3: 'Main',
+            depth4: '건물관리',
+            depth5: '건물등록',
+            depth6: '',
+            path: 'dist/pages/managing/building_new.html',
+            status: 'end',
+            create: '2024.07.03',
+            log: [{
+              date: '2024.08.26',
+              text: 'v0.73 업데이트 수정',
+            }],
+          },
+          {
+            depthOnly: false,
+            id: '',
+            depth2: '디바이스관리',
+            depth3: 'Main',
+            depth4: '건물관리',
+            depth5: '건물변경',
+            depth6: '',
+            path: 'dist/pages/managing/building_change.html',
+            status: 'end',
+            create: '2024.07.03',
+            log: [{
+              date: '2024.08.26',
+              text: 'v0.73 업데이트 수정',
+            }],
+          },
+        ],
+      },
+
+      {
+        depth1: '관리자 관리',
+        data: [{
+            depthOnly: false,
+            id: '',
+            depth2: '',
+            depth3: 'Main',
+            depth4: '관리자 관리',
+            depth5: '',
+            depth6: '',
+            path: 'dist/pages/admin/administrator.html',
+            status: 'end',
+            create: '2024.06.28',
+            log: [{
+                date: '2024.07.01',
+                text: '◾브래드크럼 변경 (Main>관리자 관리)',
+              },
+              {
+                date: '2024.07.02',
+                text: '◾일부카테고리 너비 변경 (email, 등록일, 버튼모음)',
+              },
+              {
+                date: '2024.07.09',
+                text: '◾버튼 케이스 추가',
+              },
+              {
+                date: '2024.08.22',
+                text: 'v0.73 업데이트 테이블 내용 변경',
+              },
+            ],
+          },
+          {
+            depthOnly: false,
+            id: '',
+            depth2: '',
+            depth3: 'Main',
+            depth4: '관리자 관리',
+            depth5: '관리자 추가',
+            depth6: '',
+            path: 'dist/pages/admin/administrator_new.html',
+            status: 'end',
+            create: '2024.06.28',
+            log: [{
+              date: '2024.08.22',
+              text: 'v0.73 업데이트  이메일 > 관리자 등급 변경'
+            }],
+          },
+          {
+            depthOnly: false,
+            id: '',
+            depth2: '',
+            depth3: 'Main',
+            depth4: '관리자 관리',
+            depth5: '관리자 수정',
+            depth6: '',
+            path: 'dist/pages/admin/administrator_change.html',
+            status: 'end',
+            create: '2024.06.28',
+            log: [{
+              date: '',
+              text: ' '
+            }],
+          },
+        ],
+      },
+      {
+        depth1: '로그인',
+        data: [{
+            depthOnly: false,
+            id: '',
+            depth2: '로그인',
+            depth3: '',
+            depth4: '',
+            depth5: '',
+            depth6: '',
+            path: 'dist/pages/login/login.html',
+            status: 'end',
+            create: '2024.07.15',
+            log: [{
+              date: '',
+              text: '',
+            }]
+          },
+          {
+            depthOnly: false,
+            id: '',
+            depth2: '비밀번호 변경',
+            depth3: '',
+            depth4: '',
+            depth5: '',
+            depth6: '',
+            path: 'dist/pages/login/login_change.html',
+            status: 'end',
+            create: '2024.07.15',
+            log: [{
+              date: '',
+              text: '',
+            }]
+          },
+        ],
+      },
+      {
+        depth1: '전기요금 관리',
+        data: [{
+            depthOnly: false,
+            id: '',
+            depth2: '',
+            depth3: 'Main',
+            depth4: '전기요금 관리',
+            depth5: '',
+            depth6: '',
+            path: 'dist/pages/fee/fee_manage.html',
+            status: 'end',
+            create: '2024.07.24',
+            log: [{
+              date: '',
+              text: '',
+            }, ],
+          },
+          {
+            depthOnly: false,
+            id: '',
+            depth2: '',
+            depth3: 'Main',
+            depth4: '전기요금 등록',
+            depth5: '',
+            depth6: '',
+            path: 'dist/pages/fee/fee_new.html',
+            status: 'end',
+            create: '2024.07.24',
+            log: [{
+              date: '2024.08.22',
+              text: 'v0.73업데이트[충전 수수료 삭제]',
+            }, ],
+          },
+          {
+            depthOnly: false,
+            id: '',
+            depth2: '',
+            depth3: 'Main',
+            depth4: '전기요금 변경',
+            depth5: '',
+            depth6: '',
+            path: 'dist/pages/fee/fee_change.html',
+            status: 'end',
+            create: '2024.07.24',
+            log: [{
+              date: '2024.08.22',
+              text: 'v0.73업데이트[충전 수수료 삭제]',
+            }, ],
+          },
+
+        ],
+      }
+
+    ];
+
+    var html = '';
+    var navHTML = '';
+    var totalIndex = 0;
+    let ttlCreate = [];
+    var dates = (function() {
+      var array = [];
+
+      function add(date) {
+        if (typeof date === 'string' && date.length && array.indexOf(date) === -1) {
+          array.push(date);
+        }
+      }
+
+      $.each(tableData, function(i) {
+        var sectionData = tableData[i].data;
+
+        $.each(sectionData, function(j) {
+          add(this.create);
+          $.each(sectionData[j].log, function(l) {
+            add(this.date);
+          });
+        });
+      });
+      array.sort();
+
+      return array;
+    })();
+    var latestDate = dates[dates.length - 1];
+
+
+    $.each(tableData, function(i) {
+      var sectionIndex = i;
+      var sectionData = tableData[i].data;
+      var tableHTML = '';
+
+      $.each(sectionData, function(j) {
+        var returnVal = function(key, secondTestKey) {
+          var val = sectionData[j][key];
+          var secondTestVal = sectionData[j][secondTestKey];
+          var prevIndex = j - 1;
+          var isPrint = true;
+          (key === 'path') ? val = val.substring(val.lastIndexOf('/') + 1, val.indexOf('.html')): '';
+          return isPrint ? val.replace(/\n/g, '<br>') : '';
+        };
+
+        var id = returnVal('path');
+        var depth2 = returnVal('depth2');
+        var depth3 = returnVal('depth3');
+        var depth4 = returnVal('depth4');
+        var depth5 = returnVal('depth5');
+        var depth6 = returnVal('depth6');
+
+        var path = (function() {
+          var val = sectionData[j].path;
+          var href = '';
+          if (val.match(/^\.\//g)) {
+            href = val;
+          } else {
+            href = '../' + val;
+          }
+          return val.length ? '<a href="' + href + '" target="_blank">' + val + '</a>' : '';
+        })();
+
+        var create = this.create;
+        ttlCreate.push(create);
+
+        var update = '';
+        let isLatest = '';
+        var log = (function() {
+          var val = sectionData[j].log;
+          var length = val.length;
+          var html = '<ul class="index-log">';
+          $.each(val, function(l) {
+            var date = this.date;
+            isLatest = date === latestDate;
+            var isMWK = Boolean(this.text.match(/^\(MWK\)/));
+            let fnval = this.text.replace(/\n/g, '<br>');
+
+            html +=
+              '<li class="index-log__item' +
+              (isLatest ? ' is-emphasis' : '') +
+              (isLatest && isMWK ? ' is-mwk' : '') +
+              '"><div class="index-log__item__date">' +
+              date +
+              '</div>' +
+              fnval +
+              '</li>';
+            if (length - 1 === l) {
+              update = date;
+            }
+          });
+          html += '</ul>';
+
+          return html;
+        })();
+
+        var status = (function() {
+          var val = sectionData[j].status;
+          var text = '';
+          if (val === 'end') {
+            text = '작업완료';
+          } else if (val === 'confirm') {
+            text = '검수요청';
+          } else if (val === 'moding') {
+            text = '수정';
+          } else if (val === 'working') {
+            text = '작업중';
+          }
+          return val.length ? '<span class="index-status index-status--' + val + '">' + text + '</span>' : '';
+        })();
+
+        tableHTML +=
+          '<tr>' +
+          '<td>' +
+          (j + 1) +
+          '</td>' +
+          '<td>' +
+          id +
+          '</td>' +
+          '</td>' +
+          '<td>' +
+          depth2 +
+          '</td>' +
+          '<td>' +
+          depth3 +
+          '</td>' +
+          '<td>' +
+          depth4 +
+          '</td>' +
+          '<td>' +
+          depth5 +
+          '</td>' +
+          '<td>' +
+          depth6 +
+          '</td>' +
+          '<td>' +
+          path +
+          '</td>' +
+          '<td>' +
+          status +
+          '</td>' +
+          '<td class="' +
+          (create === latestDate ? 'created-date is-emphasis' : 'created-date') +
+          '">' +
+          create +
+          '</td>' +
+          '<td class="' +
+          (update === latestDate ? ' is-emphasis' : 'update-date') +
+          '">' +
+          update +
+          '</td>' +
+          '<td>' +
+          log +
+          '</td>' +
+          '</tr>';
+
+        totalIndex++;
+      });
+
+      navHTML += '<a href="#section' + i + '">' + tableData[i].depth1 + '</a>';
+
+      html +=
+        '<div class="index-section" id="section' +
+        i +
+        '">' +
+        '<h2 class="index-section__title">' +
+        tableData[i].depth1 +
+        '</h2>' +
+        '<div class="index-table">' +
+        '<table>' +
+        '<colgroup>' +
+        '<col width="55px" />' +
+        '<col width="120px" />' +
+        '<col width="120px" />' +
+        '<col width="120px" />' +
+        '<col width="200px" />' +
+        '<col width="120px" />' +
+        '<col width="120px" />' +
+        '<col width="" />' +
+        '<col width="100px" />' +
+        '<col width="110px" />' +
+        '<col width="110px" />' +
+        '<col width="300px" />' +
+        '</colgroup>' +
+        '<thead>' +
+        '<tr>' +
+        '<th>No</th>' +
+        '<th>ID</th>' +
+        '<th>depth1</th>' +
+        '<th>depth2</th>' +
+        '<th>depth3</th>' +
+        '<th>depth4</th>' +
+        '<th>depth5</th>' +
+        '<th>path</th>' +
+        '<th>status</th>' +
+        '<th>create</th>' +
+        '<th>update</th>' +
+        '<th>log</th>' +
+        '</tr>' +
+        '</thead>' +
+        '<tbody>' +
+        tableHTML +
+        '</tbody>' +
+        '</table>' +
+        '</div>' +
+        '</div>';
+    });
+
+    $('title, .index-title').text(title);
+    $('#nav').append(navHTML);
+    $('#indexTable').append(html);
+
+    var $nav = $('.index-bottom');
+    var $doc = $(document);
+    var $win = $(window);
+
+    function paddingBottom() {
+      $('.index-fake-botttom').css('height', $nav.outerHeight());
+    }
+
+
+
+
+
+
+
+    var clickedTimer = null;
+
+    $doc.on('click', '#nav a', function() {
+      var $this = $(this);
+      var href = $this.attr('href');
+      var $target = $(href);
+      var $sections = $('.index-section');
+
+      $sections.removeClass('index-section--clicked');
+
+      clearTimeout(clickedTimer);
+
+      clickedTimer = setTimeout(function() {
+        $target.addClass('index-section--clicked');
+      }, 100);
+    });
+
+    $win
+      .on('scroll', function() {
+        var scrollLeft = $win.scrollLeft();
+        $nav.css('margin-left', -scrollLeft);
+      })
+      .on('resize', function() {
+        paddingBottom();
+      })
+      .on('load', function() {
+        paddingBottom();
+      });
+
+    let maxDate = '2020.01.01';
+    ttlCreate.forEach(e => {
+      maxDate < e ? maxDate = e : '';
+    })
+
+    // console.log(maxDate);
+
+    // $('.created-date').each(function() {
+    //   $(this).text() === maxDate ? (
+    //     $(this).parent().children('td').children('.index-status').text('검수요청'),
+    //     $(this).parent().children('td').children('.index-status').removeClass('index-status--end'),
+    //     $(this).parent().children('td').children('.index-status').addClass('index-status--confirm')
+    //   ) : '';
+    // });
+  </script>
+  <!-- //script -->
+</body>
+
+</html>

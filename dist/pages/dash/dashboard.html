@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>현대차 홈 에너지 시스템</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- favicon -->
+  <!-- <link rel="icon" href="../assets/images/common/favicon.ico" type="image/x-icon" /> -->
+  <link rel="stylesheet" href="../../assets/css/ui-style.css">
+  <script src="../../assets/lib/jquery-3.7.1.min.js"></script>
+  <script src="../../assets/lib/chart-3.5.1.min.js"></script>
+  <script src="../../assets/js/ui-script.js"></script>
+  <script src="../../assets/js/ui-dashboard.js" type="module"></script>
+</head>
+<body>
+  <div class="wrapper dash-wrap">
+    <div class="hdrtop-wrap">
+      <div class="hdr-top">
+        <h4>최근 업데이트 <span>2024.12.12 12:51</span></h4>
+      </div>
+      <div class="hdr-left">
+        <i class="ham"></i>
+        <h2>대시보드</h2>
+      </div>
+      <div class="hdr-right">
+        <!-- 이곳에 weather-icon들어옴. 컴포넌트 가이드 참고-->
+        <i class="cloudy-day"></i>
+        <select name="" id="">
+          <option value="">현재</option>
+          <option value="">오늘 낮</option>
+        </select>
+        <select name="" id="">
+          <option value="">국내</option>
+          <option value="">해외</option>
+        </select>
+        <div class="site-find">
+          <div class="input-txt">
+            <i class="place"></i>
+            <span>Site 찾기</span>
+          </div>
+
+          <div class="addr">
+            <div class="header">
+              <select name="" id="">
+                <option value="">도/시</option>
+                <option value="">서울시</option>
+                <option value="">경기도</option>
+              </select>
+              <select name="" id="">
+                <option value="">시/군/구</option>
+              </select>
+              <div class="input-txt" auto-srch="true">
+                <input type="text">
+              </div>
+              <button type="button">검색</button>
+            </div>
+
+            <div class="section">
+              <h4>검색결과 <span>0</span> 건</h4>
+              <ul class="result">
+                <!-- 검색결과 컴포넌트-->
+                <li>
+                  <i class="place-lg"></i>
+                  <span class="dts">
+                    <span>남양연구소</span>
+                    <span>경기도 화성시 남양읍 현대연구소로 150</span>
+                  </span>
+                </li>
+
+                <li>
+                  <i class="place-lg"></i>
+                  <span class="dts">
+                    <span>구로발전소</span>
+                    <span>서울시 구로구 남구로동 현대연구소로 150</span>
+                  </span>
+                </li>
+
+                <li>
+                  <i class="place-lg"></i>
+                  <span class="dts">
+                    <span>신도시연구소</span>
+                    <span>서울시 강서구 마곡동 현대연구소로 150</span>
+                  </span>
+                </li>
+
+
+                <li>
+                  <i class="place-lg"></i>
+                  <span class="dts">
+                    <span>테스트연구소</span>
+                    <span>서울시 테스트 마곡동 현대연구소로 150</span>
+                  </span>
+                </li>
+
+              </ul>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+
+    <!-- 헤더 임시 태그 : 실제 개발 시 삭제 page/inc/header.html의 태그를 사용  -->
+    <div class="header-place"></div>
+    <!--// 헤더 임시 태그 : 실제 개발 시 삭제 page/inc/header.html의 태그를 사용  -->
+
+    <!-- 컨텐츠 영역 -->
+    <section class="container">
+      <div class="board-top">
+        <!-- 에너지 플로우 다이어그램 위치 -->
+        <div class="energy-flow">
+          <h3>에너지 흐름도</h3>
+          <div class="labels"><span class="en-lb red">전력공급</span><span class="en-lb blue">전력소비</span></div>
+          <div class="diagram">
+            <article class="meter">
+              <div class="image">
+                <a href="#"></a>
+                <span class="flow-data">999</span>
+              </div>
+              <div class="texts">
+                <h3>meter</h3>
+                <p class="font-"><span>1,064</span>kW</p>
+              </div>
+
+              <!-- 다이어그램 내부요소 클릭시 레이어-->
+              <div class="list_pop">
+                <span class="tips"></span>
+                <h3><span>Meter</span>(<span>999</span>)</h3>
+                <i class="close_gr"></i>
+                <ul>
+                  <li>
+                    <h4>METERNAMEEEEEE</h4>
+                    <p>100,000kWh</p>
+                    <a href=""><i class="arr_more"></i></a>
+                  </li>
+                </ul>
+              </div>
+              <!-- // 다이어그램 내부요소 클릭시 레이어 -->
+            </article>
+
+
+            <article class="pv">
+              <div class="image">
+                <a href="#"></a>
+                <span class="flow-data">999</span>
+              </div>
+              <div class="texts">
+                <h3>PV</h3>
+                <p><span>187</span>kW</p>
+              </div>
+
+              <!-- 다이어그램 내부요소 클릭시 레이어-->
+              <div class="list_pop right">
+                <span class="tips"></span>
+                <h3><span>PV</span>(<span>999</span>)</h3>
+                <i class="close_gr"></i>
+                <ul>
+                  <li>
+                    <h4>PVNAMESSSSS</h4>
+                    <p>100,000kWh</p>
+                    <a href=""><i class="arr_more"></i></a>
+                  </li>
+                </ul>
+              </div>
+            </article>
+            <article class="ess">
+              <div class="image">
+                <a href="#"></a>
+                <span class="flow-data">999</span>
+              </div>
+              <div class="texts">
+                <h3>ESS</h3>
+                <p><span>812</span>kW</p>
+              </div>
+
+              <!-- 다이어그램 내부요소 클릭시 레이어-->
+              <div class="list_pop right">
+                <span class="tips"></span>
+                <h3><span>ESS</span>(<span>999</span>)</h3>
+                <i class="close_gr"></i>
+                <ul>
+                  <li>
+                    <h4>ESSNAMETTT</h4>
+                    <p>100,000kWh</p>
+                    <a href=""><i class="arr_more"></i></a>
+                  </li>
+                </ul>
+              </div>
+            </article>
+            <article class="evc">
+              <div class="image">
+                <a href="#"></a>
+                <span class="flow-data">999</span>
+              </div>
+              <div class="texts">
+                <h3>EVC</h3>
+                <p><span>187</span>kW</p>
+
+              </div>
+              <!-- 다이어그램 내부요소 클릭시 레이어-->
+              <div class="list_pop left">
+                <span class="tips"></span>
+                <h3><span>EVC</span>(<span>999</span>)</h3>
+                <i class="close_gr"></i>
+                <ul>
+                  <li>
+                    <h4>EVCNAMETTT</h4>
+                    <p>100,000kWh</p>
+                    <a href=""><i class="arr_more"></i></a>
+                  </li>
+                </ul>
+              </div>
+            </article>
+            <article class="ev">
+              <div class="image">
+                <a href="#"></a>
+                <span class="flow-data">999</span>
+              </div>
+              <div class="texts">
+                <h3>EV</h3>
+                <p><span>187</span>kW</p>
+              </div>
+
+              <!-- 다이어그램 내부요소 클릭시 레이어-->
+              <div class="list_pop left">
+                <span class="tips"></span>
+                <h3><span>EV</span>(<span>999</span>)</h3>
+                <i class="close_gr"></i>
+                <ul>
+                  <li>
+                    <h4>EVNAMETTT</h4>
+                    <p>100,000kWh</p>
+                    <a href=""><i class="arr_more"></i></a>
+                  </li>
+                </ul>
+              </div>
+            </article>
+            <!-- 다이어그램 점선 영역 -->
+            <div class="art-wrap">
+              <article class="wrap-home">
+                <div class="image home">
+                  <a href="#"></a>
+                  <span class="flow-data">999</span>
+                </div>
+
+                <div class="texts">
+                  <h3>Home</h3>
+                  <p><span>374</span>kW</p>
+                </div>
+                <div class="list_pop left">
+                  <span class="tips"></span>
+                  <h3><span>Meter</span>(<span>999</span>)</h3>
+                  <i class="close_gr"></i>
+                  <ul>
+                    <li>
+                      <h4>METERNAMEEEEEE</h4>
+                      <p>100,000kWh</p>
+                      <a href=""><i class="arr_more"></i></a>
+                    </li>
+                  </ul>
+                </div>
+              </article>
+              <article class="wrap-app">
+                <div class="image app">
+                  <a href="#"></a>
+                  <span class="flow-data">999</span>
+                </div>
+                <div class="texts">
+                  <h3>가전부하</h3>
+                  <p><span>187</span>kW</p>
+                </div>
+
+                <!-- 다이어그램 내부요소 클릭시 레이어-->
+                <div class="list_pop left">
+                  <span class="tips"></span>
+                  <h3><span>EV</span>(<span>999</span>)</h3>
+                  <i class="close_gr"></i>
+                  <ul>
+                    <li>
+                      <h4>EVNAMETTT</h4>
+                      <p>100,000kWh</p>
+                      <a href=""><i class="arr_more"></i></a>
+                    </li>
+                  </ul>
+                </div>
+              </article>
+              <!-- 다이어그램 점선 영역 -->
+
+
+              </article>
+              <article class="wrap-ehp">
+                <div class="image ehp">
+                  <a href="#"></a>
+                  <span class="flow-data">999</span>
+                </div>
+                <div class="texts">
+                  <h3>EHP부하</h3>
+                  <p><span>187</span>kW</p>
+                </div>
+
+                   <!-- 다이어그램 내부요소 클릭시 레이어-->
+                <div class="list_pop left">
+                  <span class="tips"></span>
+                  <h3><span>EV</span>(<span>999</span>)</h3>
+                  <i class="close_gr"></i>
+                  <ul>
+                    <li>
+                      <h4>EVNAMETTT</h4>
+                      <p>100,000kWh</p>
+                      <a href=""><i class="arr_more"></i></a>
+                    </li>
+                  </ul>
+                </div>
+              </article>
+              <!-- 다이어그램 점선 영역 -->
+              </article>
+            </div>
+            <!-- 다이어그램 점선 영역 -->
+          </div>
+        </div>
+        <!--// 에너지 플로우 다이어그램 위치 -->
+        <div class="dash-right">
+          <article>
+            <h3>PV발전 <a href="#"><i class="more"></i></a></h3>
+            <div class="prog-bar">
+              <!-- PV발전의 퍼센트 값은 span.prog-gata안에 '숫자만' 입력-->
+              <div class="bar"><span class="prog-data">63</span></div>
+            </div>
+            <ul class="txts">
+              <li><span>생산전력</span><span class="bl"><b class="data">1,500</b>kW</span></li>
+              <li><span>설비용량</span><span class="gr"><b class="data">2,000</b>kW</span></li>
+              <li class="up-line"><span>발전량(오늘)</span><span class="bk"><b class="data">3,000</b>kWh</span></li>
+            </ul>
+          </article>
+          <article class="spend-chart">
+            <h3>전력 소비량(오늘) <a href="#"><i class="more"></i></a></h3>
+            <div class="chart">
+              <canvas class="spend-elect" height="250"></canvas>
+            </div>
+          </article>
+          <article>
+            <h3>자급율(오늘)</h3>
+            <div class="chart">
+              <canvas class="self-elect" height="255"></canvas>
+            </div>
+          </article>
+          <div class="art-wrap">
+            <article>
+              <h3>EV현황<a href="#"><i class="more"></i></a></h3>
+              <ul class="txts">
+                <li><span>등록 차량 수</span><span class="bk"><b class="data">100</b>대</span></li>
+                <li><span>Plug in</span><span class="bl"><b class="data">5</b>대</span></li>
+              </ul>
+            </article>
+            <article>
+              <h3>EV충전(일)<a href="#"><i class="more"></i></a></h3>
+              <ul class="txts">
+                <li><span>충전 차량</span><span class="bk"><b class="data">100</b>대</span></li>
+                <li><span>충전 시간</span><span class="bk"><b class="data">00:20:01</b></span></li>
+              </ul>
+            </article>
+          </div>
+          <article>
+            <h3>EVC 사용 현황(오늘)<a href="#"><i class="more"></i></a></h3>
+            <ul class="txts">
+              <li><span>평균 사용율 (충전)</span><span class="bk"><b class="data">8</b>%</span></li>
+              <li><span>평균 사용율 (Plug-in)</span><span class="ac-bl"><b class="data">12</b>%</span></li>
+            </ul>
+            <ul class="txts">
+              <li><span>평균 사용시간 (충전)</span><span class="bk"><b class="data">20:00:00</b></span></li>
+              <li><span>평균 사용시간 (Plug-in)</span><span class="ac-bl"><b class="data">20:00:00</b></span></li>
+            </ul>
+            <ul class="txts">
+              <li><span>총 충전량</span><span class="bl"><b class="data">150</b>kWh</span></li>
+              <li><span>총 방전량</span><span class="rd"><b class="data">100</b>kWh</span></li>
+            </ul>
+          </article>
+          <div class="art-wrap">
+            <article>
+              <h3>ESS 사용량(오늘)<a href="#"><i class="more"></i></a></h3>
+              <ul class="txts">
+                <li><span>충전량</span><span class="bl"><b class="data">1684</b>kWh</span></li>
+                <li><span>방전량</span><span class="rd"><b class="data">1051</b>kWh</span></li>
+              </ul>
+            </article>
+            <article>
+              <h3>건물<a href="#"><i class="more"></i></a></h3>
+              <ul class="txts">
+                <li><span>현재 사용 전력</span><span class="rd"><b class="data">1051</b>kWh</span></li>
+                <li><span>오늘 사용 전력</span><span class="bk"><b class="data">1684</b>kWh</span></li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </div>
+      <div class="board-bottom">
+        <ul class="label-select">
+          <li><input type="date" value="2020-08-25"></li>
+          <li>
+            <select name="" id="" class="sel_date">
+              <option value="일">일</option>
+              <option value="월">월</option>
+              <option value="년">년</option>
+            </select>
+          </li>
+        </ul>
+        <canvas class="elec-chart" width="1840" height="290"></canvas>
+      </div>
+    </section>
+    <div class="dimmed"></div>
+  </div>
+
+  <!-- 레이아웃 조합용 스크립트. 개발시 삭제::파일까지 삭제 필요 -->
+  <script src="../../assets/js/ui-layout-script.js" type="module"></script>
+  <!--//레이아웃 조합용 스크립트입니다. 개발시 삭제 //-->
+
+  <!-- 툴팁 리스트용 임시 태그 개발 시 삭제 -->
+  <script>
+    document.querySelectorAll('.list_pop ul').forEach(e => {
+      Array(0).fill(0).forEach(aa => {
+        let li = document.createElement('li');
+        li.innerHTML = e.children[0].innerHTML;
+        e.appendChild(li);
+      })
+    })
+  </script>
+</body>
+
+</html>

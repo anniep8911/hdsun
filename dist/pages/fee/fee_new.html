@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="utf-8">
+
+<head>
+  <title>현대차 홈 에너지 시스템</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- favicon -->
+  <link rel="icon" href="./assets/images/common/favicon.ico" type="image/x-icon" />
+  <link rel="stylesheet" href="../../assets/css/ui-style.css">
+  <script src="../../assets/lib/jquery-3.7.1.min.js"></script>
+  <script src="../../assets/lib/chart-3.5.1.min.js"></script>
+  <script src="../../assets/js/ui-script.js"></script>
+</head>
+
+<body>
+  <!-- 헤더 임시 태그 : 실제 개발 시 삭제하시고 page/inc/header.html의 태그를 사용하시면 됩니다.  -->
+  <div class="header-place"></div>
+  <!--// 헤더 임시 태그 : 실제 개발 시 삭제하시고 page/inc/header.html의 태그를 사용하시면 됩니다.  -->
+
+  <!-- 컨텐츠 영역 -->
+  <section class="container fee">
+    <!-- 컨텐츠 공통해더 : fixed -->
+    <div class="header">
+      <div class="hdr-left">
+        <ul class="breadcrumb">
+          <li><a hred="#">main</a></li>
+          <li><a hred="#">전기 요금 관리</a></li>>
+          <li><a hred="#">전기 요금제 등록</a></li>
+        </ul>
+        <h2>전기 요금제 등록</h2>
+      </div>
+    </div>
+
+    <!-- 콘텐츠 영역: 내용변경 영역 -->
+    <div class="content-wrap">
+      <form class="content">
+        <ul class="input-table">
+          <h2>계절별·시간대별 구분</h2>
+          <li>
+            <label for="fee-name">요금제 명 <i class="imp"></i></label>
+            <div class="input-txt">
+              <input type="text" class="notice" placeholder="요금제 명" id="fee-name">
+              <i class="clear"></i>
+            </div>
+          </li>
+          <li>
+            <label for="home-name" class="top">계절별 <br>시간대별 구분</label>
+            <div class="inner-table large">
+              <!-- 테이블 타이틀-->
+              <ul class="tbl-header">
+                <li></li>
+                <li>봄</li>
+                <li>여름</li>
+                <li>가을</li>
+                <li>겨울</li>
+              </ul>
+              <!-- // 테이블 타이틀-->
+
+              <!-- 테이블 내용  -->
+              <ul>
+                <li>월</li>
+                <li>
+                  <!-- select의 cal이라는 클래스명은 ui용 임시 클래스입니다(월 조합을 위함) : 개발시 해당 클래스를 삭제해주시고 , select박스 안에 월에 대한 값을 option으로 넣으시면 됩니다 -->
+                  <select name="" id="" class="cal">
+                   
+                  </select>
+                  ~
+                  <select name="" id="" class="cal">
+                   
+                  </select>
+                </li>
+                <li>
+                  <select name="" id="" class="cal">
+                   
+                  </select>
+                  ~
+                  <select name="" id="" class="cal">
+                   
+                  </select>
+                </li>
+                <li>
+                  <select name="" id="" class="cal">
+                   
+                  </select>
+                  ~
+                  <select name="" id="" class="cal">
+                   
+                  </select>
+                </li>
+                <li>
+                  <select name="" id="" class="cal">
+                   
+                  </select>
+                  ~
+                  <select name="" id="" class="cal">
+                   
+                  </select>
+                </li>
+              
+              </ul>
+              <!-- rep이라는 클래스명은 ui용 임시 클래스입니다: 개발시 해당 클래스를 삭제해주세요-->
+              <ul class="rep">
+                <li>
+                  <select name="" id="">
+                    <option value="">경</option>
+                    <option value="">중간</option>
+                    <option value="">최대</option>
+                  </select>
+                </li>
+                <li>
+                   <!-- select의 time이라는 클래스명은 ui용 임시 클래스입니다(시간 조합을 위함) : 개발시 해당 클래스 자체를 삭제해주시고 , select박스 안에 월에 대한 값을 option으로 넣으시면 됩니다 -->
+                   <select name="" id="" class="time">
+                    
+                   </select>
+                   ~
+                   <select name="" id="" class="time">
+                     
+                   </select>
+                </li>
+                <li>
+                  <!-- select의 time이라는 클래스명은 ui용 임시 클래스입니다(시간 조합을 위함) : 개발시 해당 클래스 자체를 삭제해주시고 , select박스 안에 월에 대한 값을 option으로 넣으시면 됩니다 -->
+                  <select name="" id="" class="time">
+                    
+                  </select>
+                  ~
+                  <select name="" id="" class="time">
+                    
+                  </select>
+                </li>
+                <li>
+                  <!-- select의 time이라는 클래스명은 ui용 임시 클래스입니다(시간 조합을 위함) : 개발시 해당 클래스 자체를 삭제해주시고 , select박스 안에 월에 대한 값을 option으로 넣으시면 됩니다 -->
+                  <select name="" id="" class="time">
+                    
+                  </select>
+                  ~
+                  <select name="" id="" class="time">
+                    
+                  </select>
+                </li>
+                <li>
+                  <!-- select의 time이라는 클래스명은 ui용 임시 클래스입니다(시간 조합을 위함) : 개발시 해당 클래스 자체를 삭제해주시고 , select박스 안에 월에 대한 값을 option으로 넣으시면 됩니다 -->
+                  <select name="" id="" class="time">
+                    
+                  </select>
+                  ~
+                  <select name="" id="" class="time">
+                    
+                  </select>
+                </li>
+              </ul>
+              <!-- //테이블 내용 -->
+            </div>
+          </li>
+
+        </ul>
+        <ul class="input-table">
+          <h2>시간대 요금 (원)</h2>
+          <li>
+            <label for="fee-name">기본요금<i class="imp"></i></label>
+            <div class="input-txt">
+              <input type="text" class="notice" placeholder="기본요금" id="fee-name">
+              <i class="clear"></i>
+            </div>
+            원/kWh
+          </li>
+          <li>
+            <label for="home-name" class="top">여름철</label>
+            <div class="inner-table">
+              <ul class="tbl-header">
+                <li></li>
+                <li>전기요금</li>
+                <li>송전단가 </li>
+              </ul>
+              <ul>
+                <li>경부하</li>
+                <li><div class="input-txt"> <input type="text" placeholder="0,000"></div> 원/kWh</li>
+                <li><div class="input-txt"> <input type="text" placeholder="0,000"></div> 원/kWh</li>
+              </ul>
+              <ul>
+                <li>중간부하</li>
+                <li><div class="input-txt"> <input type="text" placeholder="0,000"></div> 원/kWh</li>
+                <li><div class="input-txt"> <input type="text" placeholder="0,000"></div> 원/kWh</li>
+              </ul>
+              <ul>
+                <li>최대부하</li>
+                <li><div class="input-txt"> <input type="text" placeholder="0,000"></div> 원/kWh</li>
+                <li><div class="input-txt"> <input type="text" placeholder="0,000"></div> 원/kWh</li>
+              </ul>
+            </div>
+          </li>
+          <li>
+            <label for="home-name" class="top">봄·가을철</label>
+            <div class="inner-table">
+              <ul class="tbl-header">
+                <li></li>
+                <li>전기요금</li>
+                <li>송전단가 </li>
+              </ul>
+              <ul>
+                <li>경부하</li>
+                <li><div class="input-txt"> <input type="text" placeholder="0,000"></div> 원/kWh</li>
+                <li><div class="input-txt"> <input type="text" placeholder="0,000"></div> 원/kWh</li>
+              </ul>
+              <ul>
+                <li>중간부하</li>
+                <li><div class="input-txt"> <input type="text" placeholder="0,000"></div> 원/kWh</li>
+                <li><div class="input-txt"> <input type="text" placeholder="0,000"></div> 원/kWh</li>
+              </ul>
+              <ul>
+                <li>최대부하</li>
+                <li><div class="input-txt"> <input type="text" placeholder="0,000"></div> 원/kWh</li>
+                <li><div class="input-txt"> <input type="text" placeholder="0,000"></div> 원/kWh</li>
+              </ul>
+            </div>
+          </li>
+          <li>
+            <label for="home-name" class="top">겨울철</label>
+            <div class="inner-table">
+              <ul class="tbl-header">
+                <li></li>
+                <li>전기요금</li>
+                <li>송전단가 </li>
+              </ul>
+              <ul>
+                <li>경부하</li>
+                <li><div class="input-txt"> <input type="text" placeholder="0,000"></div> 원/kWh</li>
+                <li><div class="input-txt"> <input type="text" placeholder="0,000"></div> 원/kWh</li>
+              </ul>
+              <ul>
+                <li>중간부하</li>
+                <li><div class="input-txt"> <input type="text" placeholder="0,000"></div> 원/kWh</li>
+                <li><div class="input-txt"> <input type="text" placeholder="0,000"></div> 원/kWh</li>
+              </ul>
+              <ul>
+                <li>최대부하</li>
+                <li><div class="input-txt"> <input type="text" placeholder="0,000"></div> 원/kWh</li>
+                <li><div class="input-txt"> <input type="text" placeholder="0,000"></div> 원/kWh</li>
+              </ul>
+            </div>
+          </li>
+          <li class="btns">
+            <button class="negative-btn"> 취소</button>
+            <input type="submit" value="등록" class="button">
+          </li>
+        </ul>
+      </form>
+    </div>
+  </section>
+
+  <!-- 확인후 주석삭제: UI 데이터 개수 변경용 스크립트입니다. 개발시 삭제해주세요.:파일까지 삭제 필요 -->
+  <script src="../../assets/js/ui-layout-script.js"></script>
+  <!--확인후 주석삭제: // UI 데이터 개수 변경용 스크립트입니다. 개발시 삭제해주세요. //-->
+
+  <!-- 확인 후 주석삭제:// UI select option개수 변경용 스크립트입니다. 개발시 삭제해주세요. // -->
+  <script>
+    let mon =  Array(12).fill(0).map((_,i)=>`${i+1}월`);
+    let time = Array(24).fill(0).map((_,i)=>`${i+1}:00`);
+    let row =  Array(6).fill(0);
+
+    function mker(txt,prdom){
+      let opts= document.createElement('option');
+      opts.innerText =txt;
+      prdom.append(opts);
+    }
+    mon.forEach(e=>{
+      mker(e,$('.cal'))
+    })
+    time.forEach(e=>{
+      mker(e,$('.time'))
+    })
+
+    row.forEach(e=>{
+      const table = document.querySelector('.inner-table');
+      let ul =document.createElement('ul');
+      ul.innerHTML=$('.rep').html();
+      table.append(ul);
+    })
+
+  </script>
+  <!-- 확인 후 주석삭제:// UI select option개수 변경용 스크립트입니다. 개발시 삭제해주세요. // -->
+  <script></script>
+  
+</body>
+
+</html>

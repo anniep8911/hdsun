@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <title>모달창 가이드</title>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="../dist/assets/css/ui-style.css">
+  <style>
+    body {
+      overflow: auto;
+    }
+
+    header {
+      height: 100vh;
+    }
+
+    header .categories>li {
+      line-height: 70px;
+      padding: 0px 20px;
+      cursor: pointer;
+      text-transform: capitalize;
+
+    }
+
+    header .categories>li:hover {
+      text-decoration: underline;
+    }
+
+    section.container {
+      padding-top: 0;
+    }
+
+    h4:nth-of-type(1) {
+      margin-top: 0;
+    }
+
+    h4 {
+      width: 100%;
+      font-size: 20px;
+      line-height: 40px;
+      color: #fff;
+      margin-top: 20px;
+      background-color: var(--color-hyndai-blue);
+      padding-left: 12px;
+      text-transform: uppercase;
+    }
+
+    table {
+      border: 1px solid #ccc;
+      margin-top: 20px;
+      margin-left: 50px;
+      border-spacing: 0px;
+      border-bottom: 0px;
+    }
+
+    table td {
+      padding: 20px;
+      line-height: 70px;
+      border-left: 1px solid #ccc;
+      border-bottom: 1px solid #ccc;
+      text-align: center;
+      background-color: #fff;
+      vertical-align: top;
+    }
+
+    table td.html {
+      width: fit-content;
+    }
+    table td.tag {
+      text-align-last: left;
+    }
+    table td.dim {
+      padding-top: 20px;
+    }
+
+    table td .modal {
+      position: relative;
+      display: block;
+      box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3), -1px -1px 2px rgba(0, 0, 0, 0.3);
+    }
+
+    table td:nth-of-type(1) {
+      border-left: 0px;
+    }
+
+    table td.wide {
+      width: 400px;
+      line-height: 20px;
+      text-align: left;
+    }
+
+    table td>.pagination {
+      margin-top: 0;
+    }
+
+
+    table td.tag {
+      line-height: 1;
+    }
+
+
+    section>div.note {
+      width: 95%;
+      height: 100%;
+      padding: 15px;
+      margin: 0 auto;
+      font-size: 16px;
+      line-height: 20px;
+      border-radius: 20px;
+      margin-top: 20px;
+      background-color: #ccc;
+      margin-top: 12px;
+    }
+
+    a {
+      color: blue;
+      text-decoration: underline;
+    }
+
+    sub {
+      color: #666;
+      background-color: rgba(255, 255, 255, 0.3);
+    }
+
+    sup {
+      background-color: #fc0;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="wrap">
+    <header class="gnb">
+      <ul class="categories">
+      </ul>
+    </header>
+    <section class="container">
+      <h4>modal 확인 (UX)</h4>
+      <div class="note">
+        모달버튼 액션에 대한 설명 <br>
+        <sub>👌 모달버튼은 아래와 같이 <sup>target-modal</sup>속성에 활성화가 될 모달의 클래스명을 css 형식으로 입력하여 활성화 시킬 수 있습니다.</sub>
+        <br>
+        &lt;button type="button" class="del" target-modal=".modal.del">버튼에 들어갈 내용&lt;/button>
+
+      </div>
+      <table class="btnTable">
+        <tr>
+          <td>class</td>
+          <td>tag</td>
+        </tr>
+      </table>
+
+
+      <h4>modal모양 미리보기</h4>
+      <div class="note">
+        modal의 경우 , 아래와 같은 구조로 작성하면 됩니다.
+        <br>
+        <sub>👌 modal은 반드시 dimmed의 자식요소로 들어와야합니다. 또한, 모든 modal의 <sup>기본 클래스는 modal</sup>입니다. </sub>
+        <br>
+        &lt;div class="modal del"&gt;
+        <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<sub>👌모달의 제목영역은 h2태그입니다. 없을경우 h2태그 자체를 삭제하면 됩니다.</sub>
+        <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&lt;h2&gt;모달제목&lt;/h2&gt;
+        <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<sub>👌모달의 내용 영역은 p태그입니다. 줄바꾸기는 br로 구분해주세요!</sub>
+        <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&lt;p>삭제하시겠습니까? &lt;br>삭제시 복구가 불가합니다.&lt;/p>
+        <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<sub>👌모달의 버튼은 최대 2개까지 추가할 수 있습니다.(그 이상 추가 시 퍼블문의 필수) <br> div.btns태그 안에 버튼을 추가하면되며, 추가할 수 있는 버튼은 modal-btn형식으로 추가하면 되며, <a href="./guide-component.html" target="_blank">버튼컴포넌트</a>를 참고해주세요!</sub>
+        <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&ltdiv class="btns">
+        <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&ltbutton type="button" class="modal-btn cnl">취소&lt/button>
+        <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&ltbutton type="button" class="modal-btn">내려받기&lt/button>
+        <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&lt/div>
+        <br>
+        &lt;/div&gt;
+      </div>
+
+      <table class="modTable">
+        <tr>
+          <td>class</td>
+          <td>tag</td>
+        </tr>
+      </table>
+    </section>
+  </div>
+
+  <!-- 모달창 들어오는 자리 -->
+
+  <!-- 모달임시태그 , 아래의 태그를 완전히 지우고, 해당 위치에 dist/inc/modal의 태그를 사용하면됩니다.(스크립트제외)-->
+  <div class="modal-place"></div>
+  <!--// 모달임시태그 , 아래의 태그를 완전히 지우고, 해당 위치에 dist/inc/modal의 태그를 사용하면됩니다.(스크립트제외)-->
+
+
+  <!-- script -->
+  <script type="text/javascript" src="../dist/assets/lib/jquery-3.7.1.min.js"></script>
+  <!-- 레이아웃 조합용 스크립트 -->
+  <script>
+    $(function() {
+      $('.modal-place').load('../dist/pages/inc/modals.html', function() {
+        // 모달 interaction
+        const btn = $('button, .button, .btn, .btn-add');
+        const btnModal = $('.modal-btn');
+
+        // 모달창 show/hide 함수
+        const modalHide = (modal) => {
+          $('.modal').removeClass('active');
+          $('.dimmed').css('display', 'none');
+        }
+        const modalShow = (modal) => {
+          $('.modal').removeClass('active'),
+            $(`${modal}`).addClass('active'),
+            $('.dimmed').css({
+              display: 'block',
+              zIndex: 1,
+              opacity: 1,
+            });
+        }
+
+        btn.click(function() {
+          $(this).attr('target-modal') ? modalShow($(this).attr('target-modal')) : '';
+        });
+
+        btnModal.click(function() {
+          modalHide();
+        })
+
+        // 배경 클릭시 모달 제거 이벤트
+      $('.dimmed').click(function(e){
+        e.stopPropagation();
+        modalHide();
+      });
+      
+      $('.modal').click(function(e){
+        e.stopPropagation();
+      });
+          
+
+
+      });
+    })
+  </script>
+  <script src="../dist/assets/js/ui-script.js"></script>
+
+  <!-- 가이드용 스크립트 -->
+  <script>
+    $(function() {
+      let btns = [{
+          class: 'modal del',
+          button: `<button type="button" class="del" target-modal=".modal.del">버튼2개 삭제</butto>`,
+        },
+        {
+          class: 'modal confirm',
+          button: `<button type="button" class="del" target-modal=".modal.confirm">버튼2개 확인</butto>`,
+    
+        },
+        {
+          class: 'modal change',
+          button: `<button type="button" class="del" target-modal=".modal.fail">버튼1개 확인</butto>`,
+        },
+        {
+          class: 'modal form',
+          button: `<span class="btn-add" target-modal=".modal.form"><i class="add"></i>디바이스 추가</span>`,
+        },
+        {
+          class: 'modal pool',
+          button: `<button type="button" target-modal=".modal.pool">pool id 등록</button>`,
+        },
+        {
+          class: 'modal mode',
+          button: `<button type="button" target-modal=".modal.mode">스마트모드 변경</button>`,
+        },
+      ];
+
+
+
+
+      let modals = [{
+          class: 'modal del',
+          button: `<div class="modal del" style="display:block">
+                    <h2>삭제하기</h2>
+                    <p>삭제하시겠습니까? <br>삭제시 복구가 불가합니다.</p>
+                    <div class="btns">
+                      <button type="button" class="modal-btn cnl">취소</button>
+                      <button type="button" class="modal-btn del">삭제</button>
+                    </div>
+                  </div> `
+        },
+        {
+          class: 'modal confirm',
+          button: `<div class="modal">
+                      <h2>내려받기</h2>
+                    <p>체크된 항목을 내려받으시겠습니까?</p>
+                    <div class="btns">
+                      <button type="button" class="modal-btn cnl">취소</button>
+                      <button type="button" class="modal-btn">내려받기</button>
+                    </div>
+                  </div>`
+        },
+        {
+          class: 'modal',
+          button: ` <div class="modal">
+                      <p>변경이 완료 되었습니다.</p>
+                      <div class="btns">
+                        <a href="./home_detail.html" class="modal-btn ck">확인</a>
+                      </div>
+                    </div>
+                  </div>`
+        },
+        {
+          class: 'modal form',
+          button: `<div class="modal form" style="display:block"> 
+                <h2>디바이스 추가</h2>
+                <form action="">
+                  <ul class="input-table">
+                    <li>
+                      <label for="home-name">디바이스 종류</label>
+                      <select>
+                        <option value="">디바이스 선택</option>
+                        <option value="">스마트 미터</option>
+                        <option value="">EHP</option>
+                        <option value="">EVC</option>
+                        <option value="">EV</option>
+                      </select>
+                    </li>
+                    <li>
+                      <label for="home-name">EHP명 <i class="imp"></i></label>
+                      <div class="input-txt">
+                        <input type="text" placeholder="EHP명">
+                        <i class="clear"></i>
+                      </div>
+                    </li>
+                    <li>
+                      <label for="home-name">설치일 <i class="imp"></i></label>
+                      <div class="input-txt">
+                        <input type="text" placeholder="YYYY, MM, DD">
+                      </div>
+                    </li>
+                    <li>
+                      <label for="home-name">제품명</label>
+                      <div class="input-txt">
+                        <input type="text" placeholder="제품명">
+                        <i class="clear"></i>
+                      </div>
+                    </li>
+                    <li>
+                      <label for="home-name">제품 일련번호</label>
+                      <div class="input-txt">
+                        <input type="text" placeholder="제품 일련번호">
+                        <i class="clear"></i>
+                      </div>
+                    </li>
+                    <li>
+                      <label for="home-name">제조사</label>
+                      <div class="input-txt">
+                        <input type="text" placeholder="제조사">
+                        <i class="clear"></i>
+                      </div>
+                    </li>
+                    <li>
+                      <label for="home-name">정격소비전력 </label>
+                      <div class="input-txt w140">
+                        <input type="text" placeholder="100">
+                      </div>
+                      <span>kW</span>
+                    </li>
+                    <li class="etc">
+                      <label for="etc">비고</label>
+                      <textarea name="" id="etc" placeholder="비고"></textarea>
+                    </li>
+                    <li class="btns">
+                      <button type="button" class="modal-btn cnl">취소</button>
+                      <button type="button" class="modal-btn">등록</button>
+                    </li>
+                  </ul>
+                </form>
+              </div>`
+        },
+        {
+          class: 'modal pool',
+          button: `
+              <div class="modal pool" style="display:block">
+                <h2>Pool ID</h2>
+                <div class="input-txt">
+                  <input type="text" class="notice" placeholder="poolID를 입력해주세요" id="admin-email">
+                </div>
+                <div class="btns">
+                  <button type="button" class="modal-btn cnl">취소</button>
+                  <a href="#" class="modal-btn ck">등록</a>
+                </div>
+              </div>
+          `,
+        },
+        {
+          class: 'modal mode',
+          button: `
+              <div class="modal mode">
+                <h2>스마트모드 변경</h2>
+                <div class="note">
+                  <input type="radio" name="mode"> <label>ON</label>
+                  <input type="radio" name="mode"><label>OFF</label>
+                </div>
+                <div class="btns">
+                  <button type="button" class="modal-btn cnl">취소</button>
+                  <a href="#" class="modal-btn ck">변경</a>
+                </div>
+              </div>
+          `,
+        },
+        {
+          class: 'modal soc',
+          button: `
+              <div class="modal soc">
+              <h2>Target SOC 변경</h2>
+              <div class="note">
+                <select name="" id="">
+                  <option value="">80</option>
+                  <option value="">70</option>
+                  <option value="">60</option>
+                </select>
+                <span>%</span>
+              </div>
+              <div class="btns">
+                <button type="button" class="modal-btn cnl">취소</button>
+                <a href="#" class="modal-btn ck">변경</a>
+              </div>
+            </div>
+          `
+        },
+        {
+          class: 'modal soc',
+          button: `
+            <div class="modal inout-time">
+              <h2>입차 출차 예정 시간  변경</h2>
+              <div class="note">
+                <label for="">입차</label>
+                <label for="">출차</label>
+                <select>
+                  <option value="">00:00</option>
+                  <option value="">...</option>
+                  <option value="">24:00</option>
+                </select>
+                <span>~</span>
+                <select>
+                  <option value="">00:00</option>
+                  <option value="">...</option>
+                  <option value="">24:00</option>
+                </select>
+              </div>
+              <div class="btns">
+                <button type="button" class="modal-btn cnl">취소</button>
+                <a href="#" class="modal-btn ck">변경</a>
+              </div>
+            </div>
+          `,
+        },
+      ];
+
+      const catAdd = () => {
+        document.querySelectorAll('h4').forEach(e => {
+          $('.categories').append(
+            `<li><h3 class="ct-title"><span>${e.textContent}</span></h3></li>`
+          )
+        })
+      }
+      catAdd();
+
+      $('.categories li').click(function() {
+        let nw = document.querySelectorAll('h4');
+        window.scrollTo(0, nw[$(this).index()].offsetTop + 3);
+      });
+
+
+      function tagMaker(data, table) {
+        data.forEach(e => {
+          let tr = document.createElement('tr');
+          for (let key in e) {
+            if(key==='button'){
+              let td = document.createElement('td');
+              let td2 = document.createElement('td');
+                td.innerHTML = e[key];
+                td2.innerText = e[key];
+                td2.className +=' tag';
+                td.className += 'html';
+                tr.append(td);
+                tr.append(td2);
+            }
+          }
+          table.append(tr);
+        });
+      }
+
+      // 테이블태그
+      tagMaker(btns, $('.btnTable'));
+      tagMaker(modals, $('.modTable'));
+
+
+    })
+  </script>
+  <!-- //script -->
+</body>
+
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>현대차 홈 에너지 시스템</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- favicon -->
+  <!-- <link rel="icon" href="./assets/images/common/favicon.ico" type="image/x-icon" /> -->
+  <!-- //favicon -->
+  <link rel="stylesheet" href="../../assets/css/ui-style.css">
+  <script src="../../assets/lib/jquery-3.7.1.min.js"></script>
+  <script src="../../assets/js/ui-script.js"></script>
+</head>
+
+<body>
+  <div class="wrapper">
+    <!-- 헤더 임시 태그 : 실제 개발 시 삭제하시고 page/inc/header.html의 태그를 사용하시면 됩니다.  -->
+    <div class="header-place"></div>
+    <!--// 헤더 임시 태그 : 실제 개발 시 삭제하시고 page/inc/header.html의 태그를 사용하시면 됩니다.  -->
+ 
+    <!-- 컨텐츠 영역 -->
+    <section class="container">
+      <!-- 컨텐츠 공통해더 : fixed -->
+      <div class="header">
+        <ul class="breadcrumb">
+          <li><a href="#">main</a></li>
+          <li><a href="#">관리자 관리</a></li>
+          <li><a href="#">관리자 수정</a></li>
+        </ul>
+        <h2>관리자 수정</h2>
+      </div>
+
+      <!-- 공통영역은 고정 / container 내부 내용만 변경 -->
+      <form action="" class="content">
+        <ul class="input-table">
+          <li>
+            <label for="home-name">ID <i class="imp"></i></label>
+            <div class="input-txt" state="disabled">
+              <input type="text" value="E-mail@Email.com" id="admin-id" disabled>
+            </div>
+          </li>
+          <li>
+            <label for="prd-com">임시비밀번호 <i class="imp"></i></label>
+            <div class="input-txt">
+              <input type="text" class="notice" value="#$1234Qwer" id="admin-pass">
+              <i class="clear"></i>
+            </div>
+          </li>
+          <li>
+            <label for="prd-com">관리자 이름 <i class="imp"></i></label>
+            <div class="input-txt">
+              <input type="text" class="notice" value="김관리" id="admin-email">
+              <i class="clear"></i>
+            </div>
+          </li>
+          <li>
+            <label for="prd-com">관리자 등급 <i class="imp"></i></label>
+            <select name="" id="">
+              <option value="">뷰어</option>
+            </select>
+          </li>
+          <li class="btns">
+            <a href="./home.html" class="negative-btn">취소</a>
+            <button type="submit">변경</button>
+          </li>
+        </ul>
+      </form>
+    </section>
+
+  </div>
+
+
+  
+  <!-- 모달임시태그 , 아래의 태그를 완전히 지우고, 해당 위치에 dist/inc/modal의 태그를 사용하면됩니다.(스크립트제외)-->
+  <div class="modal-place"></div>
+  <!--// 모달임시태그 , 아래의 태그를 완전히 지우고, 해당 위치에 dist/inc/modal의 태그를 사용하면됩니다.(스크립트제외)-->
+ 
+
+  <!-- 레이아웃 조합용 스크립트입니다. 개발시 삭제해주세요.:파일까지 삭제 필요 -->
+  <script src="../../assets/js/ui-layout-script.js"></script>
+  <!--//레이아웃 조합용 스크립트입니다. 개발시 삭제해주세요. //-->
+</body>
+
+</html>

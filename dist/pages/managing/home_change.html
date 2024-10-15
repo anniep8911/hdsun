@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>현대차 홈 에너지 시스템</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- favicon -->
+  <!-- <link rel="icon" href="./assets/images/common/favicon.ico" type="image/x-icon" /> -->
+  <!-- //favicon -->
+  <link rel="stylesheet" href="../../assets/css/ui-style.css">
+  <script src="../../assets/lib/jquery-3.7.1.min.js"></script>
+  <script src="../../assets/js/ui-script.js"></script>
+</head>
+
+<body>
+  <div class="wrapper">
+    <!-- 헤더전용 임시 태그 : 실제 개발 시 삭제  -->
+    <!-- 헤더 임시 태그 : 실제 개발 시 삭제하시고 page/inc/header.html의 태그를 사용하시면 됩니다.  -->
+    <div class="header-place"></div>
+    <!--// 헤더 임시 태그 : 실제 개발 시 삭제하시고 page/inc/header.html의 태그를 사용하시면 됩니다.  -->
+
+    <!-- 컨텐츠 영역 -->
+    <section class="container">
+      <!-- 컨텐츠 공통해더 : fixed -->
+      <div class="header">
+        <ul class="breadcrumb">
+          <li><a href="#">main</a></li>
+          <li><a href="#">사이트 관리</a></li>
+          <li><a href="#">사이트 변경</a></li>
+        </ul>
+        <h2>사이트 변경</h2>
+      </div>
+      <!-- 공통영역은 고정 / container 내부 내용만 변경 -->
+      <form action="./home_detail.html" class="content">
+        <ul class="input-table">
+          <li>
+            <label for="home-name">사이트 명 <i class="imp"></i></label>
+            <div class="input-txt" state="disabled">
+              <input type="text" value="남양연구소" id="home-name" disabled>
+            </div>
+          </li>
+          <li>
+            <label for="home-name">자원타입 <i class="imp"></i></label>
+            <input type="radio" name="material" id="rm" checked> <label for="rm">실제자원</label>
+            <input type="radio" name="material" id="am"> <label for="am">가상자원</label>
+          </li>
+          <li>
+            <label for="home-pre">배전사업자(DSO) <i class="imp"></i></label>
+            <div class="input-txt">
+              <input type="text" value="한국전력" id="home-name">
+            </div>
+          </li>
+          <li>
+            <label for="home-pre">송전사업자(TSO) <i class="imp"></i></label>
+            <div class="input-txt">
+              <input type="text" value="한국전력" id="home-name">
+            </div>
+          </li>
+          <li>
+            <label for="home-pre">요금제 <i class="imp"></i></label>
+            <select name="" id="">
+              <option value="">대표요금제</option>
+            </select>
+          </li>
+          <li>
+            <label>주소 <i class="imp"></i></label>
+            <div class="ipt-wrap">
+              <select class="page-location">
+                <option value="">도/시</option>
+                <option value="" selected>서울특별시</option>
+                <option value="">경기도</option>
+                <option value="">강원도</option>
+                <option value="">제주도</option>
+              </select>
+              <select class="page-location">
+                <option value="">시/군/구</option>
+                <option value="" selected>영등포구</option>
+                <option value="">노량진</option>
+              </select>
+            </div>
+          <li>
+            <label for="addr">상세주소 <i class="imp"></i></label>
+            <div class="input-txt">
+              <input type="text" class="" value="여의도동 1985" id="home-name">
+              <i class="clear"></i>
+            </div>
+          </li>
+          <li class="etc">
+            <label for="etc">비고</label>
+            <textarea name="" id="etc" placeholder="비고"></textarea>
+          </li>
+          <li class="btns">
+            <button type="button" class="negative-btn">취소</button>
+            <button type="button" class="change">변경</button>
+          </li>
+        </ul>
+      </form>
+    </section>
+  </div>
+
+
+  <!-- 모달임시태그 , 아래의 태그를 완전히 지우고, 해당 위치에 dist/inc/modal의 태그를 사용하면됩니다.(스크립트제외)-->
+  <div class="modal-place"></div>
+  <!--// 모달임시태그 , 아래의 태그를 완전히 지우고, 해당 위치에 dist/inc/modal의 태그를 사용하면됩니다.(스크립트제외)-->
+
+  <!-- 레이아웃 조합용 스크립트입니다. 개발시 삭제해주세요.:파일까지 삭제 필요 -->
+  <script src="../../assets/js/ui-layout-script.js"></script>
+  <!--//레이아웃 조합용 스크립트입니다. 개발시 삭제해주세요. //-->
+</body>
+
+</html>
