@@ -1533,7 +1533,6 @@ let enFlow = {
       this[i].state === false ? i==='home'? this.unactive('art-wrap'):this.unactive(i):'';
       this[i].longState === false? this.unactive(i,false):'';
     }
-    // !this.state ? this.unactive() : '';
   },
   layPop(dom) {
     let nowFlow = dom.parent().parent();
@@ -1552,7 +1551,7 @@ let enFlow = {
     });
 
     this.close(dom);
-  }
+  },
 }
 
 

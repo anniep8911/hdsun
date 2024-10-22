@@ -6,12 +6,12 @@ enFlow.evc.color = 'blue';
 enFlow.ev.color = 'blue';
 enFlow.home.color = 'blue';
 // 디바이스 별 unative 설정 (false : 비활성 , !false : 활성)
-enFlow.evc.state=false;
+// enFlow.evc.state=false;
 // enFlow.ev.state=false;
-enFlow.meter.state=false;
+// enFlow.meter.state=false;
 // longState는 meter아래의 progressbar'만' 의미 
 // enFlow.meter.longState=false;
-enFlow.home.state=false;
+// enFlow.home.state=false;
 
 enFlow.show();
 

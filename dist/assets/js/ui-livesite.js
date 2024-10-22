@@ -1,6 +1,9 @@
 import {mkChart,enFlow,spendChart,mixedBarChart} from './ui-functions.js';
 
 
+const ranDom=(num)=>{
+  return Math.floor(Math.random() * num) + 1;
+}
 // UI용 임시 데이터 세팅 함수(개발 시 완전 삭제)
 const dataReturn = (max, min) => {
   let arr = Array(24).fill(0).map(m => m = (Math.floor(Math.random() * max) + min));
@@ -19,6 +22,20 @@ enFlow.show();
 $('.energy-flow article .flow-data').click(function() {
   enFlow.layPop($(this));
 })
+
+document.querySelectorAll('.diagram article .flow-data').forEach((e,i)=>{
+    let num = ranDom(30);
+    e.textContent = num;
+    let now = document.querySelectorAll(`.list_pop`)[i]
+    now.querySelectorAll('h3 span')[1].textContent = num;
+    let tb = now.querySelector('ul');
+    let list = tb.querySelector('li');
+    for(let i=0; i < num-1 ; i++){
+      let li  = list.cloneNode(true);
+      tb.append(li);
+    }
+  }
+)
 
 // chart.js영역
 const spendArea = document.querySelector('.spend-elect');

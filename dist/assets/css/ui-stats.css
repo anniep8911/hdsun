@@ -1012,3 +1012,11 @@ div.sel-gr{
   top: 65px;
   right: 0px;
 }
+
+.container.stats .content article .list_pop h4{
+  display: block;
+  margin-top: 0px;
+}
+.container.stats .content article .list_pop p{
+  margin-top: 0;
+}
