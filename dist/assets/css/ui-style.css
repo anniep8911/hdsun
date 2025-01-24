@@ -2718,5 +2718,13 @@ div.sel-gr {
   .container .board-bottom{
     display: none !important;
   }
+  header .info .btns{
+    flex-wrap: wrap;
+    row-gap: 20px;
+  }
+  header .info .btns button{
+    width: 100%;
+  }
+  
 
 }
