@@ -13,6 +13,7 @@
   <script src="../../assets/js/ui-script.js"></script>
   <script src="../../assets/js/ui-dashboard.js" type="module"></script>
 </head>
+
 <body>
   <div class="wrapper dash-wrap">
     <div class="hdrtop-wrap">
@@ -300,7 +301,7 @@
                   <p><span>187</span>kW</p>
                 </div>
 
-                   <!-- 다이어그램 내부요소 클릭시 레이어-->
+                <!-- 다이어그램 내부요소 클릭시 레이어-->
                 <div class="list_pop left">
                   <span class="tips"></span>
                   <h3><span>EV</span>(<span>999</span>)</h3>
@@ -419,7 +420,7 @@
   <!-- 툴팁 리스트용 임시 태그 개발 시 삭제 -->
   <script>
     document.querySelectorAll('.list_pop ul').forEach(e => {
-      Array(0).fill(0).forEach(aa => {
+      Array(10).fill(0).forEach(aa => {
         let li = document.createElement('li');
         li.innerHTML = e.children[0].innerHTML;
         e.appendChild(li);
