@@ -1785,7 +1785,6 @@ const mkTimeline = (data, dom) => {
   ul.className += ' time-content'
   ul.style.position = 'relative';
 
-  console.log(data.options.max)
   ul.style.minWidth= `${data.options.max * 30}px`;
   ul.style.borderBottom = `1px solid ${bdCol}`;
   ul.style.backgroundColor = `${data.options.background}`;
