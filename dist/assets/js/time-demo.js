@@ -31,12 +31,12 @@ tmChart1.ev6.category='쿠키';
 
 // 타임모듈 컬러설정
 // EVC1
-tmChart1.ev1.background=`url('./dist/assets/images/common/bake1.png') no-repeat center/contain`;
-tmChart1.ev2.background=`url('./dist/assets/images/common/bake2.png') no-repeat center/contain`;
-tmChart1.ev3.background=`url('./dist/assets/images/common/bake3.png') no-repeat center/contain`;
-tmChart1.ev4.background=`url('./dist/assets/images/common/bake4.png') no-repeat center/contain`;
-tmChart1.ev5.background=`url('./dist/assets/images/common/bake2.png') no-repeat center/contain`;
-tmChart1.ev6.background=`url('./dist/assets/images/common/bake1.png') no-repeat center/contain`;
+tmChart1.ev1.background=`url('./dist/assets/images/common/bake1.png') repeat-x left/contain`;
+tmChart1.ev2.background=`url('./dist/assets/images/common/bake2.png')  repeat-x  left/contain`;
+tmChart1.ev3.background=`url('./dist/assets/images/common/bake3.png')  repeat-x  left/contain`;
+tmChart1.ev4.background=`url('./dist/assets/images/common/bake4.png')  repeat-x  left/contain`;
+tmChart1.ev5.background=`url('./dist/assets/images/common/bake2.png')  repeat-x  left/contain`;
+tmChart1.ev6.background=`url('./dist/assets/images/common/bake1.png')  repeat-x  left/contain`;
 
 // 라벨 보여주기 세팅
 tmChart1.ev1.labelShow=true;
@@ -84,11 +84,11 @@ tmChart1.ev6.note='알레르기 표시정보: 밀/우유/계란';
 // 타임모듈 시작 시간설정 (hh:mm:ss)? 툴팁 노출에따라서 hh:mm or hh:mm:ss 사용가능
 // EVC1
 tmChart1.ev1.start=['07:00:00'];
-tmChart1.ev2.start=['10:00:00'];
+tmChart1.ev2.start=['10:30:00'];
 tmChart1.ev3.start=['16:00:00'];
 tmChart1.ev4.start=['13:00:00'];
 tmChart1.ev5.start=['10:00:00'];
-tmChart1.ev6.start=['20:00:00'];
+tmChart1.ev6.start=['20:10:00'];
 
 
 // 타임모듈 끝시간 설정 (hh:mm)
@@ -96,7 +96,7 @@ tmChart1.ev6.start=['20:00:00'];
 tmChart1.ev1.end=['09:00:00'];
 tmChart1.ev2.end=['14:00:00'];
 tmChart1.ev3.end=['21:00:00'];
-tmChart1.ev4.end=['18:00:00'];
+tmChart1.ev4.end=['17:30:00'];
 tmChart1.ev5.end=['12:00:00'];
 tmChart1.ev6.end=['02:00:00'];
 

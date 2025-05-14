@@ -1784,6 +1784,9 @@ const mkTimeline = (data, dom) => {
   let ul = document.createElement('ul');
   ul.className += ' time-content'
   ul.style.position = 'relative';
+
+  console.log(data.options.max)
+  ul.style.minWidth= `${data.options.max * 30}px`;
   ul.style.borderBottom = `1px solid ${bdCol}`;
   ul.style.backgroundColor = `${data.options.background}`;
   data.options.catTag !== undefined ? ul.style.width = '100%' : '';
@@ -1813,7 +1816,7 @@ const mkTimeline = (data, dom) => {
 
     setStyle(style, li);
     ul.append(li);
-    
+
     Array(data.options.max - data.options.min + 2).fill(0).map((_, i) => i + data.options.min).forEach((e, _, a) => {
       let span = document.createElement('span');
       let hg = data.options.heights;
@@ -1832,6 +1835,7 @@ const mkTimeline = (data, dom) => {
         textOverflow: 'ellipsis',
         boxSizing: 'border-box',
         whiteSpace: 'nowrap',
+        // flexShrink : 0,
         borderRight: length !== e ? `${borderWidth}px ${bdStyle} ${bdCol}` : '',
         userSelect: 'none'
       }
@@ -1955,7 +1959,6 @@ const mkTimeline = (data, dom) => {
         tipwd = tips.clientWidth;
         ttlWd = wd + leftPos + tipwd;
         cntWd = conatiner.clientWidth;
-        console.log(e.parentNode);
         e.parentNode.style.zIndex = 5;
         tips.style.opacity = 1;
         tips.style.left = `${lft}px`;
