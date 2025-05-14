@@ -1567,6 +1567,7 @@ let timeChart = {
     heights: 40,
     cut: 0,
     labels: true,
+    background:'transparent'
   },
 }
 
@@ -1652,7 +1653,7 @@ const mkTimeline = (data, dom) => {
 
     covers.style.backgroundColor = 'transparent';
     covers.style.clipPath = '';
-    covers.style.zIndex = 90;
+    covers.style.zIndex = 10;
 
     data[i].labelShow && data[i].labelShow !== undefined ?
       note === undefined || (times.style.width.replace('px','') < note.length*16)? times.innerText = '' :
@@ -1680,7 +1681,7 @@ const mkTimeline = (data, dom) => {
       fontSize: '12px',
       opacity: 0,
       lineHeight: '13px',
-      zIndex: '10'
+      zIndex: '-1'
     }
     let tip = {
       width: '10px',
@@ -1784,6 +1785,7 @@ const mkTimeline = (data, dom) => {
   ul.className += ' time-content'
   ul.style.position = 'relative';
   ul.style.borderBottom = `1px solid ${bdCol}`;
+  ul.style.backgroundColor = `${data.options.background}`;
   data.options.catTag !== undefined ? ul.style.width = '100%' : '';
   let categories = [0];
 
@@ -1944,7 +1946,7 @@ const mkTimeline = (data, dom) => {
       let note = data.options.tips(data[idx],st,end);
       let tips = makeTips(e.parentNode, note);
 
-      e.addEventListener('mouseenter', (m) => {
+      e.addEventListener('mouseenter', (m) => {        
         st = m.currentTarget.getAttribute('time-start');
         end = m.currentTarget.getAttribute('time-end');
         wd = m.currentTarget.clientWidth;
@@ -1953,9 +1955,11 @@ const mkTimeline = (data, dom) => {
         tipwd = tips.clientWidth;
         ttlWd = wd + leftPos + tipwd;
         cntWd = conatiner.clientWidth;
+        console.log(e.parentNode);
         e.parentNode.style.zIndex = 5;
         tips.style.opacity = 1;
         tips.style.left = `${lft}px`;
+        tips.style.zIndex = 10;
         if(lft+tipwd > cntWd){
           tips.style.left = `${leftPos-tipwd-11}px`;
           tips.querySelector('span').style.left = 'auto',
@@ -1967,6 +1971,7 @@ const mkTimeline = (data, dom) => {
       e.addEventListener('mouseleave', () => {
         tips.style.opacity = 0;
         e.parentNode.style.zIndex = 1;
+        tips.style.zIndex = -1;
       })
     })
   ) : '';
