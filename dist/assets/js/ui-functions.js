@@ -1667,6 +1667,7 @@ const mkTimeline = (data, dom) => {
     let toolBody = document.createElement('span');
     let tipTip = document.createElement('span');
     toolBody.className += ' tips';
+    toolBody.setAttribute('tabindex',0)
     let tipSt = {
       display: 'block',
       backgroundColor: '#333',
@@ -1698,7 +1699,7 @@ const mkTimeline = (data, dom) => {
     setStyle(tipSt, toolBody);
     setStyle(tip, tipTip);
     toolBody.append(tipTip);
-    li.append(toolBody);
+    li.after(toolBody);
     return toolBody
   }
 
@@ -1786,7 +1787,7 @@ const mkTimeline = (data, dom) => {
   ul.style.position = 'relative';
 
   ul.style.minWidth= `${data.options.max * 30}px`;
-  ul.style.borderBottom = `1px solid ${bdCol}`;
+  ul.style.borderTop = `1px solid ${bdCol}`;
   ul.style.backgroundColor = `${data.options.background}`;
   data.options.catTag !== undefined ? ul.style.width = '100%' : '';
   let categories = [0];
@@ -1801,7 +1802,7 @@ const mkTimeline = (data, dom) => {
     let li = document.createElement('li');
     let style = {
       width: '100%',
-      borderTop: `${borderWidth}px ${bdStyle} ${bdCol}`,
+      borderBottom: `${borderWidth}px ${bdStyle} ${bdCol}`,
       borderLeft: `${borderWidth}px ${bdStyle} ${bdCol}`,
       borderRight: `${borderWidth}px ${bdStyle} ${bdCol}`,
       display: 'flex',
@@ -1843,7 +1844,7 @@ const mkTimeline = (data, dom) => {
       ix === 0 ? 
       span.innerText = e-1
       : e === data.options.min ?
-      (span.innerText = categories[ix], span.className='cat')
+      (span.innerText = categories[ix], span.className='cat',span.setAttribute('role','group'),span.setAttribute('tabindex',0))
        :
         '';
 
@@ -1947,7 +1948,7 @@ const mkTimeline = (data, dom) => {
       let st = e.getAttribute('time-start');
       let end = e.getAttribute('time-end');
       let note = data.options.tips(data[idx],st,end);
-      let tips = makeTips(e.parentNode, note);
+      let tips = makeTips(e, note);
 
       e.addEventListener('mouseenter', (m) => {        
         st = m.currentTarget.getAttribute('time-start');
@@ -1961,7 +1962,7 @@ const mkTimeline = (data, dom) => {
         e.parentNode.style.zIndex = 5;
         tips.style.opacity = 1;
         tips.style.left = `${lft}px`;
-        tips.style.zIndex = 10;
+        tips.style.zIndex = 11;
         if(lft+tipwd > cntWd){
           tips.style.left = `${leftPos-tipwd-11}px`;
           tips.querySelector('span').style.left = 'auto',
