@@ -14,15 +14,63 @@
   <script src="../../assets/js/ui-dashboardCopy.js" type="module"></script>
 
   <style>
-    .dash-wrap{
-       overflow: hidden;
-       width: 99vw;
-       margin: 0 auto;
+    .dash-wrap {
+      /* overflow: hidden; */
+      width: 99vw;
+      margin: 0 auto;
     }
-    section.container{
+
+    section.container {
       margin: 0 auto;
       margin-left: 0;
+    }
 
+    section.container {
+      margin: 0 auto;
+    }
+
+    /* html, */
+    body {
+      overflow-y: scroll;
+      background-color: transparent;
+    }
+
+    section.container {
+      background-color: transparent;
+    }
+
+    ::-webkit-scrollbar {
+      width: 2px;
+      /* 세로 스크롤 */
+      height: 2px;
+      /* 가로 스크롤 */
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background-color: rgba(100, 100, 100, 0.6);
+      /* 스크롤 색 */
+      border-radius: 10px;
+      /* 둥글게 */
+    }
+
+    ::-webkit-scrollbar-track {
+      background: transparent;
+      /* 트랙 배경 투명 */
+    }
+
+    /* 파이어폭스 */
+    * {
+      scrollbar-width: thin;
+      /* thin = 약 6px 정도 */
+      scrollbar-color: rgba(100, 100, 100, 0.6) transparent;
+    }
+
+    .container .board-top .dash-right {
+      width: 100%;
+    }
+
+    .dash-wrap section.container {
+      min-width: auto;
     }
   </style>
 </head>
@@ -36,7 +84,7 @@
     <section class="container">
       <div class="board-top">
         <!-- 에너지 플로우 다이어그램 위치 -->
-        
+
         <!--// 에너지 플로우 다이어그램 위치 -->
         <div class="dash-right">
           <article>
