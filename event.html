@@ -335,15 +335,47 @@
       height: 5rem;
       border-radius: 50%;
       position: relative;
+      padding: 0.5rem;
+      box-sizing: border-box;
     }
 
     .share li a {
       color: transparent;
-      width: 100%;
-      height: 100%;
+      width: 80%;
+      height: 80%;
       position: absolute;
       top: 0;
       left: 0;
+      bottom: 0;
+      right: 0;
+      margin: auto;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 100%;
+    }
+
+    .share .facebook a {
+      background-image: url('./facebook.svg');
+    }
+
+    .share .twitter a {
+      background-image: url('./twitter.svg');
+    }
+
+    .share .naver {
+      background: linear-gradient(110deg, #03C75A 0%, #4DEB8C 100%);
+    }
+
+    .share .naver a {
+      background-image: url('./naver.svg');
+    }
+
+    .share .facebook {
+      background: linear-gradient(110deg, #1DA1F2 0%, #4FC3F7 100%);
+    }
+
+    .share .twitter {
+      background: linear-gradient(110deg, #1877F2 0%, #6A89F7 100%);
     }
   </style>
 </head>
@@ -375,6 +407,9 @@
       </article>
     </div>
   </div>
+
+  <h2>스마트 에너지, 클릭 한 번으로 시작됩니다</h2>
+  <h3><a href="./dist/pages/dash/dashboard.html">무료로 확인해보기</a></h3>
 
   <div class="cntWrap">
     <div class="content cnt02">
@@ -423,26 +458,22 @@
 
 
 
-  <h2>스마트 에너지, 클릭 한 번으로 시작됩니다</h2>
-  <h3><a href="./dist/pages/dash/dashboard.html">무료로 확인해보기</a></h3>
-
-
   <!-- sns 공유하기 -->
   <div class="cntWrap">
     <div class="content cnt03">
       <h2>공유하기</h2>
       <ul class="share">
-        <li>
+        <li class="naver">
           <a href="https://share.naver.com/web/shareView.nhn?url=https://anniep8911.github.io/hdsun/event&title=현대 태양광 시스템" target="_blank">
             네이버 공유
           </a>
         </li>
-        <li>
+        <li class="twitter">
           <a href="https://twitter.com/intent/tweet?url=https://anniep8911.github.io/hdsun/event&text=현대 태양광 시스템" target="_blank">
             트위터 공유
           </a>
         </li>
-        <li>
+        <li class="facebook">
           <a href="https://www.facebook.com/sharer/sharer.php?u=https://anniep8911.github.io/hdsun/event" target="_blank">
             페이스북 공유
           </a>
@@ -563,6 +594,7 @@
       background: linear-gradient(135deg, #0099ff 0%, #00cc88 100%);
       color: #fff;
       padding: 60px 20px;
+      margin-top: 5rem;
     }
 
     .policy-inner {
