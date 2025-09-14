@@ -38,6 +38,19 @@
       padding: 10rem 2rem 6rem;
       background: linear-gradient(135deg, #0099ff 0%, #00cc88 100%);
       position: relative;
+      transition: all 0.5s;
+      transition-delay: 0.5s;
+      width: 100vw;
+      height: 20rem;
+    }
+
+    main.fixed {
+      width: 100vw;
+      height: 100vh;
+      position: fixed;
+      z-index: 10;
+      top: 0;
+      left: 0;
     }
 
     main::after {
@@ -381,7 +394,7 @@
 </head>
 
 <body>
-  <main>
+  <main class="fixed">
     <h2>당신의 에너지, </h2>
     <h3><span>눈으로 확인하는 순간</span> <span>비용이 절약</span> <span>됩니다.</span></h3>
   </main>
@@ -667,7 +680,6 @@
         ifr.style.border = 'none';
         contImg.querySelector('iframe').remove();
         contImg.append(ifr);
-        console.log(idx);
       })
     })
 
@@ -688,15 +700,13 @@
 
 
     // 메인 이벤트
+    const mn = document.querySelector('main');
     const title = document.querySelector('main h2');
     const subTitle = document.querySelector('main h3');
     let ttlTxt = [...title.textContent];
     let subTxt = subTitle.querySelectorAll('span');
     let idx2 = 0;
     subTitle.innerHTML = '';
-
-
-
 
     let txtIdx = 0;
     let flagTTl = false;
@@ -712,7 +722,7 @@
         subTitle.append(subTxt[idx2]),
         idx2++
       ) : '';
-      (subTxt.length <= idx2) ? clearInterval(subTtl): ''
+      (subTxt.length <= idx2) ? (clearInterval(subTtl), mn.classList.remove('fixed')) : ''
     }, 500)
 
     // 아코디언 이벤트
