@@ -197,12 +197,9 @@
       margin: 0 auto;
     }
 
-    div.content.cnt01 article>div {
-      overflow: hidden;
-    }
-
     div.content.cnt01 .texts {
       height: 3rem;
+      overflow: hidden;
       margin: 0 auto;
     }
 
@@ -259,15 +256,14 @@
       display: flex;
       justify-content: space-between;
       position: absolute;
-      width: 100%;
       top: 0;
       bottom: 0;
       margin: auto;
-      left: 0;
+      left: -5%;
       height: 3rem;
       z-index: 3;
-      width: 100%;
       right: 0;
+      width: 110%;
 
     }
 
@@ -451,6 +447,9 @@
         e.classList.contains('on') ? e.classList.remove('on') : e.className += ' on';
       })
     })
+
+    console.error = () => {};
+    window.onerror = () => true;
   </script>
 
 
