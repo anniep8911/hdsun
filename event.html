@@ -722,7 +722,7 @@
         subTitle.append(subTxt[idx2]),
         idx2++
       ) : '';
-      (subTxt.length <= idx2) ? (clearInterval(subTtl), mn.classList.remove('fixed')) : ''
+      (subTxt.length <= idx2) ? (clearInterval(subTtl), mn.classList.remove('fixed'), window.scrollTo(0, 0)) : ''
     }, 500)
 
     // 아코디언 이벤트
