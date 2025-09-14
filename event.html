@@ -16,7 +16,7 @@
   <style>
     html {
       font-size: min(0.9vw, 16px);
-      width: 100vw;
+      /* width: 100vw; */
       overflow: hidden;
     }
 
@@ -405,6 +405,63 @@
       background: linear-gradient(110deg, #1877F2 0%, #6A89F7 100%);
     }
 
+    .policy-section {
+      background: linear-gradient(135deg, #0099ff 0%, #00cc88 100%);
+      color: #fff;
+      padding: 60px 0;
+      margin-top: 5rem;
+    }
+
+    .policy-inner {
+      width: 80%;
+      max-width: 1080px;
+      margin: 0 auto;
+      font-size: 0.8rem;
+      line-height: 1rem;
+    }
+
+    .policy-inner h4 {
+      cursor: pointer;
+    }
+
+    .policy-inner h5 {
+      height: 0;
+      overflow: hidden;
+    }
+
+    .policy-inner h4 span {
+      margin-left: 0.5rem;
+      transition: transform 0.5s;
+      display: inline-block;
+    }
+
+    .policy-inner h4.on span {
+      transform: rotate(180deg);
+    }
+
+    .policy-inner h5 {
+      height: 0;
+      overflow: hidden;
+      margin: 0;
+    }
+
+    .policy-inner h5 p {
+      margin: 0;
+    }
+
+    h2,
+    h3 {
+      margin: 0;
+      padding: 0;
+      text-align: left;
+    }
+
+    .policy-inner ul,
+    .policy-inner ol {
+      list-style: none;
+      padding: 0;
+    }
+
 
     /* 반응형 */
     @media(max-width: 768px) {
@@ -423,6 +480,10 @@
 
       div.content.cnt01 .texts li {
         font-size: 1.2rem;
+      }
+
+      .policy-inner {
+        width: 90%;
       }
 
     }
@@ -645,64 +706,11 @@
 
 
   <style>
-    .policy-section {
-      background: linear-gradient(135deg, #0099ff 0%, #00cc88 100%);
-      color: #fff;
-      padding: 60px 20px;
-      margin-top: 5rem;
-    }
 
-    .policy-inner {
-      width: 80%;
-      margin: 0 auto;
-      font-size: 0.8rem;
-      line-height: 1rem;
-    }
-
-    .policy-inner h4 {
-      cursor: pointer;
-    }
-
-    .policy-inner h5 {
-      height: 0;
-      overflow: hidden;
-    }
-
-    .policy-inner h4 span {
-      margin-left: 0.5rem;
-      transition: transform 0.5s;
-      display: inline-block;
-    }
-
-    .policy-inner h4.on span {
-      transform: rotate(180deg);
-    }
-
-    .policy-inner h5 {
-      height: 0;
-      overflow: hidden;
-      margin: 0;
-    }
-
-    .policy-inner h5 p {
-      margin: 0;
-    }
-
-    h2,
-    h3 {
-      margin: 0;
-      padding: 0;
-      text-align: left;
-    }
-
-    .policy-inner ul,
-    .policy-inner ol {
-      list-style: none;
-      padding: 0;
-    }
   </style>
 
   <script>
+    window.scroll(0, 0)
     const btn = document.querySelectorAll('button');
     const contTitle = document.querySelector('.cnt01 .texts ol');
     const contImg = document.querySelector('.cnt01 .images');
