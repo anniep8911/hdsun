@@ -16,6 +16,8 @@
   <style>
     html {
       font-size: min(0.9vw, 16px);
+      width: 100vw;
+      overflow: hidden;
     }
 
     video {
@@ -75,6 +77,14 @@
     main h3 {
       color: #fff;
       height: 2rem;
+      margin-top: 2rem;
+      opacity: 0;
+      transition: all 0.5s;
+    }
+
+    main h3.on {
+      margin-top: 0;
+      opacity: 1;
     }
 
     main h3 span {
@@ -94,7 +104,11 @@
       left: 0;
       bottom: -0.1rem;
       transition: width 0.5s;
+      transition-delay: 0.5s;
+    }
 
+    main h3 span.on {
+      margin-right: 2.5rem;
     }
 
     main h3 span.on::after {
@@ -110,14 +124,18 @@
       width: 100%;
       display: block;
       position: absolute;
-      top: -2.5rem;
-      right: -5rem;
+      bottom: 0;
+      top: 0;
+      margin: auto;
+      right: -7rem;
       content: '';
       background-repeat: no-repeat;
       background-position: center;
       background-size: contain;
       background-image: url('./Services-Marketing_Icon.gif');
       opacity: 0;
+      transition: opacity 0.5s;
+      transition-delay: 1s;
 
     }
 
@@ -396,7 +414,7 @@
 <body>
   <main class="fixed">
     <h2>당신의 에너지, </h2>
-    <h3><span>눈으로 확인하는 순간</span> <span>비용이 절약</span> <span>됩니다.</span></h3>
+    <h3><span>눈으로 확인하는 순간</span> <br> <span>비용이 절약</span> <span>됩니다.</span></h3>
   </main>
 
   <div class="cntWrap">
@@ -706,7 +724,7 @@
     let ttlTxt = [...title.textContent];
     let subTxt = subTitle.querySelectorAll('span');
     let idx2 = 0;
-    subTitle.innerHTML = '';
+    let wholedoc = document.querySelector('html');
 
     let txtIdx = 0;
     let flagTTl = false;
@@ -714,16 +732,19 @@
     let added = setInterval(() => {
       title.textContent += ttlTxt[txtIdx];
       txtIdx++;
-      (ttlTxt.length <= txtIdx) ? (clearInterval(added), flagTTl = true) : '';
-    }, 180)
-
-    let subTtl = setInterval(() => {
-      flagTTl ? (
-        subTitle.append(subTxt[idx2]),
-        idx2++
+      (ttlTxt.length <= txtIdx) ? (
+        clearInterval(added),
+        flagTTl = true,
+        subTitle.className += ' on',
+        subTitle.querySelector('span:nth-of-type(2)').className += ' on',
+        mn.classList.remove('fixed'),
+        mn.addEventListener('transitionend', () => {
+          wholedoc.style.overflow = 'auto'
+        }, {
+          once: true
+        })
       ) : '';
-      (subTxt.length <= idx2) ? (clearInterval(subTtl), mn.classList.remove('fixed'), window.scrollTo(0, 0)) : ''
-    }, 500)
+    }, 100)
 
     // 아코디언 이벤트
     const li = document.querySelectorAll('.cnt02 li:nth-of-type(odd)');
