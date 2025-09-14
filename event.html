@@ -37,13 +37,13 @@
     /* 메인 헤더 */
     main {
       text-align: center;
-      padding: 10rem 2rem 6rem;
+      padding: 4rem 0;
       background: linear-gradient(135deg, #0099ff 0%, #00cc88 100%);
       position: relative;
       transition: all 0.5s;
       transition-delay: 0.5s;
-      width: 100vw;
-      height: 20rem;
+      width: 100%;
+      height: 30vh;
     }
 
     main.fixed {
@@ -53,7 +53,9 @@
       z-index: 10;
       top: 0;
       left: 0;
+      position: relative;
     }
+
 
     main::after {
       content: '';
@@ -72,24 +74,27 @@
       font-weight: 700;
       color: #fff;
       height: 2rem;
+      text-align: center;
+      margin-top: 4rem;
     }
 
     main h3 {
       color: #fff;
-      height: 2rem;
       margin-top: 2rem;
       opacity: 0;
       transition: all 0.5s;
+      text-align: center;
+      margin-top: 10rem;
     }
 
     main h3.on {
-      margin-top: 0;
+      margin-top: 1rem;
       opacity: 1;
     }
 
     main h3 span {
       position: relative;
-      font-size: 2.4rem;
+      font-size: 3rem;
       opacity: 0;
       animation: fadeIn 0.5s 0.1s 1 forwards;
     }
@@ -107,10 +112,6 @@
       transition-delay: 0.5s;
     }
 
-    main h3 span.on {
-      margin-right: 2.5rem;
-    }
-
     main h3 span.on::after {
       width: 100%;
     }
@@ -125,14 +126,14 @@
       display: block;
       position: absolute;
       bottom: 0;
-      top: 0;
+      top: -4rem;
+      left: 0;
       margin: auto;
-      right: -7rem;
       content: '';
       background-repeat: no-repeat;
       background-position: center;
       background-size: contain;
-      background-image: url('./Services-Marketing_Icon.gif');
+      background-image: url('./giphy-unscreen.gif');
       opacity: 0;
       transition: opacity 0.5s;
       transition-delay: 1s;
@@ -167,40 +168,35 @@
     }
 
     /* CTA 버튼 */
-    h3 {
+    .cnt04 h2 {
       text-align: center;
-      margin: 50px 0 100px;
     }
 
-    h3 a {
+    .cnt04 h3 {
       background: linear-gradient(135deg, #00aaff, #00cc88);
-      color: #fff;
       padding: 18px 40px;
       border-radius: 40px;
       font-size: 1.2rem;
-      text-decoration: none;
       font-weight: 700;
       box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
       transition: all 0.3s ease;
+      width: 30%;
+      margin: 0 auto;
+      margin-top: 2rem;
+      text-align: center;
+      cursor: pointer;
     }
 
-    h3 a:hover {
+    .cnt04 h3 a {
+      text-decoration: none;
+      color: #fff;
+
+    }
+
+    .cnt04 h3:hover {
       background: linear-gradient(135deg, #0088cc, #00aa77);
       transform: translateY(-3px);
       box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
-    }
-
-    /* 반응형 */
-    @media(max-width: 768px) {
-      html {
-        font-size: max(0.9vw, 10px);
-      }
-
-      div.content {
-        width: 90%;
-        margin: 0 auto;
-      }
-
     }
 
 
@@ -408,13 +404,37 @@
     .share .twitter {
       background: linear-gradient(110deg, #1877F2 0%, #6A89F7 100%);
     }
+
+
+    /* 반응형 */
+    @media(max-width: 768px) {
+      html {
+        font-size: max(0.9vw, 10px);
+      }
+
+      div.content {
+        width: 90%;
+        margin: 0 auto;
+      }
+
+      .cnt04 h3 {
+        width: 80%;
+      }
+
+      div.content.cnt01 .texts li {
+        font-size: 1.2rem;
+      }
+
+    }
   </style>
 </head>
 
 <body>
   <main class="fixed">
-    <h2>당신의 에너지, </h2>
-    <h3><span>눈으로 확인하는 순간</span> <br> <span>비용이 절약</span> <span>됩니다.</span></h3>
+    <div class="titles">
+      <h2>당신의 에너지, </h2>
+      <h3><span>눈으로 확인하는 순간</span> <br> <span>비용이 절약</span> <span>됩니다.</span></h3>
+    </div>
   </main>
 
   <div class="cntWrap">
@@ -422,10 +442,10 @@
       <article class="artWrap">
         <div class="texts">
           <ol>
-            <li idx="3">모바일 최적화 – 언제 어디서나 <span>간단하게 확인</span></li>
-            <li idx="0">실시간 전력 확인 – 1초 단위로 흐르는 <span>에너지를 바로 확인</span></li>
             <li idx="1">EV 충전 상태 추적 – 충전량·사용량을 <span>직관적으로 파악</span></li>
-            <li idx="2">절감율 & 자급율 분석 – 오늘의 <span>절감 효과를 바로 계산</span></li>
+            <li idx="0">실시간 전력 확인 – 1초 단위로 흐르는 <span>에너지를 바로 확인</span></li>
+            <li idx="2">절감율 & 자급율 분석 – <span>오늘 충전 스케줄 절감 효과</span></li>
+
           </ol>
         </div>
         <div class="images">
@@ -439,8 +459,12 @@
     </div>
   </div>
 
-  <h2>스마트 에너지, 클릭 한 번으로 시작됩니다</h2>
-  <h3><a href="./dist/pages/dash/dashboard.html" target="_blank">무료로 확인해보기</a></h3>
+  <div class="cntWrap">
+    <div class="content cnt04">
+      <h2>스마트 에너지, 클릭 한 번으로 시작됩니다</h2>
+      <h3><a href="./dist/pages/dash/dashboard.html" target="_blank">무료로 확인해보기</a></h3>
+    </div>
+  </div>
 
   <div class="cntWrap">
     <div class="content cnt02">
@@ -664,8 +688,8 @@
       margin: 0;
     }
 
-    .policy-inner h2,
-    .policy-inner h3 {
+    h2,
+    h3 {
       margin: 0;
       padding: 0;
       text-align: left;
@@ -739,7 +763,8 @@
         subTitle.querySelector('span:nth-of-type(2)').className += ' on',
         mn.classList.remove('fixed'),
         mn.addEventListener('transitionend', () => {
-          wholedoc.style.overflow = 'auto'
+          wholedoc.style.overflow = 'auto';
+          window.scroll(0, 0)
         }, {
           once: true
         })
