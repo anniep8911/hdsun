@@ -100,6 +100,7 @@ body {
 .cntWrap {
   /* padding: 6rem 2rem; */
   margin-top: 4rem;
+  overflow: hidden;
 }
 .content header {
   text-align: center;
@@ -232,6 +233,7 @@ body {
 /* 공통 */
 .cnt5 .texts {
   display: flex;
+  
 }
 
 /* 말풍선 */
@@ -244,6 +246,14 @@ body {
   font-size: 15px;
   position: relative;
   word-break: keep-all;
+   opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.6s ease;
+  
+}
+.cnt5 .texts p.show {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* 홀수번째(왼쪽 말풍선) */
@@ -519,6 +529,7 @@ body {
   border-radius: 0.6rem;
   background: #111; /* 어두운 바탕 */
   box-shadow: inset 0 0 1rem rgba(0,0,0,0.8);
+  margin: auto;
 }
 
 /* 숫자 그룹 */
@@ -538,4 +549,200 @@ body {
   font-family: 'Courier New', monospace; /* 디지털 숫자 느낌 */
   color: #0ff; /* 네온 그린 */
   text-shadow: 0 0 0.6rem #0ff, 0 0 1rem #0ff; /* 발광 효과 */
+}
+
+
+/* 기본 카드 스타일 */
+.test-cards {
+  position: relative;
+}
+.test-card {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+.test-card.active {
+  opacity: 1;
+  pointer-events: auto;
+  position: relative;
+}
+
+/* 왼쪽/오른쪽으로 날라가는 상태 */
+.test-card.swipe-left {
+  animation: swipeLeft 0.5s forwards ease-in-out;
+}
+.test-card.swipe-right {
+  animation: swipeRight 0.5s forwards ease-in-out;
+}
+
+@keyframes swipeLeft {
+  0% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(-120%);
+    opacity: 0;
+  }
+}
+
+@keyframes swipeRight {
+  0% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(120%);
+    opacity: 0;
+  }
+}
+
+/* 새 카드 등장 (fade-in) */
+.test-card.fade-in {
+  animation: fadeIn 0.6s forwards ease;
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+
+/* 플로팅 FAQ 버튼 */
+.faq-floating {
+  position: fixed;
+  right: 2rem;
+  bottom: 2rem;
+  width: 4rem;
+  height: 4rem;
+  background: var(--blue-500);
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  cursor: pointer;
+  box-shadow: 0 0.4rem 1rem rgba(0,0,0,0.2);
+  transition: background 0.3s;
+  z-index: 1000;
+}
+.faq-floating:hover {
+  background: var(--blue-600);
+}
+
+/* 모달 */
+.faq-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  display: none; /* JS로 제어 */
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+}
+.faq-modal.active {
+  display: flex;
+}
+.faq-content {
+  background: #fff;
+  border-radius: 1rem;
+  width: 90%;
+  max-width: 40rem;
+  height: 70vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow: 0 0.8rem 2rem rgba(0,0,0,0.3);
+}
+
+/* 헤더 */
+.faq-header {
+  background: var(--blue-500);
+  color: #fff;
+  padding: 1rem 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.faq-header h2 {
+  margin: 0;
+  font-size: 1.6rem;
+}
+.faq-close {
+  background: none;
+  border: none;
+  font-size: 1.6rem;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* 본문 */
+.faq-body {
+  /* display: flex;
+  flex: 1; */
+  overflow: hidden;
+}
+
+/* 질문 리스트 */
+.faq-questions {  
+  border-right: 0.1rem solid #ddd;
+  display: flex;
+  flex-direction: column;
+  background: var(--gray-50);
+  position:relative;
+  height: 30vh;
+  overflow-y: scroll;
+}
+.faq-questions button { 
+  display: block;
+  line-height: 2.5rem;
+} 
+.faq-questions .mv{
+  position: absolute;
+  border: 0.5rem solid var(--blue-400);
+  top: 0;
+  height: 2.5rem;
+  left: 0;
+  width: 100%;
+  box-sizing: border-box;
+  transition:  transform 0.3s ease;
+}
+.faq-question {
+  background: #fff;
+  border: 0.1rem solid var(--gray-200);
+  padding: 0.8rem;
+  border-radius: 0.6rem;
+  text-align: left;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.faq-question:hover {
+  background: var(--blue-50);
+}
+
+/* 채팅 영역 */
+.faq-chat {
+  height: 40vh;
+  padding: 0.5rem;
+}
+
+.chat-message.bot{
+  
+  padding: 0.8rem 1.2rem;
+  border-radius: 1rem;
+  font-size: 1.2rem;
+  line-height: 1.4;
+  width: 90%;
+  margin: 0 auto;
+  background: var(--blue-100);
 }

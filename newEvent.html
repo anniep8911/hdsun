@@ -44,32 +44,25 @@
   <div class="cntWrap">
     <div class="content cnt8">
       <header>
-        <h2>이 강의가 필요한지 테스트</h2>
-        <h4>카드를 보며 스스로 체크해보세요</h4>
+        <h2>직접 체크해보세요!</h2>
         <div class="score">
-          <h5>score</h5>
+          <h5>당신에게 이 강의가 필요할 확률</h5>
           <div class="num">
             <ul>
-              <li>0</li>
-              <li>20</li>
-              <li>40</li>
-              <li>60</li>
-              <li>80</li>
-              <li>100</li>
+              <!-- 스코어 들어옴 -->
             </ul>
           </div>
         </div>
       </header>
       <section class="test-cards">
         <!-- 카드 1 -->
-        <article class="test-card">
+        <article class="test-card active">
           <div class="image">
             <img src="layout-example.png" alt="레이아웃 예시 이미지">
           </div>
           <div class="texts">
             <p class="question">
-              이 레이아웃을 보면 <br />
-              반응형 HTML 구조가 머릿속에 그려지나요?
+              이 레이아웃을 보면 반응형을 고려한  <br> HTML 구조가 머릿속에 그려지나요?
             </p>
             <div class="options">
               <button type="button" class="opt-btn">예</button>
@@ -382,16 +375,6 @@
             <p>“처음 코딩을 접했는데도 이벤트 페이지를 직접 만들 수 있었어요.”</p>
           </div>
         </article>
-        <article>
-          <div class="texts">
-            <p>“실무에서 바로 쓰는 툴을 배워서 취업 준비에 큰 도움이 됐습니다.”</p>
-          </div>
-        </article>
-        <article>
-          <div class="texts">
-            <p>“Git 협업을 경험해본 게 제일 좋았어요. 팀 프로젝트에 자신감이 생겼습니다.”</p>
-          </div>
-        </article>
       </section>
     </div>
   </div>
@@ -419,8 +402,303 @@
       © 2025 웹 퍼블리싱 강의 | 문의: info@example.com
     </footer>
   </div>
+
+
+
+  <!-- 플로팅 FAQ 아이콘 -->
+<div class="faq-floating" role="button" aria-label="자주 묻는 질문 열기">
+  ❓
+</div>
+
+<!-- FAQ 모달 -->
+<div class="faq-modal" role="dialog" aria-modal="true" aria-labelledby="faqTitle">
+  <div class="faq-content">
+    <header class="faq-header">
+      <h2 id="faqTitle">자주 묻는 질문</h2>
+      <button type="button" class="faq-close" aria-label="닫기">✕</button>
+    </header>
+
+    <div class="faq-body">
+      <!-- 질문 리스트 -->
+      <div class="faq-questions">
+        <div class="mv"></div>
+      </div>
+
+      <!-- 채팅 영역 -->
+      <div class="faq-chat">
+        <!-- JS로 답변 메시지 append -->
+        <div class="chat-message bot">
+          안녕하세요! 궁금한 질문을 선택해주세요 😊
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 </body>
 <script>
+// DOM 탐색
+const cards = document.querySelectorAll('.test-card');
+const buttons = document.querySelectorAll('.opt-btn');
+const scoreList = document.querySelector('.score .num ul');
+
+let currentIndex = 0;
+let currentScore = 0;
+
+let scoreUnits =  Math.round( 100 / cards.length);
+
+cards.forEach((e,i)=>{
+  let li =  document.createElement('li');
+  li.innerText =  `${scoreUnits*i}%`;
+  scoreList.append(li);
+})
+
+
+
+
+// 재사용 함수
+const addClass = (el, className) => {
+  if (el && !el.classList.contains(className)) {
+    el.classList.add(className);
+  }
+};
+
+const removeClass = (el, className) => {
+  if (el && el.classList.contains(className)) {
+    el.classList.remove(className);
+  }
+};
+
+// 점수 롤링 함수
+const updateScore = (value) => {
+  currentScore += value;
+  if (currentScore > 100) currentScore = 100; // 최대 100점 제한
+
+  // li 하나 높이가 3.6rem → n번째로 이동
+  const step = 3.6; // rem 단위 높이
+  const index = currentScore / 20; // 0,20,40... → 0~5 인덱스
+  scoreList.style.marginTop = `-${step * index}rem`;
+};
+
+// 카드 전환 함수
+const goNextCard = (direction, isScoreUp) => {
+  const currentCard = cards[currentIndex];
+  const nextIndex = currentIndex + 1;
+
+  if (!currentCard) return;
+
+  // 점수 업데이트
+  if (isScoreUp) {
+    updateScore(20);
+  }
+
+  // 마지막 카드일 경우 → 스와이프만 하고 끝내기
+  if (currentIndex === cards.length - 1) {
+    if (direction === 'left') {
+      addClass(currentCard, 'swipe-left');
+    } else {
+      addClass(currentCard, 'swipe-right');
+    }
+    removeClass(currentCard, 'active');
+    return; // 종료
+  }
+
+  // 현재 카드 날리기
+  if (direction === 'left') {
+    addClass(currentCard, 'swipe-left');
+  } else if (direction === 'right') {
+    addClass(currentCard, 'swipe-right');
+  }
+  removeClass(currentCard, 'active');
+
+  // 다음 카드 fade-in
+  const nextCard = cards[nextIndex];
+  addClass(nextCard, 'active');
+  addClass(nextCard, 'fade-in');
+
+  // fade-in 끝나면 클래스 제거
+  setTimeout(() => {
+    removeClass(nextCard, 'fade-in');
+  }, 500);
+
+  currentIndex = nextIndex;
+};
+
+// 버튼 이벤트
+buttons.forEach((btn) => {
+  btn.addEventListener('click', () => {
+    if (btn.textContent === '예') {
+      goNextCard('left', false); // 점수 유지
+    } else if (btn.textContent === '아니오') {
+      goNextCard('right', true); // 점수 +20
+    }
+  });
+});
+
+
+
+// ----------------------------
+// DOM 탐색
+// ----------------------------
+const faqFloating = document.querySelector(".faq-floating");
+const faqModal = document.querySelector(".faq-modal");
+const faqClose = document.querySelector(".faq-close");
+const faqQuestions = document.querySelector(".faq-questions");
+const faqChat = document.querySelector(".faq-chat");
+// ----------------------------
+// 타이핑 효과 함수
+// ----------------------------
+
+let chatTypingInterval = null; // 챗봇 전용
+// 후기 같은 일반 출력은 별도 interval을 쓰지 않고 각자 setInterval 생성
+
+const typeMessage = (targetEl, text, cls = "bot", speed = 50) => {
+  // 챗봇 영역이면 이전 타이핑 중단
+  if (targetEl === faqChat) {
+    if (chatTypingInterval) {
+      clearInterval(chatTypingInterval);
+      chatTypingInterval = null;
+    }
+    targetEl.innerHTML = "";
+
+    let msg = document.createElement("div");
+    addClass(msg, "chat-message");
+    addClass(msg, cls);
+    targetEl.appendChild(msg);
+
+    let i = 0;
+    chatTypingInterval = setInterval(() => {
+      msg.textContent += text.charAt(i);
+      i++;
+      if (i >= text.length) {
+        clearInterval(chatTypingInterval);
+        chatTypingInterval = null;
+      }
+      faqChat.scrollTop = faqChat.scrollHeight;
+    }, speed);
+  } else {
+    // 일반 영역 (후기 등) → 각자 독립적으로 타이핑
+    targetEl.textContent = "";
+    let i = 0;
+    const interval = setInterval(() => {
+      targetEl.textContent += text.charAt(i);
+      i++;
+      if (i >= text.length) clearInterval(interval);
+    }, speed);
+  }
+};
+
+
+// ----------------------------
+// 모달 열기 / 닫기
+// ----------------------------
+const openModal = () => addClass(faqModal, "active");
+const closeModal = () => removeClass(faqModal, "active");
+
+faqFloating.addEventListener("click", openModal);
+faqClose.addEventListener("click", closeModal);
+
+// ----------------------------
+// 질문 클릭 시 채팅 추가
+// ----------------------------
+const answers = {
+  "이 강의는 누구를 위한 건가요?": "웹 퍼블리싱 기초부터 실무까지 배우고 싶은 모든 분들을 위한 강의입니다!",
+  "사전 지식이 없어도 수강할 수 있나요?": "네! HTML, CSS 기초부터 시작해서 차근차근 따라올 수 있습니다.",
+  "강의 자료는 어떻게 제공되나요?": "모든 강의 자료는 PDF와 예제 코드로 제공됩니다.",
+  "실습은 어떤 방식으로 진행되나요?": "실무 예제 프로젝트를 따라 하며 직접 코드를 작성합니다.",
+  "강의는 몇 주 동안 진행되나요?": "총 5주 과정이며 주차별 주제가 나누어져 있습니다.",
+  "수업은 온라인인가요 오프라인인가요?": "온라인으로 진행되며, 언제든 복습할 수 있습니다.",
+  "강의 후 피드백을 받을 수 있나요?": "네, 과제 제출 후 코드 리뷰와 피드백을 제공합니다.",
+  "포트폴리오도 완성할 수 있나요?": "실무 예제를 기반으로 포트폴리오까지 완성할 수 있습니다.",
+  "강의 난이도는 어느 정도인가요?": "HTML/CSS 기초만 알면 누구나 시작할 수 있습니다.",
+  "강의 후 바로 취업에 도움이 될까요?": "네, 실무에 맞는 프로젝트 경험을 담아 취업 포트폴리오로 활용할 수 있습니다.",
+  "협업 툴은 어떤 걸 배우나요?": "Git, Figma, Jira 등을 실습합니다.",
+  "JavaScript도 배우나요?": "네, 이벤트 처리, DOM 조작, API 활용까지 다룹니다.",
+  "jQuery도 다루나요?": "실무에서 남아 있는 jQuery 코드를 이해할 수 있도록 다룹니다.",
+  "SCSS는 꼭 배워야 하나요?": "SCSS는 유지보수와 확장성이 뛰어나 반드시 익혀야 하는 기술입니다.",
+  "이 강의에서만 제공되는 장점은 뭔가요?": "실무 환경과 동일하게 협업 툴을 활용하고, 강사와 1:1 멘토링이 제공됩니다."
+};
+
+
+let idx = 0;
+for (const key in answers) {
+  let btn  = document.createElement('button');
+  btn.innerText =  key;
+  btn.setAttribute('idx',idx);
+  idx++;
+  faqQuestions.append(btn);
+}
+
+faqQuestions.addEventListener('click',(e)=>{
+    if (e.target.tagName === 'BUTTON') {
+    const question = e.target.textContent.trim();
+    const idx = e.target.getAttribute('idx');
+    const mv = faqQuestions.querySelector('.mv');
+
+    mv.style.transform = `translateY(${idx * 2.5}rem)`;
+
+    // 봇 답변
+    const answer = answers[question] || "죄송합니다, 준비된 답변이 없습니다.";
+    setTimeout(() => {
+      typeMessage(faqChat, answer, "bot");
+    }, 300);
+
+    faqChat.scrollTop = faqChat.scrollHeight;
+  }
+})
+
+
+
+// 수강생 후기
+
+const reviews = [
+  "“처음 코딩을 접했는데도 이벤트 페이지를 직접 만들 수 있었어요.”",
+  "“실무에서 바로 쓰는 툴을 배워서 취업 준비에 큰 도움이 됐습니다.”",
+  "“Git 협업을 경험해본 게 제일 좋았어요. 팀 프로젝트에 자신감이 생겼습니다.”",
+  "“강의 덕분에 처음으로 제 개인 포트폴리오 사이트를 완성했어요.”",
+  "“실무에서 바로 쓰는 퍼블리싱 팁을 배워서 업무 속도가 확 줄었습니다.”",
+  "“처음에는 어렵다고 느꼈는데, 점점 성취감이 쌓여서 끝까지 즐겁게 들을 수 있었습니다.”",
+  "“팀 프로젝트 경험을 통해 협업 툴 사용이 몸에 익었어요.”",
+  "“강사님의 피드백이 현실적이라서 취업 준비에 정말 도움이 되었습니다.”",
+  "“Figma로 디자인 시안을 직접 퍼블리싱하면서 큰 자신감을 얻었어요.”",
+  "“과제를 통해 반복 학습하니 코드가 손에 익어가는 게 느껴졌습니다.”",
+  "“수업에서 만든 예제를 기반으로 제 프로젝트까지 확장할 수 있었어요.”"
+];
+
+const reviewSection = document.querySelector(".cntWrap5 section");
+
+// 기존 article 다 지우기
+
+// 템플릿으로 쓸 첫 article 클론
+const template = document.querySelector(".cntWrap5 section article")?.cloneNode(true) 
+               || document.createElement("article");
+
+const observer = new IntersectionObserver((entries, obs) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      reviews.forEach((text, idx) => {
+        // 템플릿 복제
+        const article = template.cloneNode(true);
+        const p = article.querySelector("p") || document.createElement("p");
+        p.textContent = text;
+        p.classList.remove("show"); // 초기화
+        article.querySelector(".texts").innerHTML = "";
+        article.querySelector(".texts").appendChild(p);
+        reviewSection.appendChild(article);
+
+        // 순차 애니메이션
+        setTimeout(() => {
+          p.classList.add("show");
+        }, idx * 500);
+      });
+
+      obs.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.3 });
+
+observer.observe(reviewSection);
+
 
 
 </script>
